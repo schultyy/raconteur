@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
+		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		D41997021958C50D00EA6DCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997011958C50D00EA6DCB /* Cocoa.framework */; };
 		D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D419970A1958C50D00EA6DCB /* InfoPlist.strings */; };
 		D419970E1958C50D00EA6DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D419970D1958C50D00EA6DCB /* main.m */; };
 		D41997121958C50D00EA6DCB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D41997101958C50D00EA6DCB /* Credits.rtf */; };
 		D41997151958C50D00EA6DCB /* RCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D41997141958C50D00EA6DCB /* RCAppDelegate.m */; };
-		D41997181958C50D00EA6DCB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41997161958C50D00EA6DCB /* MainMenu.xib */; };
 		D419971A1958C50D00EA6DCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D41997191958C50D00EA6DCB /* Images.xcassets */; };
 		D41997211958C50D00EA6DCB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997201958C50D00EA6DCB /* XCTest.framework */; };
 		D41997221958C50D00EA6DCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997011958C50D00EA6DCB /* Cocoa.framework */; };
 		D419972A1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D41997281958C50D00EA6DCB /* InfoPlist.strings */; };
 		D419972C1958C50D00EA6DCB /* raconteurTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D419972B1958C50D00EA6DCB /* raconteurTests.m */; };
+		D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41997351958C62E00EA6DCB /* RCMainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
+		6964F62EB54D507C0FC7F080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997011958C50D00EA6DCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D41997041958C50D00EA6DCB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,13 +48,13 @@
 		D41997111958C50D00EA6DCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		D41997131958C50D00EA6DCB /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
 		D41997141958C50D00EA6DCB /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
-		D41997171958C50D00EA6DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D41997191958C50D00EA6DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D419971F1958C50D00EA6DCB /* raconteurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = raconteurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997201958C50D00EA6DCB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D41997271958C50D00EA6DCB /* raconteurTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "raconteurTests-Info.plist"; sourceTree = "<group>"; };
 		D41997291958C50D00EA6DCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D419972B1958C50D00EA6DCB /* raconteurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raconteurTests.m; sourceTree = "<group>"; };
+		D41997351958C62E00EA6DCB /* RCMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCMainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6964F6BB20AC58AA5FDBB761 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6964F0A706808DAA649CFEC3 /* MainMenu.xib */,
+				D41997351958C62E00EA6DCB /* RCMainWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6964F8401979B225B088A8DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6964FEFA0A21D1C8BFF0263C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6964FC2F582EA51EF11F51AF /* RCMainController.m */,
+				6964F4253EC6DA9182EE3BF5 /* RCMainController.h */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		D41996F51958C50D00EA6DCB = {
 			isa = PBXGroup;
 			children = (
@@ -117,9 +147,11 @@
 			children = (
 				D41997131958C50D00EA6DCB /* RCAppDelegate.h */,
 				D41997141958C50D00EA6DCB /* RCAppDelegate.m */,
-				D41997161958C50D00EA6DCB /* MainMenu.xib */,
 				D41997191958C50D00EA6DCB /* Images.xcassets */,
 				D41997081958C50D00EA6DCB /* Supporting Files */,
+				6964FEFA0A21D1C8BFF0263C /* Controllers */,
+				6964F6BB20AC58AA5FDBB761 /* Resources */,
+				6964F8401979B225B088A8DA /* Models */,
 			);
 			path = raconteur;
 			sourceTree = "<group>";
@@ -234,7 +266,8 @@
 				D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */,
 				D419971A1958C50D00EA6DCB /* Images.xcassets in Resources */,
 				D41997121958C50D00EA6DCB /* Credits.rtf in Resources */,
-				D41997181958C50D00EA6DCB /* MainMenu.xib in Resources */,
+				6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */,
+				D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +288,7 @@
 			files = (
 				D419970E1958C50D00EA6DCB /* main.m in Sources */,
 				D41997151958C50D00EA6DCB /* RCAppDelegate.m in Sources */,
+				6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +311,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6964F0A706808DAA649CFEC3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6964F62EB54D507C0FC7F080 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		D419970A1958C50D00EA6DCB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,14 +333,6 @@
 				D41997111958C50D00EA6DCB /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		D41997161958C50D00EA6DCB /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D41997171958C50D00EA6DCB /* Base */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		D41997281958C50D00EA6DCB /* InfoPlist.strings */ = {
@@ -467,6 +501,7 @@
 				D41997311958C50D00EA6DCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D41997321958C50D00EA6DCB /* Build configuration list for PBXNativeTarget "raconteurTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +510,7 @@
 				D41997341958C50D00EA6DCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

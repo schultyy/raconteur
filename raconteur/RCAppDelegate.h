@@ -8,8 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class RCMainController;
+
 @interface RCAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (retain) RCMainController *mainController;
 
 @end

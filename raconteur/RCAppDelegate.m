@@ -7,12 +7,15 @@
 //
 
 #import "RCAppDelegate.h"
+#import "RCMainController.h"
 
 @implementation RCAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    [self setMainController:[[RCMainController alloc] init]];
+    [[self mainController] showWindow:self];
 }
 
 @end
