@@ -15,6 +15,8 @@
 {
 }
 
+#pragma mark - Actions
+
 -(IBAction)newProject:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseDirectories:YES];
@@ -26,6 +28,10 @@
         [self setMainController:[[RCMainController alloc] initWithWorkingDirectory: cwd]];
         [[self mainController] showWindow:self];
     }
+}
+
+-(IBAction)addFile:(id)sender {
+    [[self mainController] addFile];
 }
 
 @end

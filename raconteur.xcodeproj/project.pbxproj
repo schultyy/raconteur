@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
+		6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FE76C00AEE43E82649C2 /* RCProject.m */; };
 		D41997021958C50D00EA6DCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997011958C50D00EA6DCB /* Cocoa.framework */; };
 		D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D419970A1958C50D00EA6DCB /* InfoPlist.strings */; };
 		D419970E1958C50D00EA6DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D419970D1958C50D00EA6DCB /* main.m */; };
@@ -36,6 +37,8 @@
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
 		6964F62EB54D507C0FC7F080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
+		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
+		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997011958C50D00EA6DCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D41997041958C50D00EA6DCB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,8 @@
 		6964F8401979B225B088A8DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6964FE76C00AEE43E82649C2 /* RCProject.m */,
+				6964FF569984A93ACE7A3707 /* RCProject.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				D419970E1958C50D00EA6DCB /* main.m in Sources */,
 				D41997151958C50D00EA6DCB /* RCAppDelegate.m in Sources */,
 				6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */,
+				6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
