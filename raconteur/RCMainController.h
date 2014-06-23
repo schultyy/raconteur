@@ -7,4 +7,8 @@
 
 
 @interface RCMainController : NSWindowController
+
+@property (readonly, nonatomic, strong) NSString *currentWorkingDirectory;
+
+-(id) initWithWorkingDirectory: (NSString *) cwd;
 @end

@@ -5,11 +5,17 @@
 
 #import "RCMainController.h"
 
+@interface RCMainController()
+@property (readwrite, nonatomic, strong) NSString *workingDirectory;
+@end
 
 @implementation RCMainController
 
--(id) init {
+-(id) initWithWorkingDirectory: (NSString *) cwd {
     self = [super initWithWindowNibName:@"RCMainWindow"];
+    if(self) {
+        [self setWorkingDirectory:cwd];
+    }
     return self;
 }
 

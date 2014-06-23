@@ -13,9 +13,19 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
-    [self setMainController:[[RCMainController alloc] init]];
-    [[self mainController] showWindow:self];
+}
+
+-(IBAction)newProject:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseDirectories:YES];
+    [panel setCanChooseFiles:NO];
+    [panel setCanCreateDirectories:YES];
+
+    if([panel runModal] == NSOKButton) {
+        NSString *cwd = [[panel directoryURL] path];
+        [self setMainController:[[RCMainController alloc] initWithWorkingDirectory: cwd]];
+        [[self mainController] showWindow:self];
+    }
 }
 
 @end

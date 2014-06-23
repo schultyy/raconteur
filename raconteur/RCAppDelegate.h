@@ -14,4 +14,6 @@
 
 @property (retain) RCMainController *mainController;
 
+-(IBAction) newProject: (id) sender;
+
 @end
