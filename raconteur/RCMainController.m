@@ -36,8 +36,11 @@
 
     NSUInteger selectedIndex = [[self selectionIndex] firstIndex];
 
-    RCSlide *selectedSlide = [[[self slideArrayController] arrangedObjects] objectAtIndex: selectedIndex];
+    if(selectedIndex == NSNotFound) {
+        return;
+    }
 
+    RCSlide *selectedSlide = [[[self slideArrayController] arrangedObjects] objectAtIndex: selectedIndex];
     [[self slideEditorController] setCurrentSlide:selectedSlide];
 }
 
