@@ -30,4 +30,8 @@
     [[self mainController] saveProject];
 }
 
+-(IBAction) saveProjectAs: (id) sender {
+    [[self mainController] saveProjectAs];
+}
+
 @end

@@ -45,7 +45,16 @@
     [[self project] addSlide];
 }
 
--(void)saveProject {
+-(void) saveProject {
+    if([[[self project] directory] length] == 0) {
+        [self saveProjectAs];
+    }
+    else {
+        [RCProjectSerializer serializeObject:self.project toFile: self.project.directory];
+    }
+}
+
+-(void) saveProjectAs {
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
     [openDlg setCanChooseFiles:NO];
     [openDlg setCanChooseDirectories:YES];
@@ -54,6 +63,7 @@
 
     if([openDlg runModal] == NSOKButton) {
         [RCProjectSerializer serializeObject:self.project toFile:openDlg.URL.path];
+        [[self project] setDirectory:openDlg.URL.path];
     }
 }
 

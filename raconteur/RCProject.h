@@ -10,6 +10,8 @@
 
 @property (nonatomic, strong) NSArray *slides;
 
+@property (strong) NSString *directory;
+
 -(void) addSlide;
 
 @end

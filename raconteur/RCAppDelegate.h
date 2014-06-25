@@ -20,4 +20,6 @@
 
 -(IBAction) saveProject: (id) sender;
 
+-(IBAction) saveProjectAs: (id) sender;
+
 @end

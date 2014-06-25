@@ -27,4 +27,6 @@
 
 -(void) saveProject;
 
+-(void) saveProjectAs;
+
 @end

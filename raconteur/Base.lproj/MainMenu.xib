@@ -78,6 +78,11 @@
                                     <action selector="saveProject:" target="Voe-Tx-rLC" id="su4-EY-LNP"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Save as" keyEquivalent="S" id="4eC-br-YYc">
+                                <connections>
+                                    <action selector="saveProjectAs:" target="Voe-Tx-rLC" id="od2-Cx-UVv"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
