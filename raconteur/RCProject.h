@@ -14,7 +14,7 @@
 
 @property (strong) NSString *directory;
 
--(id) initWithSlides: (NSArray *) slides;
+-(id) initWithSlides: (NSArray *) slides andPath: (NSString *) path;
 
 -(void) addSlide;
 

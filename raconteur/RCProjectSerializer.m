@@ -30,7 +30,7 @@
         NSString *absolutePath = [directory stringByAppendingPathComponent:file];
         return [RCSlide fromFile:absolutePath];
     });
-    return [[RCProject alloc] initWithSlides: slides];
+    return [[RCProject alloc] initWithSlides: slides andPath: directory];
 }
 
 @end

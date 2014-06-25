@@ -10,17 +10,15 @@
 @implementation RCProject
 
 -(id) init {
-    self = [super init];
-    if(self) {
-        [self setSlides:[NSArray array]];
-    }
+    self = [self initWithSlides:[NSArray array] andPath: nil];
     return self;
 }
 
--(id) initWithSlides: (NSArray *) slides {
+-(id)initWithSlides:(NSArray *)slides andPath:(NSString *)path {
     self = [super init];
     if(self) {
         [self setSlides:slides];
+        [self setDirectory:path];
     }
     return self;
 }
