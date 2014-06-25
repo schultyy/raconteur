@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="406" height="242"/>
@@ -36,6 +36,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="export:" target="-2" id="XUv-gc-ssk"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fub-Ih-I6p">
                         <rect key="frame" x="234" y="13" width="82" height="32"/>
@@ -47,6 +50,9 @@
 Gw
 </string>
                         </buttonCell>
+                        <connections>
+                            <action selector="discard:" target="-2" id="xZn-2q-p0a"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dD2-10-Mc2">
                         <rect key="frame" x="20" y="162" width="32" height="17"/>
@@ -106,23 +112,6 @@ Gw
                 </subviews>
             </view>
         </window>
-        <button verticalHuggingPriority="750" id="WHg-A2-A8B">
-            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s70-75-MrQ">
-                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                <font key="font" metaFont="system"/>
-            </buttonCell>
-        </button>
-        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="yYm-j9-OWd">
-            <rect key="frame" x="0.0" y="0.0" width="38" height="17"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="OA4-kF-VK6">
-                <font key="font" metaFont="system"/>
-                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-            </textFieldCell>
-        </textField>
         <userDefaultsController representsSharedInstance="YES" id="Olr-2d-j1I"/>
     </objects>
 </document>

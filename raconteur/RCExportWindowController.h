@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) NSColor *background;
 
+-(IBAction) discard: (id) sender;
+
 -(IBAction) export: (id) sender;
 
 @end

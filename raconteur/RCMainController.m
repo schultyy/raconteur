@@ -9,10 +9,12 @@
 #import "RCSlide.h"
 #import "RCProjectSerializer.h"
 #import "RCPresentationBuilder.h"
+#import "RCExportWindowController.h"
 
 @interface RCMainController()
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
+@property (readwrite, nonatomic, strong) RCExportWindowController *exportWindowController;
 @end
 
 @implementation RCMainController
@@ -89,18 +91,33 @@
 }
 
 -(void) exportSlides {
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    [savePanel setCanCreateDirectories:YES];
-    [savePanel setPrompt:@"Export"];
-    [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
+    [self setExportWindowController:[[RCExportWindowController alloc] init]];
 
-    if([savePanel runModal] == NSOKButton) {
-        RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-        NSString *html = [builder processSlides];
-        [html writeToFile:savePanel.URL.path
-               atomically:NO
-                 encoding:NSUTF8StringEncoding
-                    error:nil];
+    [NSApp beginSheet:self.exportWindowController.window
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
+          contextInfo:NULL];
+}
+
+#pragma mark - ExportSheet delegate methods
+
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if(returnCode == 1) {
+        //Sucess
+        NSSavePanel *savePanel = [NSSavePanel savePanel];
+        [savePanel setCanCreateDirectories:YES];
+        [savePanel setPrompt:@"Export"];
+        [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
+
+        if([savePanel runModal] == NSOKButton) {
+            RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
+            NSString *html = [builder processSlides];
+            [html writeToFile:savePanel.URL.path
+                   atomically:NO
+                     encoding:NSUTF8StringEncoding
+                        error:nil];
+        }
     }
 }
 

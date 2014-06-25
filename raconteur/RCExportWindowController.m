@@ -13,8 +13,14 @@
     return self;
 }
 
--(IBAction)export:(id)sender {
+-(IBAction)discard:(id)sender {
+    [[self window] orderOut:self];
+    [NSApp endSheet:self.window returnCode:-1];
+}
 
+-(IBAction)export:(id)sender {
+    [[self window] orderOut:self];
+    [NSApp endSheet:self.window returnCode:1];
 }
 
 @end
