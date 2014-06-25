@@ -26,4 +26,8 @@
     [[self mainController] addSlide];
 }
 
+-(void) saveProject:(id)sender {
+    [[self mainController] saveProject];
+}
+
 @end

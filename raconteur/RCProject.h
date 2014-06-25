@@ -11,4 +11,5 @@
 @property (nonatomic, strong) NSArray *slides;
 
 -(void) addSlide;
+
 @end

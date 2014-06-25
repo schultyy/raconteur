@@ -7,6 +7,7 @@
 #import "RCProject.h"
 #import "RCSlideEditorViewController.h"
 #import "RCSlide.h"
+#import "RCProjectSerializer.h"
 
 @interface RCMainController()
 @property (readwrite, nonatomic, strong) RCProject *project;
@@ -42,6 +43,18 @@
 
 -(void) addSlide {
     [[self project] addSlide];
+}
+
+-(void)saveProject {
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    [openDlg setCanChooseFiles:NO];
+    [openDlg setCanChooseDirectories:YES];
+    [openDlg setCanCreateDirectories:YES];
+    [openDlg setPrompt:@"Select"];
+
+    if([openDlg runModal] == NSOKButton) {
+        [RCProjectSerializer serializeObject:self.project toFile:openDlg.URL.path];
+    }
 }
 
 @end

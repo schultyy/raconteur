@@ -25,4 +25,6 @@
 
 -(void) addSlide;
 
+-(void) saveProject;
+
 @end

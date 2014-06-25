@@ -18,4 +18,6 @@
 
 -(IBAction) addSlide: (id) sender;
 
+-(IBAction) saveProject: (id) sender;
+
 @end

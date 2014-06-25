@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
+		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
 		6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F39CD8CA781BA19CE868 /* RCSlide.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */; };
 		6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FE76C00AEE43E82649C2 /* RCProject.m */; };
+		801DB213EB8042B09F38ECC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2F4843875A4EED8F22BB0E /* libPods.a */; };
 		D41997021958C50D00EA6DCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997011958C50D00EA6DCB /* Cocoa.framework */; };
 		D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D419970A1958C50D00EA6DCB /* InfoPlist.strings */; };
 		D419970E1958C50D00EA6DCB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D419970D1958C50D00EA6DCB /* main.m */; };
@@ -37,15 +39,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F2F4843875A4EED8F22BB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
+		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
 		6964F62EB54D507C0FC7F080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6964F902B2561974A461074F /* RCSlideEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlideEditorViewController.h; sourceTree = "<group>"; };
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
+		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
 		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
 		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
+		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997011958C50D00EA6DCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D41997041958C50D00EA6DCB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -74,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41997021958C50D00EA6DCB /* Cocoa.framework in Frameworks */,
+				801DB213EB8042B09F38ECC1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +104,15 @@
 				D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		6964F82F7208DDC54F5543AB /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */,
+				6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 		6964F8401979B225B088A8DA /* Models */ = {
@@ -128,6 +144,7 @@
 				D41997251958C50D00EA6DCB /* raconteurTests */,
 				D41997001958C50D00EA6DCB /* Frameworks */,
 				D41996FF1958C50D00EA6DCB /* Products */,
+				CD570114AF254F93955998A7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +163,7 @@
 				D41997011958C50D00EA6DCB /* Cocoa.framework */,
 				D41997201958C50D00EA6DCB /* XCTest.framework */,
 				D41997031958C50D00EA6DCB /* Other Frameworks */,
+				2F2F4843875A4EED8F22BB0E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +188,7 @@
 				6964FEFA0A21D1C8BFF0263C /* Controllers */,
 				6964F6BB20AC58AA5FDBB761 /* Resources */,
 				6964F8401979B225B088A8DA /* Models */,
+				6964F82F7208DDC54F5543AB /* Lib */,
 			);
 			path = raconteur;
 			sourceTree = "<group>";
@@ -211,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D419972F1958C50D00EA6DCB /* Build configuration list for PBXNativeTarget "raconteur" */;
 			buildPhases = (
+				4B2B39D91DE743AFBE28B55B /* Check Pods Manifest.lock */,
 				D41996FA1958C50D00EA6DCB /* Sources */,
 				D41996FB1958C50D00EA6DCB /* Frameworks */,
 				D41996FC1958C50D00EA6DCB /* Resources */,
+				B3A937884181409AB442058B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +289,8 @@
 			mainGroup = D41996F51958C50D00EA6DCB;
 			productRefGroup = D41996FF1958C50D00EA6DCB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				D41996FD1958C50D00EA6DCB /* raconteur */,
@@ -300,6 +323,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B2B39D91DE743AFBE28B55B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A937884181409AB442058B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D41996FA1958C50D00EA6DCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -311,6 +367,7 @@
 				6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */,
 				6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */,
 				6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */,
+				6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +497,7 @@
 		};
 		D41997301958C50D00EA6DCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD570114AF254F93955998A7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -447,12 +505,14 @@
 				GCC_PREFIX_HEADER = "raconteur/raconteur-Prefix.pch";
 				INFOPLIST_FILE = "raconteur/raconteur-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		D41997311958C50D00EA6DCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD570114AF254F93955998A7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -460,6 +520,7 @@
 				GCC_PREFIX_HEADER = "raconteur/raconteur-Prefix.pch";
 				INFOPLIST_FILE = "raconteur/raconteur-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
