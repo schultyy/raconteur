@@ -12,6 +12,7 @@
 		6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F39CD8CA781BA19CE868 /* RCSlide.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */; };
+		6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FDAD778080AE47382286 /* RCExportWindowController.m */; };
 		6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */; };
 		6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FE76C00AEE43E82649C2 /* RCProject.m */; };
 		801DB213EB8042B09F38ECC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2F4843875A4EED8F22BB0E /* libPods.a */; };
@@ -27,6 +28,7 @@
 		D419972C1958C50D00EA6DCB /* raconteurTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D419972B1958C50D00EA6DCB /* raconteurTests.m */; };
 		D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41997351958C62E00EA6DCB /* RCMainWindow.xib */; };
 		D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */; };
+		D4CF8C05195B770F00A132EE /* RCExportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CF8C04195B770F00A132EE /* RCExportWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		2F2F4843875A4EED8F22BB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6964F0CE662D6A2AC475B044 /* RCExportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCExportWindowController.h; sourceTree = "<group>"; };
 		6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationBuilder.h; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
+		6964FDAD778080AE47382286 /* RCExportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCExportWindowController.m; sourceTree = "<group>"; };
 		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
 		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
 		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		D419972B1958C50D00EA6DCB /* raconteurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raconteurTests.m; sourceTree = "<group>"; };
 		D41997351958C62E00EA6DCB /* RCMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCMainWindow.xib; sourceTree = "<group>"; };
 		D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCSlideEditorView.xib; sourceTree = "<group>"; };
+		D4CF8C04195B770F00A132EE /* RCExportWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCExportWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,7 @@
 				6964F0A706808DAA649CFEC3 /* MainMenu.xib */,
 				D41997351958C62E00EA6DCB /* RCMainWindow.xib */,
 				D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */,
+				D4CF8C04195B770F00A132EE /* RCExportWindow.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 				6964F4253EC6DA9182EE3BF5 /* RCMainController.h */,
 				6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */,
 				6964F902B2561974A461074F /* RCSlideEditorViewController.h */,
+				6964F0CE662D6A2AC475B044 /* RCExportWindowController.h */,
+				6964FDAD778080AE47382286 /* RCExportWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -294,8 +302,6 @@
 			mainGroup = D41996F51958C50D00EA6DCB;
 			productRefGroup = D41996FF1958C50D00EA6DCB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D41996FD1958C50D00EA6DCB /* raconteur */,
@@ -311,6 +317,7 @@
 			files = (
 				D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */,
 				D419971A1958C50D00EA6DCB /* Images.xcassets in Resources */,
+				D4CF8C05195B770F00A132EE /* RCExportWindow.xib in Resources */,
 				D41997121958C50D00EA6DCB /* Credits.rtf in Resources */,
 				6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */,
 				D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */,
@@ -374,6 +381,7 @@
 				6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */,
 				6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */,
 				6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */,
+				6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
