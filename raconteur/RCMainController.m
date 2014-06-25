@@ -8,6 +8,7 @@
 #import "RCSlideEditorViewController.h"
 #import "RCSlide.h"
 #import "RCProjectSerializer.h"
+#import "RCPresentationBuilder.h"
 
 @interface RCMainController()
 @property (readwrite, nonatomic, strong) RCProject *project;
@@ -49,6 +50,8 @@
     [[self slideEditorController] setCurrentSlide:selectedSlide];
 }
 
+#pragma mark - Menu actions
+
 -(void) addSlide {
     [[self project] addSlide];
 }
@@ -72,6 +75,22 @@
     if([openDlg runModal] == NSOKButton) {
         [RCProjectSerializer serializeObject:self.project toFile:openDlg.URL.path];
         [[self project] setDirectory:openDlg.URL.path];
+    }
+}
+
+-(void) exportSlides {
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setCanCreateDirectories:YES];
+    [savePanel setPrompt:@"Export"];
+    [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
+
+    if([savePanel runModal] == NSOKButton) {
+        RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
+        NSString *html = [builder processSlides];
+        [html writeToFile:savePanel.URL.path
+               atomically:NO
+                 encoding:NSUTF8StringEncoding
+                    error:nil];
     }
 }
 

@@ -1,10 +1,13 @@
 PODS:
+  - MMMarkdown (0.3)
   - Underscore.m (0.2.1)
 
 DEPENDENCIES:
+  - MMMarkdown (~> 0.3)
   - Underscore.m
 
 SPEC CHECKSUMS:
+  MMMarkdown: 95af8920c647512d1efa2ac8ac1932baf3266e2c
   Underscore.m: f99c166a9fdccfb5069085b6b4263c04b817fc9f
 
 COCOAPODS: 0.32.1

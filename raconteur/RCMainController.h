@@ -31,4 +31,6 @@
 
 -(void) saveProjectAs;
 
+-(void) exportSlides;
+
 @end

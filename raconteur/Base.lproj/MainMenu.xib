@@ -68,16 +68,13 @@
                                     <action selector="newProject:" target="Voe-Tx-rLC" id="XUK-IY-g48"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Add slide" keyEquivalent="n" id="NiZ-wG-lFW">
-                                <connections>
-                                    <action selector="addSlide:" target="Voe-Tx-rLC" id="Txb-mQ-EAW"/>
-                                </connections>
-                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="f0A-37-BND"/>
                             <menuItem title="Open" keyEquivalent="o" id="L3A-Ez-PrD">
                                 <connections>
                                     <action selector="openProject:" target="Voe-Tx-rLC" id="AnQ-V0-lVl"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="CZ8-Ts-rJ8"/>
                             <menuItem title="Save" keyEquivalent="s" id="VJM-f3-AiM">
                                 <connections>
                                     <action selector="saveProject:" target="Voe-Tx-rLC" id="su4-EY-LNP"/>
@@ -86,6 +83,25 @@
                             <menuItem title="Save as" keyEquivalent="S" id="4eC-br-YYc">
                                 <connections>
                                     <action selector="saveProjectAs:" target="Voe-Tx-rLC" id="od2-Cx-UVv"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="cqH-Qa-Adm"/>
+                            <menuItem title="Export" id="7Ay-4w-r4C">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="exportSlides:" target="Voe-Tx-rLC" id="XGK-km-xJC"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Slides" id="roc-eM-Lgk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Slides" id="dQN-8S-5PN">
+                        <items>
+                            <menuItem title="Add slide" keyEquivalent="n" id="cR8-7h-3Ig">
+                                <connections>
+                                    <action selector="addSlide:" target="Voe-Tx-rLC" id="zyv-DL-iiQ"/>
                                 </connections>
                             </menuItem>
                         </items>

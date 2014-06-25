@@ -24,4 +24,6 @@
 
 -(IBAction) saveProjectAs: (id) sender;
 
+-(IBAction)exportSlides:(id)sender;
+
 @end

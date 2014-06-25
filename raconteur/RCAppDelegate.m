@@ -49,4 +49,8 @@
     [[self mainController] saveProjectAs];
 }
 
+-(IBAction)exportSlides:(id)sender {
+    [[self mainController] exportSlides];
+}
+
 @end
