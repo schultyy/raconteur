@@ -6,6 +6,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RCMainController">
             <connections>
+                <outlet property="detailView" destination="k6y-YG-B1c" id="7Bh-83-kHS"/>
+                <outlet property="slideArrayController" destination="bvU-hU-FT9" id="oLR-V2-hyl"/>
+                <outlet property="slideList" destination="9jg-9d-IdC" id="Zv0-an-4jZ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="yJG-cD-sYk"/>
             </connections>
         </customObject>
@@ -73,6 +76,7 @@
                                     </tableColumns>
                                     <connections>
                                         <binding destination="bvU-hU-FT9" name="content" keyPath="arrangedObjects" id="Rph-3L-g1a"/>
+                                        <binding destination="bvU-hU-FT9" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="Rph-3L-g1a" id="lec-YO-R8a"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -90,17 +94,32 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="k6y-YG-B1c">
+                        <rect key="frame" x="145" y="-4" width="467" height="513"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <view key="contentView">
+                            <rect key="frame" x="1" y="1" width="465" height="511"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </box>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="k6y-YG-B1c" firstAttribute="leading" secondItem="je3-76-qPC" secondAttribute="trailing" constant="8" id="NWy-fn-KuX"/>
+                    <constraint firstAttribute="trailing" secondItem="k6y-YG-B1c" secondAttribute="trailing" id="Uuq-wY-zMm"/>
                     <constraint firstItem="je3-76-qPC" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Z3o-wM-er6"/>
                     <constraint firstAttribute="bottom" secondItem="je3-76-qPC" secondAttribute="bottom" id="axt-ca-0OH"/>
+                    <constraint firstAttribute="bottom" secondItem="k6y-YG-B1c" secondAttribute="bottom" id="pSM-jM-HMT"/>
                     <constraint firstItem="je3-76-qPC" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="q1Y-ds-4AD"/>
+                    <constraint firstItem="k6y-YG-B1c" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="qmW-YB-AdH"/>
                 </constraints>
             </view>
         </window>
         <arrayController objectClassName="RCSlide" automaticallyPreparesContent="YES" id="bvU-hU-FT9" userLabel="SlidesController">
             <connections>
                 <binding destination="-2" name="contentArray" keyPath="self.project.slides" id="0pj-B3-hXg"/>
+                <binding destination="-2" name="selectionIndexes" keyPath="self.selectionIndex" id="5Cl-Ob-9bR"/>
             </connections>
         </arrayController>
         <userDefaultsController representsSharedInstance="YES" id="avF-ck-Yrr"/>
