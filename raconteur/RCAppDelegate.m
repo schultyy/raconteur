@@ -22,11 +22,19 @@
     [[self mainController] showWindow:self];
 }
 
--(IBAction)addSlide:(id)sender {
+-(IBAction) openProject: (id) sender {
+    if(!self.mainController) {
+        [self setMainController:[[RCMainController alloc] init]];
+        [[self mainController] showWindow:self];
+    }
+    [[self mainController] openProject];
+}
+
+-(IBAction) addSlide:(id)sender {
     [[self mainController] addSlide];
 }
 
--(void) saveProject:(id)sender {
+-(IBAction) saveProject:(id)sender {
     [[self mainController] saveProject];
 }
 

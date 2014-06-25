@@ -45,6 +45,18 @@
     [[self project] addSlide];
 }
 
+-(void) openProject {
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    [openDlg setCanChooseFiles:NO];
+    [openDlg setCanChooseDirectories:YES];
+    [openDlg setCanCreateDirectories:YES];
+    [openDlg setPrompt:@"Select"];
+
+    if([openDlg runModal] == NSOKButton) {
+        [self setProject:[RCProjectSerializer loadFromDirectory:openDlg.URL.path]];
+    }
+}
+
 -(void) saveProject {
     if([[[self project] directory] length] == 0) {
         [self saveProjectAs];

@@ -17,6 +17,14 @@
     return self;
 }
 
+-(id) initWithSlides: (NSArray *) slides {
+    self = [super init];
+    if(self) {
+        [self setSlides:slides];
+    }
+    return self;
+}
+
 -(void) addSlide {
     RCSlide *slide = [[RCSlide alloc] init];
     [slide setText:@"text"];

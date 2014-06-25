@@ -24,4 +24,13 @@
     }
 }
 
++(RCProject *) loadFromDirectory: (NSString *) directory {
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:nil];
+    NSArray *slides = Underscore.arrayMap(files, ^(NSString *file) {
+        NSString *absolutePath = [directory stringByAppendingPathComponent:file];
+        return [RCSlide fromFile:absolutePath];
+    });
+    return [[RCProject alloc] initWithSlides: slides];
+}
+
 @end

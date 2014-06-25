@@ -10,4 +10,6 @@
 
 @property (strong) NSString *text;
 
++(RCSlide *) fromFile: (NSString *) filename;
+
 @end

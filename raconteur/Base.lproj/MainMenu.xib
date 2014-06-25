@@ -73,6 +73,11 @@
                                     <action selector="addSlide:" target="Voe-Tx-rLC" id="Txb-mQ-EAW"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Open" keyEquivalent="o" id="L3A-Ez-PrD">
+                                <connections>
+                                    <action selector="openProject:" target="Voe-Tx-rLC" id="AnQ-V0-lVl"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Save" keyEquivalent="s" id="VJM-f3-AiM">
                                 <connections>
                                     <action selector="saveProject:" target="Voe-Tx-rLC" id="su4-EY-LNP"/>

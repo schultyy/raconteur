@@ -16,6 +16,8 @@
 
 -(IBAction) newProject: (id) sender;
 
+-(IBAction) openProject: (id) sender;
+
 -(IBAction) addSlide: (id) sender;
 
 -(IBAction) saveProject: (id) sender;
