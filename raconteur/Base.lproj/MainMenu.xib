@@ -68,9 +68,9 @@
                                     <action selector="newProject:" target="Voe-Tx-rLC" id="XUK-IY-g48"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Add file" keyEquivalent="n" id="NiZ-wG-lFW">
+                            <menuItem title="Add slide" keyEquivalent="n" id="NiZ-wG-lFW">
                                 <connections>
-                                    <action selector="addFile:" target="Voe-Tx-rLC" id="kH2-Pj-d57"/>
+                                    <action selector="addSlide:" target="Voe-Tx-rLC" id="Txb-mQ-EAW"/>
                                 </connections>
                             </menuItem>
                         </items>

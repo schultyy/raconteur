@@ -16,6 +16,6 @@
 
 -(IBAction) newProject: (id) sender;
 
--(IBAction) addFile: (id) sender;
+-(IBAction) addSlide: (id) sender;
 
 @end

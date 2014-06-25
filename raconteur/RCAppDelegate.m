@@ -18,20 +18,12 @@
 #pragma mark - Actions
 
 -(IBAction)newProject:(id)sender {
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    [panel setCanChooseDirectories:YES];
-    [panel setCanChooseFiles:NO];
-    [panel setCanCreateDirectories:YES];
-
-    if([panel runModal] == NSOKButton) {
-        NSString *cwd = [[panel directoryURL] path];
-        [self setMainController:[[RCMainController alloc] initWithWorkingDirectory: cwd]];
-        [[self mainController] showWindow:self];
-    }
+    [self setMainController:[[RCMainController alloc] init]];
+    [[self mainController] showWindow:self];
 }
 
--(IBAction)addFile:(id)sender {
-    [[self mainController] addFile];
+-(IBAction)addSlide:(id)sender {
+    [[self mainController] addSlide];
 }
 
 @end

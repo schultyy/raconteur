@@ -10,12 +10,8 @@
 
 @interface RCMainController : NSWindowController
 
-@property (readonly, nonatomic, strong) NSString *currentWorkingDirectory;
-
 @property (readonly, nonatomic, strong) RCProject *project;
 
--(id) initWithWorkingDirectory: (NSString *) cwd;
-
--(void) addFile;
+-(void) addSlide;
 
 @end

@@ -8,6 +8,6 @@
 
 @interface RCProject : NSObject
 
-@property (nonatomic, strong) NSArray *files;
+@property (nonatomic, strong) NSArray *slides;
 
 @end

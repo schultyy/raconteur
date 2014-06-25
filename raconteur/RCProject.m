@@ -11,7 +11,7 @@
 -(id) init {
     self = [super init];
     if(self) {
-        [self setFiles:[NSArray array]];
+        [self setSlides:[NSArray array]];
     }
     return self;
 }
