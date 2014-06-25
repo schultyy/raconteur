@@ -27,6 +27,8 @@
 
 -(void) addSlide;
 
+-(void) removeSelectedSlide;
+
 -(void) saveProject;
 
 -(void) saveProjectAs;

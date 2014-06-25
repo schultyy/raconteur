@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class RCSlide;
+
 
 @interface RCProject : NSObject
 
@@ -15,5 +17,7 @@
 -(id) initWithSlides: (NSArray *) slides;
 
 -(void) addSlide;
+
+-(void) removeSlide: (RCSlide *) slide;
 
 @end

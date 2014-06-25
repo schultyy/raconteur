@@ -33,4 +33,12 @@
     [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
 }
 
+-(void) removeSlide: (RCSlide *) slide {
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.slides];
+    [tmp removeObject:slide];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
+    [self setSlides: tmp];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
+}
+
 @end

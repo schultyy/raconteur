@@ -38,22 +38,32 @@
     [[self slideList] setDoubleAction:@selector(slideListDoubleClick:)];
 }
 
--(void) slideListDoubleClick: (id) sender {
-
+-(RCSlide *) selectedSlide {
     NSUInteger selectedIndex = [[self selectionIndex] firstIndex];
 
     if(selectedIndex == NSNotFound) {
-        return;
+        return nil;
     }
 
-    RCSlide *selectedSlide = [[[self slideArrayController] arrangedObjects] objectAtIndex: selectedIndex];
-    [[self slideEditorController] setCurrentSlide:selectedSlide];
+    return [[[self slideArrayController] arrangedObjects] objectAtIndex: selectedIndex];
+}
+
+-(void) slideListDoubleClick: (id) sender {
+    if(self.selectedSlide) {
+        [[self slideEditorController] setCurrentSlide: self.selectedSlide];
+    }
 }
 
 #pragma mark - Menu actions
 
 -(void) addSlide {
     [[self project] addSlide];
+}
+
+-(void) removeSelectedSlide {
+    if(self.selectedSlide) {
+        [[self project] removeSlide: self.selectedSlide];
+    }
 }
 
 -(void) saveProject {

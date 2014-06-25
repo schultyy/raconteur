@@ -41,6 +41,10 @@
     [[self mainController] addSlide];
 }
 
+-(IBAction) removeSelectedSlide: (id) sender {
+    [[self mainController] removeSelectedSlide];
+}
+
 -(IBAction) saveProject:(id)sender {
     [[self mainController] saveProject];
 }

@@ -104,6 +104,11 @@
                                     <action selector="addSlide:" target="Voe-Tx-rLC" id="zyv-DL-iiQ"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Remove slide" keyEquivalent="d" id="7bZ-tL-qfU">
+                                <connections>
+                                    <action selector="removeSelectedSlide:" target="Voe-Tx-rLC" id="OLD-20-caO"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
