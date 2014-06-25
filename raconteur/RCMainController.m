@@ -21,7 +21,7 @@
 }
 
 -(void) addSlide {
-
+    [[self project] addSlide];
 }
 
 @end

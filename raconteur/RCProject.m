@@ -4,6 +4,7 @@
 //
 
 #import "RCProject.h"
+#import "RCSlide.h"
 
 
 @implementation RCProject
@@ -14,6 +15,14 @@
         [self setSlides:[NSArray array]];
     }
     return self;
+}
+
+-(void) addSlide {
+    RCSlide *slide = [[RCSlide alloc] init];
+    [slide setText:@"text"];
+    [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
+    [self setSlides:[[self slides] arrayByAddingObject:slide]];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
 }
 
 @end
