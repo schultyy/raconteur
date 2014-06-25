@@ -25,11 +25,23 @@
 }
 
 +(RCProject *) loadFromDirectory: (NSString *) directory {
-    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:nil];
-    NSArray *slides = Underscore.arrayMap(files, ^(NSString *file) {
-        NSString *absolutePath = [directory stringByAppendingPathComponent:file];
-        return [RCSlide fromFile:absolutePath];
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    NSURL *url = [NSURL fileURLWithPath:directory];
+    NSArray *contents = [fileManager contentsOfDirectoryAtURL:url
+                                   includingPropertiesForKeys:@[]
+                                                      options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                        error:nil];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pathExtension == 'md'"];
+
+    NSArray *filtered = [contents filteredArrayUsingPredicate:predicate];
+
+    NSArray *slides = Underscore.arrayMap(filtered, ^(NSURL *fileUrl) {
+        return [RCSlide fromFile:fileUrl.path];
     });
+
     return [[RCProject alloc] initWithSlides: slides andPath: directory];
 }
 

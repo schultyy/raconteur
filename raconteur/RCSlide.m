@@ -15,4 +15,8 @@
     return slide;
 }
 
+-(id)description {
+    return self.text;
+}
+
 @end
