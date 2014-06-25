@@ -8,6 +8,7 @@
 
 #import "RCAppDelegate.h"
 #import "RCMainController.h"
+#import "RCProjectSerializer.h"
 
 @implementation RCAppDelegate
 
@@ -23,11 +24,17 @@
 }
 
 -(IBAction) openProject: (id) sender {
-    if(!self.mainController) {
-        [self setMainController:[[RCMainController alloc] init]];
+    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+    [openDlg setCanChooseFiles:NO];
+    [openDlg setCanChooseDirectories:YES];
+    [openDlg setCanCreateDirectories:YES];
+    [openDlg setPrompt:@"Select"];
+
+    if([openDlg runModal] == NSOKButton) {
+        RCProject *project = [RCProjectSerializer loadFromDirectory:openDlg.URL.path];
+        [self setMainController:[[RCMainController alloc] initWithProject: project]];
         [[self mainController] showWindow:self];
     }
-    [[self mainController] openProject];
 }
 
 -(IBAction) addSlide:(id)sender {

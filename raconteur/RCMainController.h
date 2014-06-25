@@ -23,9 +23,9 @@
 
 @property IBOutlet NSArrayController *slideArrayController;
 
--(void) addSlide;
+-(id) initWithProject: (RCProject *) project;
 
--(void) openProject;
+-(void) addSlide;
 
 -(void) saveProject;
 

@@ -17,9 +17,14 @@
 @implementation RCMainController
 
 -(id) init {
+    self = [self initWithProject:[[RCProject alloc] init]];
+    return self;
+}
+
+-(id)initWithProject:(RCProject *)project {
     self = [super initWithWindowNibName:@"RCMainWindow"];
     if(self) {
-        [self setProject:[[RCProject alloc] init]];
+        [self setProject: project];
         [self setSlideEditorController:[[RCSlideEditorViewController alloc] init]];
         [self setSelectionIndex:[[NSIndexSet alloc] init]];
     }
@@ -46,18 +51,6 @@
 
 -(void) addSlide {
     [[self project] addSlide];
-}
-
--(void) openProject {
-    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-    [openDlg setCanChooseFiles:NO];
-    [openDlg setCanChooseDirectories:YES];
-    [openDlg setCanCreateDirectories:YES];
-    [openDlg setPrompt:@"Select"];
-
-    if([openDlg runModal] == NSOKButton) {
-        [self setProject:[RCProjectSerializer loadFromDirectory:openDlg.URL.path]];
-    }
 }
 
 -(void) saveProject {
