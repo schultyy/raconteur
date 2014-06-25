@@ -94,11 +94,11 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="k6y-YG-B1c">
-                        <rect key="frame" x="145" y="-4" width="467" height="513"/>
+                    <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="k6y-YG-B1c">
+                        <rect key="frame" x="137" y="-4" width="475" height="513"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
-                            <rect key="frame" x="1" y="1" width="465" height="511"/>
+                            <rect key="frame" x="0.0" y="0.0" width="475" height="513"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -106,7 +106,7 @@
                     </box>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="k6y-YG-B1c" firstAttribute="leading" secondItem="je3-76-qPC" secondAttribute="trailing" constant="8" id="NWy-fn-KuX"/>
+                    <constraint firstItem="k6y-YG-B1c" firstAttribute="leading" secondItem="je3-76-qPC" secondAttribute="trailing" id="7CJ-RH-OaW"/>
                     <constraint firstAttribute="trailing" secondItem="k6y-YG-B1c" secondAttribute="trailing" id="Uuq-wY-zMm"/>
                     <constraint firstItem="je3-76-qPC" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="Z3o-wM-er6"/>
                     <constraint firstAttribute="bottom" secondItem="je3-76-qPC" secondAttribute="bottom" id="axt-ca-0OH"/>
