@@ -4,12 +4,19 @@
 //
 
 #import "RCExportWindowController.h"
+#import "RCExportOptions.h"
 
+@interface RCExportWindowController()
+@property (readwrite, nonatomic, strong) RCExportOptions *exportOptions;
+@end
 
 @implementation RCExportWindowController
 
 -(id) init {
     self = [super initWithWindowNibName:@"RCExportWindow"];
+    [self setExportOptions:[[RCExportOptions alloc] init]];
+    [[self exportOptions] setTextColor: [NSColor blackColor]];
+    [[self exportOptions] setBackgroundColor: [NSColor whiteColor]];
     return self;
 }
 

@@ -5,16 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class RCExportOptions;
+
 
 @interface RCExportWindowController : NSWindowController
 
-@property (nonatomic, strong) NSString *fontFamily;
-
-@property (nonatomic, strong) NSNumber *fontSize;
-
-@property (nonatomic, strong) NSColor *foreground;
-
-@property (nonatomic, strong) NSColor *background;
+@property (readonly, nonatomic, strong) RCExportOptions *exportOptions;
 
 -(IBAction) discard: (id) sender;
 

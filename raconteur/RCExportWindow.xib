@@ -72,7 +72,11 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.fontFamily" id="CEh-6F-hBx"/>
+                            <binding destination="-2" name="value" keyPath="self.exportOptions.fontFamily" id="8pu-dJ-h50">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </textField>
                     <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLF-IE-d3v">
@@ -80,7 +84,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.foreground" id="t4e-eX-fzg"/>
+                            <binding destination="-2" name="value" keyPath="exportOptions.textColor" id="Hhw-4v-1Hg"/>
                         </connections>
                     </colorWell>
                     <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XW-av-dgS">
@@ -88,7 +92,7 @@ Gw
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="background" id="m6a-ne-MZp"/>
+                            <binding destination="-2" name="value" keyPath="exportOptions.backgroundColor" id="mrt-ZC-uxo"/>
                         </connections>
                     </colorWell>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-p7-XGt">

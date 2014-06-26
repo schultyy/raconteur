@@ -112,7 +112,7 @@
 
         if([savePanel runModal] == NSOKButton) {
             RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-            NSString *html = [builder processSlides];
+            NSString *html = [builder processSlides: self.exportWindowController.exportOptions];
             [html writeToFile:savePanel.URL.path
                    atomically:NO
                      encoding:NSUTF8StringEncoding

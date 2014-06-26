@@ -8,6 +8,8 @@
 #import "RCProject.h"
 #import "Underscore.h"
 #import "RCSlide.h"
+#import "RCExportOptions.h"
+#import "NSColor+RCHexValue.h"
 
 @interface RCPresentationBuilder()
 @property (assign) RCProject *project;
@@ -23,16 +25,29 @@
     return self;
 }
 
--(NSString *) embedd: (NSString *) content {
+-(NSString *) generateStyles: (RCExportOptions *) options {
+    NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", options.fontFamily];
+    NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", options.backgroundColor.hexColor];
+    NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", options.textColor.hexColor];
+
+    return [NSString stringWithFormat:@"body {\n" \
+                                "%@\n" \
+                                "%@\n" \
+                                "%@\n}", fontFamily, backgroundColor, foregroundColor];
+}
+
+-(NSString *) renderContent: (NSString *) content withOptions: (RCExportOptions *) options {
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"basic-template" ofType:@"html"];
     NSString *template = [NSString stringWithContentsOfFile:path
                                                    encoding:NSUTF8StringEncoding
                                                       error:nil];
-    return [template stringByReplacingOccurrencesOfString:@"{{CONTENT}}" withString:content];
+
+    return [[template stringByReplacingOccurrencesOfString:@"{{CONTENT}}" withString:content]
+            stringByReplacingOccurrencesOfString:@"{{STYLES}}" withString:[self generateStyles:options]];
 }
 
--(NSString *) processSlides {
+-(NSString *) processSlides: (RCExportOptions *) options {
     NSArray *htmlSlides = Underscore.arrayMap([[self project] slides], ^NSString *(RCSlide *slide) {
         NSError  *error;
         NSString *html = [MMMarkdown HTMLStringWithMarkdown:slide.text
@@ -42,7 +57,9 @@
         }
         return html;
     });
-    return [self embedd:[htmlSlides componentsJoinedByString:@"\n"]];
+
+    return [self renderContent: [htmlSlides componentsJoinedByString:@"\n"]
+                   withOptions:options];
 }
 
 @end

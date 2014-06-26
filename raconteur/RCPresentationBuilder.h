@@ -6,12 +6,13 @@
 #import <Foundation/Foundation.h>
 
 @class RCProject;
+@class RCExportOptions;
 
 
 @interface RCPresentationBuilder : NSObject
 
 -(id) initWithProject: (RCProject *) project;
 
--(NSString *) processSlides;
+-(NSString *) processSlides: (RCExportOptions *) options;
 
 @end

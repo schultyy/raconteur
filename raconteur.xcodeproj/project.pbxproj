@@ -10,8 +10,10 @@
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
 		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
 		6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F39CD8CA781BA19CE868 /* RCSlide.m */; };
+		6964FBEB651EB4954CCFEEC3 /* RCExportOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F173C0D9A1A778D27EA5 /* RCExportOptions.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */; };
+		6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */; };
 		6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FDAD778080AE47382286 /* RCExportWindowController.m */; };
 		6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */; };
 		6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FE76C00AEE43E82649C2 /* RCProject.m */; };
@@ -44,9 +46,11 @@
 
 /* Begin PBXFileReference section */
 		2F2F4843875A4EED8F22BB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6964F059153C4F40DFE10C4A /* NSColor+RCHexValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+RCHexValue.h"; sourceTree = "<group>"; };
 		6964F0A3AFAACF2909DD7B14 /* basic-template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "basic-template.html"; sourceTree = "<group>"; };
 		6964F0CE662D6A2AC475B044 /* RCExportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCExportWindowController.h; sourceTree = "<group>"; };
 		6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationBuilder.h; sourceTree = "<group>"; };
+		6964F173C0D9A1A778D27EA5 /* RCExportOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCExportOptions.m; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
@@ -55,10 +59,12 @@
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
 		6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
+		6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+RCHexValue.m"; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
 		6964FDAD778080AE47382286 /* RCExportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCExportWindowController.m; sourceTree = "<group>"; };
 		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
+		6964FE8F87102D43FF50080E /* RCExportOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCExportOptions.h; sourceTree = "<group>"; };
 		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
 		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6964F5611BD413862E1AD8E5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */,
+				6964F059153C4F40DFE10C4A /* NSColor+RCHexValue.h */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		6964F6BB20AC58AA5FDBB761 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +150,8 @@
 				6964FF569984A93ACE7A3707 /* RCProject.h */,
 				6964F39CD8CA781BA19CE868 /* RCSlide.m */,
 				6964FA50C091833EC6CCC15F /* RCSlide.h */,
+				6964F173C0D9A1A778D27EA5 /* RCExportOptions.m */,
+				6964FE8F87102D43FF50080E /* RCExportOptions.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -213,6 +230,7 @@
 				6964F8401979B225B088A8DA /* Models */,
 				6964F82F7208DDC54F5543AB /* Lib */,
 				6964FAE17AD8F87AA4F189C9 /* Templates */,
+				6964F5611BD413862E1AD8E5 /* Categories */,
 			);
 			path = raconteur;
 			sourceTree = "<group>";
@@ -394,6 +412,8 @@
 				6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */,
 				6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */,
 				6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */,
+				6964FBEB651EB4954CCFEEC3 /* RCExportOptions.m in Sources */,
+				6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
