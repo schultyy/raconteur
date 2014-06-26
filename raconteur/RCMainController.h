@@ -8,6 +8,7 @@
 @class RCProject;
 @class RCSlideEditorViewController;
 @class RCExportWindowController;
+@class RCPresentationWindowController;
 
 
 @interface RCMainController : NSWindowController
@@ -17,6 +18,8 @@
 @property (strong) NSIndexSet *selectionIndex;
 
 @property (readonly, nonatomic, strong) RCExportWindowController *exportWindowController;
+
+@property (readonly, nonatomic, strong) RCPresentationWindowController *presentationController;
 
 @property (readonly, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
 
@@ -37,5 +40,7 @@
 -(void) saveProjectAs;
 
 -(void) exportSlides;
+
+-(void) startPresentation;
 
 @end

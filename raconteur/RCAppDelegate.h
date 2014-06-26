@@ -28,4 +28,6 @@
 
 -(IBAction)exportSlides:(id)sender;
 
+-(IBAction)startPresentation:(id)sender;
+
 @end

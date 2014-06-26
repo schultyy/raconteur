@@ -57,4 +57,7 @@
     [[self mainController] exportSlides];
 }
 
+-(IBAction)startPresentation:(id)sender {
+    [[self mainController] startPresentation];
+}
 @end

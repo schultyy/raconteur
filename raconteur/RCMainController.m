@@ -10,10 +10,12 @@
 #import "RCProjectSerializer.h"
 #import "RCPresentationBuilder.h"
 #import "RCExportWindowController.h"
+#import "RCPresentationWindowController.h"
 
 @interface RCMainController()
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
+@property (readwrite, nonatomic, strong) RCPresentationWindowController *presentationController;
 @property (readwrite, nonatomic, strong) RCExportWindowController *exportWindowController;
 @end
 
@@ -100,6 +102,12 @@
           contextInfo:NULL];
 }
 
+-(void) startPresentation{
+    [self setPresentationController:[[RCPresentationWindowController alloc] initWithProject:self.project]];
+    [[self presentationController] showWindow:self];
+    [[self presentationController] start];
+}
+
 #pragma mark - ExportSheet delegate methods
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
@@ -112,7 +120,7 @@
 
         if([savePanel runModal] == NSOKButton) {
             RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-            NSString *html = [builder processSlides: self.exportWindowController.exportOptions];
+            NSString *html = [builder processAllSlides:self.exportWindowController.exportOptions];
             [html writeToFile:savePanel.URL.path
                    atomically:NO
                      encoding:NSUTF8StringEncoding

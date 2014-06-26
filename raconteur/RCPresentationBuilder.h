@@ -13,6 +13,6 @@
 
 -(id) initWithProject: (RCProject *) project;
 
--(NSString *) processSlides: (RCExportOptions *) options;
+-(NSString *)processAllSlides: (RCExportOptions *) options;
 
 @end

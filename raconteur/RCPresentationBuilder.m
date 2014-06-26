@@ -47,7 +47,7 @@
             stringByReplacingOccurrencesOfString:@"{{STYLES}}" withString:[self generateStyles:options]];
 }
 
--(NSString *) processSlides: (RCExportOptions *) options {
+-(NSString *)processAllSlides: (RCExportOptions *) options {
     NSArray *htmlSlides = Underscore.arrayMap([[self project] slides], ^NSString *(RCSlide *slide) {
         NSError  *error;
         NSString *html = [MMMarkdown HTMLStringWithMarkdown:slide.text

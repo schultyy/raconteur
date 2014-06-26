@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 
++(RCExportOptions *) defaultOptions;
+
 @end

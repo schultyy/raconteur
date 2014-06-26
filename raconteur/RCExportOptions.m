@@ -6,7 +6,14 @@
 #import "RCExportOptions.h"
 
 
-@implementation RCExportOptions {
+@implementation RCExportOptions
 
++(RCExportOptions *) defaultOptions {
+    RCExportOptions *opts = [[RCExportOptions alloc] init];
+    [opts setTextColor: [NSColor blackColor]];
+    [opts setBackgroundColor: [NSColor whiteColor]];
+    [opts setFontFamily:@"Arial"];
+    return opts;
 }
+
 @end
