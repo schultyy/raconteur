@@ -12,6 +12,7 @@
 		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
 		6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F39CD8CA781BA19CE868 /* RCSlide.m */; };
 		6964FBEB651EB4954CCFEEC3 /* RCExportOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F173C0D9A1A778D27EA5 /* RCExportOptions.m */; };
+		6964FCC1D41E79BE410C650C /* RCPagedPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */; };
 		6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */; };
@@ -57,6 +58,7 @@
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
+		6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPagedPresentationBuilder.m; sourceTree = "<group>"; };
 		6964F5F64CF8F30245DBDD07 /* RCPresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationWindowController.h; sourceTree = "<group>"; };
 		6964F62EB54D507C0FC7F080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationWindowController.m; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
 		6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
+		6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPagedPresentationBuilder.h; sourceTree = "<group>"; };
 		6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+RCHexValue.m"; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */,
 				6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */,
 				6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */,
+				6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */,
+				6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				6964FBEB651EB4954CCFEEC3 /* RCExportOptions.m in Sources */,
 				6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */,
 				6964FA258D2DF01FE056A0AA /* RCPresentationWindowController.m in Sources */,
+				6964FCC1D41E79BE410C650C /* RCPagedPresentationBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

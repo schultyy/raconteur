@@ -18,4 +18,8 @@
 
 -(void) start;
 
+-(void) nextSlide;
+
+-(void) previousSlide;
+
 @end

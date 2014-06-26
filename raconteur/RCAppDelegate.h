@@ -30,4 +30,8 @@
 
 -(IBAction)startPresentation:(id)sender;
 
+-(IBAction)nextSlide:(id)sender;
+
+-(IBAction)previousSlide:(id)sender;
+
 @end

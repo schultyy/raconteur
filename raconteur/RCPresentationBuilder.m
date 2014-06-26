@@ -12,7 +12,7 @@
 #import "NSColor+RCHexValue.h"
 
 @interface RCPresentationBuilder()
-@property (assign) RCProject *project;
+@property (readwrite, assign) RCProject *project;
 @end
 
 @implementation RCPresentationBuilder

@@ -9,6 +9,7 @@
 #import "RCAppDelegate.h"
 #import "RCMainController.h"
 #import "RCProjectSerializer.h"
+#import "RCPresentationWindowController.h"
 
 @implementation RCAppDelegate
 
@@ -59,5 +60,13 @@
 
 -(IBAction)startPresentation:(id)sender {
     [[self mainController] startPresentation];
+}
+
+-(IBAction)nextSlide:(id)sender {
+    [[[self mainController] presentationController] nextSlide];
+}
+
+-(IBAction)previousSlide:(id)sender {
+    [[[self mainController] presentationController] previousSlide];
 }
 @end

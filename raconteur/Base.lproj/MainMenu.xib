@@ -122,6 +122,18 @@
                                     <action selector="startPresentation:" target="Voe-Tx-rLC" id="5BL-AK-iLf"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Next slide" keyEquivalent="" id="TgJ-dC-CL7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="nextSlide:" target="Voe-Tx-rLC" id="qRQ-AV-zYD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Previous slide" keyEquivalent="" id="pfp-Qf-Fot">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="previousSlide:" target="Voe-Tx-rLC" id="wsN-ai-raB"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>

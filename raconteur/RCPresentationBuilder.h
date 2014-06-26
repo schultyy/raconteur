@@ -11,8 +11,12 @@
 
 @interface RCPresentationBuilder : NSObject
 
+@property (readonly, assign) RCProject *project;
+
 -(id) initWithProject: (RCProject *) project;
 
 -(NSString *)processAllSlides: (RCExportOptions *) options;
+
+-(NSString *) renderContent: (NSString *) content withOptions: (RCExportOptions *) options;
 
 @end

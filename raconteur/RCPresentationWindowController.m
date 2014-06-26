@@ -5,11 +5,12 @@
 
 #import "RCPresentationWindowController.h"
 #import "RCProject.h"
-#import "RCPresentationBuilder.h"
 #import "RCExportOptions.h"
+#import "RCPagedPresentationBuilder.h"
 
 @interface RCPresentationWindowController()
 @property (readwrite, nonatomic, assign) RCProject *project;
+@property (strong) RCPagedPresentationBuilder *presentationBuilder;
 @end
 
 @implementation RCPresentationWindowController
@@ -18,15 +19,32 @@
     self = [super initWithWindowNibName:@"RCPresentationWindow"];
     if(self) {
         [self setProject:project];
+        [self setPresentationBuilder:[[RCPagedPresentationBuilder alloc] initWithProject:self.project]];
     }
     return self;
 }
 
 -(void) start {
-    RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-    NSString *html = [builder processAllSlides:[RCExportOptions defaultOptions]];
-    //[[tempWebView mainFrame] loadHTMLString:htmlContent baseURL:url];
+    NSString *html = [[self presentationBuilder] firstSlide];
+
     [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
 }
 
+-(void) nextSlide {
+    NSString *html = [[self presentationBuilder] nextSlide];
+    if(!html) {
+        return;
+    }
+    
+    [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
+}
+
+-(void) previousSlide {
+    NSString *html = [[self presentationBuilder] previousSlide];
+    if(!html) {
+        return;
+    }
+    
+    [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
+}
 @end
