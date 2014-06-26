@@ -24,16 +24,12 @@
 }
 
 -(NSString *) embedd: (NSString *) content {
-    NSString *header = @"<!DOCTYPE html>" \
-        "<html>"\
-        "<head>" \
-        "<title></title>"\
-        "</head>"\
-        "<body>";
 
-    NSString *footer =  @"</body>\n</html>";
-
-    return [NSString stringWithFormat:@"%@%@%@", header, content, footer];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"basic-template" ofType:@"html"];
+    NSString *template = [NSString stringWithContentsOfFile:path
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+    return [template stringByReplacingOccurrencesOfString:@"{{CONTENT}}" withString:content];
 }
 
 -(NSString *) processSlides {

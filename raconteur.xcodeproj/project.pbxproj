@@ -27,6 +27,7 @@
 		D419972A1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D41997281958C50D00EA6DCB /* InfoPlist.strings */; };
 		D419972C1958C50D00EA6DCB /* raconteurTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D419972B1958C50D00EA6DCB /* raconteurTests.m */; };
 		D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41997351958C62E00EA6DCB /* RCMainWindow.xib */; };
+		D41B6A27195C904A00426F13 /* basic-template.html in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A3AFAACF2909DD7B14 /* basic-template.html */; };
 		D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */; };
 		D4CF8C05195B770F00A132EE /* RCExportWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CF8C04195B770F00A132EE /* RCExportWindow.xib */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2F2F4843875A4EED8F22BB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6964F0A3AFAACF2909DD7B14 /* basic-template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "basic-template.html"; sourceTree = "<group>"; };
 		6964F0CE662D6A2AC475B044 /* RCExportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCExportWindowController.h; sourceTree = "<group>"; };
 		6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationBuilder.h; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		6964FAE17AD8F87AA4F189C9 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				6964F0A3AFAACF2909DD7B14 /* basic-template.html */,
+			);
+			name = Templates;
+			sourceTree = "<group>";
+		};
 		6964FEFA0A21D1C8BFF0263C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 				6964F6BB20AC58AA5FDBB761 /* Resources */,
 				6964F8401979B225B088A8DA /* Models */,
 				6964F82F7208DDC54F5543AB /* Lib */,
+				6964FAE17AD8F87AA4F189C9 /* Templates */,
 			);
 			path = raconteur;
 			sourceTree = "<group>";
@@ -315,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41B6A27195C904A00426F13 /* basic-template.html in Resources */,
 				D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */,
 				D419971A1958C50D00EA6DCB /* Images.xcassets in Resources */,
 				D4CF8C05195B770F00A132EE /* RCExportWindow.xib in Resources */,
