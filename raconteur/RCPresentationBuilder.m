@@ -55,7 +55,7 @@
         if(error) {
             return nil;
         }
-        return html;
+        return [NSString stringWithFormat:@"<section class='slide'>%@</section>", html];
     });
 
     return [self renderContent: [htmlSlides componentsJoinedByString:@"\n"]
