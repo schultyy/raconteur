@@ -85,11 +85,17 @@
                                 <rect key="frame" x="149" y="264" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="currentSlide.options.textColor" id="Lw4-jq-lsA"/>
+                                </connections>
                             </colorWell>
                             <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F99-Tm-4UO">
                                 <rect key="frame" x="149" y="233" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="currentSlide.options.backgroundColor" id="2Y0-2K-mf9"/>
+                                </connections>
                             </colorWell>
                         </subviews>
                     </view>

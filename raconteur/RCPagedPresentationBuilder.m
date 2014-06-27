@@ -35,7 +35,7 @@
 
 
     return [self renderContent: slideSection
-                   withOptions:[RCSlideOptions defaultOptions]];
+                   withOptions: slide.options];
 }
 
 -(NSString *)previousSlide {
