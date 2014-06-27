@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface RCExportOptions : NSObject
+@interface RCSlideOptions : NSObject
 
 @property (nonatomic, strong) NSString *fontFamily;
 
@@ -14,6 +14,6 @@
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 
-+(RCExportOptions *) defaultOptions;
++(RCSlideOptions *) defaultOptions;
 
 @end

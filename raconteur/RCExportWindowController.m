@@ -4,17 +4,17 @@
 //
 
 #import "RCExportWindowController.h"
-#import "RCExportOptions.h"
+#import "RCSlideOptions.h"
 
 @interface RCExportWindowController()
-@property (readwrite, nonatomic, strong) RCExportOptions *exportOptions;
+@property (readwrite, nonatomic, strong) RCSlideOptions *exportOptions;
 @end
 
 @implementation RCExportWindowController
 
 -(id) init {
     self = [super initWithWindowNibName:@"RCExportWindow"];
-    [self setExportOptions:[[RCExportOptions alloc] init]];
+    [self setExportOptions:[[RCSlideOptions alloc] init]];
     [[self exportOptions] setTextColor: [NSColor blackColor]];
     [[self exportOptions] setBackgroundColor: [NSColor whiteColor]];
     return self;

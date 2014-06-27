@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @class RCProject;
-@class RCExportOptions;
+@class RCSlideOptions;
 
 
 @interface RCPresentationBuilder : NSObject
@@ -15,8 +15,8 @@
 
 -(id) initWithProject: (RCProject *) project;
 
--(NSString *)processAllSlides: (RCExportOptions *) options;
+-(NSString *)processAllSlides: (RCSlideOptions *) options;
 
--(NSString *) renderContent: (NSString *) content withOptions: (RCExportOptions *) options;
+-(NSString *) renderContent: (NSString *) content withOptions: (RCSlideOptions *) options;
 
 @end

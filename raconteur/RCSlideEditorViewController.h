@@ -7,7 +7,6 @@
 
 @class RCSlide;
 
-
 @interface RCSlideEditorViewController : NSViewController
 
 @property (assign) RCSlide *currentSlide;

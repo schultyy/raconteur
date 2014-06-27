@@ -5,7 +5,7 @@
 
 #import "RCPresentationWindowController.h"
 #import "RCProject.h"
-#import "RCExportOptions.h"
+#import "RCSlideOptions.h"
 #import "RCPagedPresentationBuilder.h"
 
 @interface RCPresentationWindowController()

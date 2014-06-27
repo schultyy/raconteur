@@ -5,12 +5,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class RCExportOptions;
+@class RCSlideOptions;
 
 
 @interface RCExportWindowController : NSWindowController
 
-@property (readonly, nonatomic, strong) RCExportOptions *exportOptions;
+@property (readonly, nonatomic, strong) RCSlideOptions *exportOptions;
 
 -(IBAction) discard: (id) sender;
 

@@ -6,7 +6,7 @@
 #import "RCPagedPresentationBuilder.h"
 #import "RCSlide.h"
 #import "MMMarkdown.h"
-#import "RCExportOptions.h"
+#import "RCSlideOptions.h"
 #import "RCProject.h"
 
 @interface RCPagedPresentationBuilder(){
@@ -35,7 +35,7 @@
 
 
     return [self renderContent: slideSection
-                   withOptions:[RCExportOptions defaultOptions]];
+                   withOptions:[RCSlideOptions defaultOptions]];
 }
 
 -(NSString *)previousSlide {
