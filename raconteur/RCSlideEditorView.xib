@@ -19,7 +19,7 @@
                     <rect key="frame" x="8" y="20" width="417" height="370"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="Awk-e2-IkH">
-                        <font key="font" size="13" name="Courier"/>
+                        <font key="font" size="20" name="Courier"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
