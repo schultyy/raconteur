@@ -53,9 +53,7 @@
 }
 
 -(void) slideListDoubleClick: (id) sender {
-    if(self.selectedSlide) {
-        [[self slideEditorController] setCurrentSlide: self.selectedSlide];
-    }
+    [[self slideEditorController] setCurrentSlide: self.selectedSlide];
 }
 
 #pragma mark - Menu actions
