@@ -27,6 +27,7 @@
     [opts setBackgroundColor: backgroundColor];
     [opts setTextColor: textColor];
     [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
+    [opts setTextAlignment: [frontmatter valueForKey:RCTextAlignment]];
     return opts;
 }
 
