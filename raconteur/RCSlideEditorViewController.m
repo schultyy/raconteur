@@ -4,18 +4,32 @@
 //
 
 #import "RCSlideEditorViewController.h"
+#import "RCConstants.h"
 #import "RCSlide.h"
+#import "RCSlideOptions.h"
 
+
+@interface RCSlideEditorViewController()
+@property (nonatomic, strong, readwrite) NSDictionary *alignmentOptions;
+@end
 
 @implementation RCSlideEditorViewController
 
 -(id) init {
     self = [super initWithNibName:@"RCSlideEditorView" bundle:nil];
+    if(self) {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        [dict setValue: RCAlignmentCenterValue forKey:RCAlignmentCenterKey];
+        [dict setValue: RCAlignmentLeftValue forKey:RCAlignmentLeftKey];
+        [dict setValue: RCAlignmentRightValue forKey:RCAlignmentRightKey];
+
+        [self setAlignmentOptions:dict];
+    }
     return self;
 }
 
 /*
- From https://developer.apple.com/library/mac/qa/qa1454/_index.htmlg
+ From https://developer.apple.com/library/mac/qa/qa1454/_index.html
  */
 - (BOOL)control:(NSControl*)control textView:(NSTextView*)textView doCommandBySelector:(SEL)commandSelector
 {

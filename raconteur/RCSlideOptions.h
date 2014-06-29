@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 
+@property (nonatomic, strong) NSString *textAlignment;
+
 +(RCSlideOptions *) defaultOptions;
 
 +(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter;

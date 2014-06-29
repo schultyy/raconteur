@@ -11,4 +11,6 @@
 
 @property (assign) RCSlide *currentSlide;
 
+@property (nonatomic, strong, readonly) NSDictionary *alignmentOptions;
+
 @end

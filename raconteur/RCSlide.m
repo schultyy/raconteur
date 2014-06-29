@@ -52,11 +52,13 @@
             @"---\n" \
             "%@: %@\n" \
             "%@: %@\n" \
+            "%@: %@\n" \
             "%@: %@\n"
             "---",
                     RCFontFamily, opts.fontFamily,
                     RCTextColor, opts.textColor.hexColor,
-                    RCBackgroundColor, opts.backgroundColor.hexColor];
+                    RCBackgroundColor, opts.backgroundColor.hexColor,
+                    RCTextAlignment, opts.textAlignment];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
 }
 

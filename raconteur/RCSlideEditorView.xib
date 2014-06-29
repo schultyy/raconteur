@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RCSlideEditorViewController">
             <connections>
+                <outlet property="alignmentPopupButton" destination="nkH-l7-9Kk" id="Tsg-Fw-gln"/>
                 <outlet property="view" destination="c22-O7-iKe" id="hmE-8n-j9x"/>
             </connections>
         </customObject>
@@ -54,14 +55,14 @@
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="seO-fR-SLx">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" title="OtherViews" id="EGf-Xb-4dh">
-                                        <items>
-                                            <menuItem title="Left" id="q9R-HJ-DvP"/>
-                                            <menuItem title="Right" id="VbQ-Qg-uJs"/>
-                                            <menuItem title="Center" id="wLL-Kb-eqE"/>
-                                        </items>
-                                    </menu>
+                                    <menu key="menu" title="OtherViews" id="EGf-Xb-4dh"/>
                                 </popUpButtonCell>
+                                <connections>
+                                    <binding destination="xee-oH-ezP" name="content" keyPath="arrangedObjects" id="maN-f6-iQl"/>
+                                    <binding destination="xee-oH-ezP" name="contentObjects" keyPath="arrangedObjects.key" previousBinding="maN-f6-iQl" id="Yia-k4-CWj"/>
+                                    <binding destination="xee-oH-ezP" name="contentValues" keyPath="arrangedObjects.value" previousBinding="Yia-k4-CWj" id="5xA-bI-66h"/>
+                                    <binding destination="-2" name="selectedValue" keyPath="self.currentSlide.options.textAlignment" previousBinding="5xA-bI-66h" id="ojh-MU-gxg"/>
+                                </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcz-rS-zzN">
                                 <rect key="frame" x="13" y="267" width="78" height="17"/>
@@ -105,5 +106,10 @@
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="F5b-H4-9l5"/>
+        <dictionaryController objectClassName="_NSControllerKeyValuePair" automaticallyPreparesContent="YES" id="xee-oH-ezP">
+            <connections>
+                <binding destination="-2" name="contentDictionary" keyPath="alignmentOptions" id="8YF-Je-lXM"/>
+            </connections>
+        </dictionaryController>
     </objects>
 </document>
