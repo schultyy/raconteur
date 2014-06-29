@@ -4,6 +4,8 @@
 //
 
 #import "RCSlideOptions.h"
+#import "RCConstants.h"
+#import "NSColor+RCHexValue.h"
 
 
 @implementation RCSlideOptions
@@ -13,6 +15,18 @@
     [opts setTextColor: [NSColor blackColor]];
     [opts setBackgroundColor: [NSColor whiteColor]];
     [opts setFontFamily:@"Arial"];
+    return opts;
+}
+
++(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter {
+    RCSlideOptions *opts = [[RCSlideOptions alloc] init];
+
+    NSColor *backgroundColor = [NSColor colorWithHexColorString: [frontmatter valueForKey: RCBackgroundColor]];
+    NSColor *textColor = [NSColor colorWithHexColorString:[frontmatter valueForKey: RCTextColor]];
+
+    [opts setBackgroundColor: backgroundColor];
+    [opts setTextColor: textColor];
+    [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
     return opts;
 }
 

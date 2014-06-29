@@ -7,6 +7,7 @@
 #import "RCProject.h"
 #import "Underscore.h"
 #import "RCSlide.h"
+#import "RCFrontMatterParser.h"
 
 
 @implementation RCProjectSerializer

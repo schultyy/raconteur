@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6964F5EA9761A56CAAC2E81D /* RCFrontMatterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */; };
 		6964FA258D2DF01FE056A0AA /* RCPresentationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */; };
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
 		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
 		6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F39CD8CA781BA19CE868 /* RCSlide.m */; };
 		6964FBEB651EB4954CCFEEC3 /* RCSlideOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F173C0D9A1A778D27EA5 /* RCSlideOptions.m */; };
+		6964FBF9E44FAD8AF2322D42 /* RCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FD7BA408CB962F3484EE /* RCConstants.m */; };
 		6964FCC1D41E79BE410C650C /* RCPagedPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
 		6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */; };
@@ -61,19 +63,23 @@
 		6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPagedPresentationBuilder.m; sourceTree = "<group>"; };
 		6964F5F64CF8F30245DBDD07 /* RCPresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationWindowController.h; sourceTree = "<group>"; };
 		6964F62EB54D507C0FC7F080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCFrontMatterParser.m; sourceTree = "<group>"; };
 		6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationWindowController.m; sourceTree = "<group>"; };
 		6964F902B2561974A461074F /* RCSlideEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlideEditorViewController.h; sourceTree = "<group>"; };
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
 		6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
+		6964FA4BE9FE82D8C82E8A01 /* RCFrontMatterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFrontMatterParser.h; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
 		6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPagedPresentationBuilder.h; sourceTree = "<group>"; };
 		6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+RCHexValue.m"; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
+		6964FD7BA408CB962F3484EE /* RCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCConstants.m; sourceTree = "<group>"; };
 		6964FDAD778080AE47382286 /* RCExportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCExportWindowController.m; sourceTree = "<group>"; };
 		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
 		6964FE8F87102D43FF50080E /* RCSlideOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlideOptions.h; sourceTree = "<group>"; };
 		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
+		6964FF985B5147A8F9C4C172 /* RCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCConstants.h; sourceTree = "<group>"; };
 		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997011958C50D00EA6DCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -153,6 +159,8 @@
 				6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */,
 				6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */,
 				6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */,
+				6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */,
+				6964FA4BE9FE82D8C82E8A01 /* RCFrontMatterParser.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -248,6 +256,8 @@
 				6964F82F7208DDC54F5543AB /* Lib */,
 				6964FAE17AD8F87AA4F189C9 /* Templates */,
 				6964F5611BD413862E1AD8E5 /* Categories */,
+				6964FF985B5147A8F9C4C172 /* RCConstants.h */,
+				6964FD7BA408CB962F3484EE /* RCConstants.m */,
 			);
 			path = raconteur;
 			sourceTree = "<group>";
@@ -434,6 +444,8 @@
 				6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */,
 				6964FA258D2DF01FE056A0AA /* RCPresentationWindowController.m in Sources */,
 				6964FCC1D41E79BE410C650C /* RCPagedPresentationBuilder.m in Sources */,
+				6964F5EA9761A56CAAC2E81D /* RCFrontMatterParser.m in Sources */,
+				6964FBF9E44FAD8AF2322D42 /* RCConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

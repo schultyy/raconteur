@@ -7,4 +7,5 @@
 
 @interface NSColor (RCHexValue)
 -(NSString *) hexColor;
++(NSColor *) colorWithHexColorString:(NSString*)inColorString;
 @end

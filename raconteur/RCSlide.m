@@ -4,8 +4,10 @@
 //
 
 #import "RCSlide.h"
+#import "RCConstants.h"
 #import "RCSlideOptions.h"
 #import "NSColor+RCHexValue.h"
+#import "RCFrontMatterParser.h"
 
 @interface RCSlide()
 @property (readwrite, nonatomic, strong) RCSlideOptions *options;
@@ -24,8 +26,20 @@
 +(RCSlide *) fromFile: (NSString *) filename {
     RCSlide *slide = [[RCSlide alloc] init];
 
-    [slide setText:[NSString stringWithContentsOfFile:filename encoding:NSUTF8StringEncoding error:nil]];
+    RCFrontMatterParser *parser = [[RCFrontMatterParser alloc] initWithFilepath:filename];
+    NSDictionary *frontMatter = [parser parse:nil];
+    [slide setOptions:[RCSlideOptions fromFrontmatter:frontMatter]];
+
+    [slide setText:[self parseSlide:filename]];
     return slide;
+}
+
++(NSString *) parseSlide: (NSString *) filename {
+    NSString *fileContent = [NSString stringWithContentsOfFile:filename encoding:NSUTF8StringEncoding error:nil];
+    NSRange limRange = [fileContent rangeOfString:@"---\n" options:NSBackwardsSearch];
+    NSUInteger startPosition = limRange.location + limRange.length;
+    NSRange frontMatterRange = NSMakeRange(startPosition, [fileContent length] - startPosition);
+    return [fileContent substringWithRange:frontMatterRange];
 }
 
 -(id)description {
@@ -36,12 +50,13 @@
     RCSlideOptions *opts = [self options];
     NSString *frontMatter = [NSString stringWithFormat:
             @"---\n" \
-            "FontFamily: %@\n" \
-            "TextColor: %@\n" \
-            "BackgroundColor: %@\n"
-            "---", opts.fontFamily,
-                    opts.textColor.hexColor,
-                    opts.backgroundColor.hexColor];
+            "%@: %@\n" \
+            "%@: %@\n" \
+            "%@: %@\n"
+            "---",
+                    RCFontFamily, opts.fontFamily,
+                    RCTextColor, opts.textColor.hexColor,
+                    RCBackgroundColor, opts.backgroundColor.hexColor];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
 }
 

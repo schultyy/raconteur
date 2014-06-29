@@ -16,4 +16,6 @@
 
 +(RCSlideOptions *) defaultOptions;
 
++(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter;
+
 @end
