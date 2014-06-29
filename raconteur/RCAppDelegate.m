@@ -26,13 +26,14 @@
 
 -(IBAction) openProject: (id) sender {
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-    [openDlg setCanChooseFiles:NO];
-    [openDlg setCanChooseDirectories:YES];
-    [openDlg setCanCreateDirectories:YES];
+    [openDlg setCanChooseFiles:YES];
+    [openDlg setCanChooseDirectories:NO];
+    [openDlg setCanCreateDirectories:NO];
+    [openDlg setAllowedFileTypes:[NSArray arrayWithObject:@"json"]];
     [openDlg setPrompt:@"Select"];
 
     if([openDlg runModal] == NSOKButton) {
-        RCProject *project = [RCProjectSerializer loadFromDirectory:openDlg.URL.path];
+        RCProject *project = [RCProjectSerializer load:openDlg.URL.path];
         [self setMainController:[[RCMainController alloc] initWithProject: project]];
         [[self mainController] showWindow:self];
     }

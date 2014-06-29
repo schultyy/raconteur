@@ -18,7 +18,7 @@
     self = [super init];
     if(self) {
         [self setSlides:slides];
-        [self setDirectory:path];
+        [self setFilePath:path];
     }
     return self;
 }

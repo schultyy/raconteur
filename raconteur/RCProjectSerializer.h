@@ -10,7 +10,7 @@
 
 @interface RCProjectSerializer : NSObject
 
-+(void) serializeObject: (RCProject *) obj toFile: (NSString *) directory;
-+(RCProject *) loadFromDirectory: (NSString *) directory;
++(void) serializeObject: (RCProject *) obj toFile: (NSString *) filePath;
++(RCProject *) load: (NSString *) projectFilePath;
 
 @end

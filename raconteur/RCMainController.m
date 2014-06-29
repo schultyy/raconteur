@@ -69,24 +69,24 @@
 }
 
 -(void) saveProject {
-    if([[[self project] directory] length] == 0) {
+    if([[[self project] filePath] length] == 0) {
         [self saveProjectAs];
     }
     else {
-        [RCProjectSerializer serializeObject:self.project toFile: self.project.directory];
+        [RCProjectSerializer serializeObject:self.project toFile: self.project.filePath];
     }
 }
 
 -(void) saveProjectAs {
-    NSOpenPanel* openDlg = [NSOpenPanel openPanel];
-    [openDlg setCanChooseFiles:NO];
-    [openDlg setCanChooseDirectories:YES];
-    [openDlg setCanCreateDirectories:YES];
-    [openDlg setPrompt:@"Select"];
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setCanCreateDirectories:YES];
 
-    if([openDlg runModal] == NSOKButton) {
-        [RCProjectSerializer serializeObject:self.project toFile:openDlg.URL.path];
-        [[self project] setDirectory:openDlg.URL.path];
+    [savePanel setAllowedFileTypes: [NSArray arrayWithObject:@"json"]];
+
+
+    if([savePanel runModal] == NSOKButton) {
+        [RCProjectSerializer serializeObject:self.project toFile: savePanel.URL.path];
+        [[self project] setFilePath:savePanel.URL.path];
     }
 }
 

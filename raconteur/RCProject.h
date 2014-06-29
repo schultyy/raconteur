@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSArray *slides;
 
-@property (strong) NSString *directory;
+@property (strong) NSString *filePath;
 
 -(id) initWithSlides: (NSArray *) slides andPath: (NSString *) path;
 
