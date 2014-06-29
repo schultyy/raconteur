@@ -5,6 +5,7 @@
 
 #import "RCSlide.h"
 #import "RCSlideOptions.h"
+#import "NSColor+RCHexValue.h"
 
 @interface RCSlide()
 @property (readwrite, nonatomic, strong) RCSlideOptions *options;
@@ -29,6 +30,19 @@
 
 -(id)description {
     return self.text;
+}
+
+-(NSString *) textWithFrontmatter {
+    RCSlideOptions *opts = [self options];
+    NSString *frontMatter = [NSString stringWithFormat:
+            @"---\n" \
+            "FontFamily: %@\n" \
+            "TextColor: %@\n" \
+            "BackgroundColor: %@\n"
+            "---", opts.fontFamily,
+                    opts.textColor.hexColor,
+                    opts.backgroundColor.hexColor];
+    return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
 }
 
 @end

@@ -16,4 +16,6 @@
 
 +(RCSlide *) fromFile: (NSString *) filename;
 
+-(NSString *) textWithFrontmatter;
+
 @end

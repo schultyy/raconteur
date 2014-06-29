@@ -14,7 +14,7 @@
 +(void) serializeObject: (RCProject *) obj toFile: (NSString *) directory {
 
     NSArray *slideContents = Underscore.arrayMap(obj.slides, ^(RCSlide *slide) {
-       return slide.text;
+       return [slide textWithFrontmatter];
     });
 
     for(NSUInteger i = 0; i < [slideContents count]; i++) {
