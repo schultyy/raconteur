@@ -29,11 +29,13 @@
     NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", options.fontFamily];
     NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", options.backgroundColor.hexColor];
     NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", options.textColor.hexColor];
+    NSString *textAlignment = [NSString stringWithFormat:@"text-align: %@", options.textAlignment];
 
     return [NSString stringWithFormat:@"body {\n" \
                                 "%@\n" \
                                 "%@\n" \
-                                "%@\n}", fontFamily, backgroundColor, foregroundColor];
+                                "%@\n" \
+                                "%@\n}", fontFamily, backgroundColor, foregroundColor, textAlignment];
 }
 
 -(NSString *) renderContent: (NSString *) content withOptions: (RCSlideOptions *) options {
