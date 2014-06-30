@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="663" height="410"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="re3-TF-vuL">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="re3-TF-vuL">
                     <rect key="frame" x="8" y="20" width="417" height="370"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                     <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="Awk-e2-IkH">
@@ -33,7 +33,7 @@
                         <outlet property="delegate" destination="-2" id="Cyz-aS-zJg"/>
                     </connections>
                 </textField>
-                <box autoresizesSubviews="NO" fixedFrame="YES" title="Properties" boxType="oldStyle" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VQC-uQ-J6Y">
+                <box autoresizesSubviews="NO" misplaced="YES" title="Properties" boxType="oldStyle" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="VQC-uQ-J6Y">
                     <rect key="frame" x="433" y="20" width="210" height="370"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
@@ -100,10 +100,22 @@
                             </colorWell>
                         </subviews>
                     </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="210" id="3bS-oW-1gk"/>
+                    </constraints>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
             </subviews>
+            <constraints>
+                <constraint firstItem="re3-TF-vuL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="8a6-UP-twI"/>
+                <constraint firstAttribute="bottom" secondItem="re3-TF-vuL" secondAttribute="bottom" constant="20" id="TeC-cf-fvl"/>
+                <constraint firstItem="VQC-uQ-J6Y" firstAttribute="leading" secondItem="re3-TF-vuL" secondAttribute="trailing" constant="8" id="YCB-Yy-3Rd"/>
+                <constraint firstItem="VQC-uQ-J6Y" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="ZpG-oL-53N"/>
+                <constraint firstItem="re3-TF-vuL" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="daV-U5-81q"/>
+                <constraint firstAttribute="bottom" secondItem="VQC-uQ-J6Y" secondAttribute="bottom" constant="20" id="hdm-jC-yMc"/>
+                <constraint firstAttribute="trailing" secondItem="VQC-uQ-J6Y" secondAttribute="trailing" constant="20" id="tdX-Zd-EIM"/>
+            </constraints>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="F5b-H4-9l5"/>
         <dictionaryController objectClassName="_NSControllerKeyValuePair" automaticallyPreparesContent="YES" id="xee-oH-ezP">
