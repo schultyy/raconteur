@@ -8,6 +8,7 @@
 #import "RCSlideOptions.h"
 #import "NSColor+RCHexValue.h"
 #import "RCFrontMatterParser.h"
+#import "MMMarkdown.h"
 
 @interface RCSlide()
 @property (readwrite, nonatomic, strong) RCSlideOptions *options;
@@ -69,6 +70,35 @@
                     RCBackgroundColor, opts.backgroundColor.hexColor,
                     RCTextAlignment, opts.textAlignment];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
+}
+
+#pragma mark - HTML
+
+-(NSString *) styles {
+    NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", self.options.fontFamily];
+    NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", self.options.backgroundColor.hexColor];
+    NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", self.options.foregroundColor.hexColor];
+    NSString *textAlignment = [NSString stringWithFormat:@"text-align: %@", self.options.textAlignment];
+
+    return [NSString stringWithFormat:@"body {\n" \
+                                "%@\n" \
+                                "%@\n" \
+                                "%@\n" \
+                                "%@\n}", fontFamily, backgroundColor, foregroundColor, textAlignment];
+}
+
+-(NSString *)preview {
+    NSString *slideHtml =
+            [NSString stringWithFormat:@"<section class='slide'>%@</section>",
+                                       [MMMarkdown HTMLStringWithMarkdown:self.text error:nil]];
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"basic-template" ofType:@"html"];
+    NSString *template = [NSString stringWithContentsOfFile:path
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+
+    return [[template stringByReplacingOccurrencesOfString:@"{{CONTENT}}" withString:slideHtml]
+            stringByReplacingOccurrencesOfString:@"{{STYLES}}" withString: self.styles];
 }
 
 #pragma mark - NSCoding

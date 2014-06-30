@@ -4,11 +4,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCPresentationBuilder.h"
 
+@class RCProject;
 
-@interface RCPagedPresentationBuilder : RCPresentationBuilder
+@interface RCPagedPresentationBuilder : NSObject
 
+-(id) initWithProject: (RCProject *) project;
 -(NSString *) previousSlide;
 -(NSString *) nextSlide;
 -(NSString *) firstSlide;

@@ -22,4 +22,6 @@
 
 -(void) encodeWithCoder: (NSCoder *) coder;
 
+-(NSString *) preview;
+
 @end

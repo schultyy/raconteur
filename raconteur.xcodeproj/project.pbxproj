@@ -16,7 +16,6 @@
 		6964FBF9E44FAD8AF2322D42 /* RCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FD7BA408CB962F3484EE /* RCConstants.m */; };
 		6964FCC1D41E79BE410C650C /* RCPagedPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */; };
 		6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A706808DAA649CFEC3 /* MainMenu.xib */; };
-		6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */; };
 		6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */; };
 		6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FDAD778080AE47382286 /* RCExportWindowController.m */; };
 		6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */; };
@@ -55,7 +54,6 @@
 		6964F059153C4F40DFE10C4A /* NSColor+RCHexValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+RCHexValue.h"; sourceTree = "<group>"; };
 		6964F0A3AFAACF2909DD7B14 /* basic-template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "basic-template.html"; sourceTree = "<group>"; };
 		6964F0CE662D6A2AC475B044 /* RCExportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCExportWindowController.h; sourceTree = "<group>"; };
-		6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationBuilder.h; sourceTree = "<group>"; };
 		6964F173C0D9A1A778D27EA5 /* RCSlideOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideOptions.m; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 		6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationWindowController.m; sourceTree = "<group>"; };
 		6964F902B2561974A461074F /* RCSlideEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlideEditorViewController.h; sourceTree = "<group>"; };
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
-		6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
 		6964FA4BE9FE82D8C82E8A01 /* RCFrontMatterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFrontMatterParser.h; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
 		6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPagedPresentationBuilder.h; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 			children = (
 				6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */,
 				6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */,
-				6964FA1BCA9FD68BAFEE3082 /* RCPresentationBuilder.m */,
-				6964F164485CFF799B20E4F0 /* RCPresentationBuilder.h */,
 				6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */,
 				6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */,
 				6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */,
@@ -438,7 +433,6 @@
 				6964FB6897B49E6A8E5AB706 /* RCSlide.m in Sources */,
 				6964FF6FBA8022179439A095 /* RCSlideEditorViewController.m in Sources */,
 				6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */,
-				6964FD907C8F50CC256967FC /* RCPresentationBuilder.m in Sources */,
 				6964FDB919FE7DEF4D2BA288 /* RCExportWindowController.m in Sources */,
 				6964FBEB651EB4954CCFEEC3 /* RCSlideOptions.m in Sources */,
 				6964FDB84C88422B0A84E110 /* NSColor+RCHexValue.m in Sources */,
