@@ -11,7 +11,7 @@
 @class RCPresentationWindowController;
 
 
-@interface RCMainController : NSWindowController
+@interface RCMainController : NSWindowController<NSTableViewDataSource>
 
 @property (readonly, nonatomic, strong) RCProject *project;
 

@@ -10,6 +10,17 @@
 
 @implementation RCSlideOptions
 
+-(id) initWithCoder: (NSCoder *) coder {
+    self = [super init];
+    if(self) {
+        [self setTextAlignment:   [coder decodeObjectForKey:NSStringFromSelector(@selector(textAlignment))]];
+        [self setFontFamily:      [coder decodeObjectForKey:NSStringFromSelector(@selector(fontFamily))]];
+        [self setBackgroundColor: [coder decodeObjectForKey:NSStringFromSelector(@selector(backgroundColor))]];
+        [self setTextColor:       [coder decodeObjectForKey:NSStringFromSelector(@selector(textColor))]];
+    }
+    return self;
+}
+
 +(RCSlideOptions *) defaultOptions {
     RCSlideOptions *opts = [[RCSlideOptions alloc] init];
     [opts setTextColor: [NSColor blackColor]];
@@ -29,6 +40,15 @@
     [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
     [opts setTextAlignment: [frontmatter valueForKey:RCTextAlignment]];
     return opts;
+}
+
+#pragma mark - NSCoder
+
+-(void) encodeWithCoder: (NSCoder *) coder {
+    [coder encodeObject: self.textColor forKey:NSStringFromSelector(@selector(textColor))];
+    [coder encodeObject: self.textAlignment forKey:NSStringFromSelector(@selector(textAlignment))];
+    [coder encodeObject: self.backgroundColor forKey:NSStringFromSelector(@selector(backgroundColor))];
+    [coder encodeObject: self.textColor forKey:NSStringFromSelector(@selector(textColor))];
 }
 
 @end

@@ -8,14 +8,18 @@
 @class RCSlideOptions;
 
 
-@interface RCSlide : NSObject
+@interface RCSlide : NSObject<NSCoding>
 
 @property (strong) NSString *text;
 
 @property (readonly, nonatomic, strong) RCSlideOptions *options;
 
+-(id) initWithCoder: (NSCoder *) coder;
+
 +(RCSlide *) fromFile: (NSString *) filename;
 
 -(NSString *) textWithFrontmatter;
+
+-(void) encodeWithCoder: (NSCoder *) coder;
 
 @end

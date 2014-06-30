@@ -23,6 +23,15 @@
     return self;
 }
 
+-(id)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if(self) {
+        [self setOptions: [coder decodeObjectForKey:NSStringFromSelector(@selector(options))]];
+        [self setText:[coder decodeObjectForKey:NSStringFromSelector(@selector(text))]];
+    }
+    return self;
+}
+
 +(RCSlide *) fromFile: (NSString *) filename {
     RCSlide *slide = [[RCSlide alloc] init];
 
@@ -60,6 +69,13 @@
                     RCBackgroundColor, opts.backgroundColor.hexColor,
                     RCTextAlignment, opts.textAlignment];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
+}
+
+#pragma mark - NSCoding
+
+-(void) encodeWithCoder: (NSCoder *) coder {
+    [coder encodeObject:self.text forKey:NSStringFromSelector(@selector(text))];
+    [coder encodeObject:self.options forKey:NSStringFromSelector(@selector(options))];
 }
 
 @end

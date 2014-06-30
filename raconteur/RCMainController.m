@@ -12,6 +12,8 @@
 #import "RCExportWindowController.h"
 #import "RCPresentationWindowController.h"
 
+#define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
+
 @interface RCMainController()
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
@@ -37,9 +39,14 @@
 }
 
 -(void)awakeFromNib {
+    [super awakeFromNib];
+
     [[self detailView] setContentView:self.slideEditorController.view];
     [[self slideList] setTarget:self];
     [[self slideList] setDoubleAction:@selector(slideListDoubleClick:)];
+
+    [[self slideList] setDataSource:self];
+    [[self slideList] registerForDraggedTypes: [NSArray arrayWithObject:BasicTableViewDragAndDropDataType]];
 }
 
 -(RCSlide *) selectedSlide {
@@ -126,5 +133,55 @@
         }
     }
 }
+
+#pragma mark - NSTableViewDataSource
+
+-(BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
+    NSLog(@"Row: %lu", row);
+    NSLog(@"Drop Operation: %@", dropOperation);
+    NSLog(@"Info: %@", info);
+    NSData *data = [[info draggingPasteboard] dataForType:BasicTableViewDragAndDropDataType];
+    NSArray *slides = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    RCSlide *slide = [slides objectAtIndex:0];
+    if(row >= self.project.slides.count) {
+        [[[self project] slides] addObject:slide];
+    }
+    else {
+        [[[self project] slides] insertObject:slide atIndex:(NSUInteger) row];
+    }
+
+    [[self slideArrayController] rearrangeObjects];
+    //[[[self slideArrayController] arrangedObjects] insertObject:slide atIndex:(NSUInteger)row];
+
+    return YES;
+}
+
+-(NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
+    NSLog(@"Proposed Row: %lu", row);
+    //return NSDragOperationGeneric;
+    return NSDragOperationMove;
+}
+
+-(BOOL)tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
+    if([rowIndexes firstIndex] >= 0 && [rowIndexes firstIndex] < self.project.slides.count) {
+        NSLog(@"write rows with indexes");
+        NSLog(@"Indexes: %@", rowIndexes);
+        [pboard declareTypes:[NSArray arrayWithObject:BasicTableViewDragAndDropDataType] owner:self];
+
+        NSMutableArray *rows = [NSMutableArray array];
+        NSArray * selectedObjects = [[[self project] slides] objectsAtIndexes:rowIndexes];
+
+        for (RCSlide * o in selectedObjects) {
+            [rows addObject: o];
+            [[self project] removeSlide:o];
+        }
+        NSData * encodedObjects = [NSKeyedArchiver archivedDataWithRootObject:rows];
+        [pboard setData:encodedObjects forType:BasicTableViewDragAndDropDataType];
+
+        return YES;
+    }
+    return NO;
+}
+
 
 @end

@@ -10,7 +10,7 @@
 
 @interface RCProject : NSObject
 
-@property (nonatomic, strong) NSArray *slides;
+@property (nonatomic, strong) NSMutableArray *slides;
 
 @property (strong) NSString *filePath;
 

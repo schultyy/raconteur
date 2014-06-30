@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface RCSlideOptions : NSObject
+@interface RCSlideOptions : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *fontFamily;
 
@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSColor *backgroundColor;
 
 @property (nonatomic, strong) NSString *textAlignment;
+
+-(id) initWithCoder: (NSCoder *) coder;
 
 +(RCSlideOptions *) defaultOptions;
 

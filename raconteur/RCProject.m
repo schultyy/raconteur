@@ -10,14 +10,14 @@
 @implementation RCProject
 
 -(id) init {
-    self = [self initWithSlides:[NSArray array] andPath: nil];
+    self = [self initWithSlides:[NSMutableArray array] andPath: nil];
     return self;
 }
 
 -(id)initWithSlides:(NSArray *)slides andPath:(NSString *)path {
     self = [super init];
     if(self) {
-        [self setSlides:slides];
+        [self setSlides:[NSMutableArray arrayWithArray:slides]];
         [self setFilePath:path];
     }
     return self;
@@ -27,15 +27,13 @@
     RCSlide *slide = [[RCSlide alloc] init];
     [slide setText:@"text"];
     [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
-    [self setSlides:[[self slides] arrayByAddingObject:slide]];
+    [[self slides] addObject:slide];
     [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
 }
 
 -(void) removeSlide: (RCSlide *) slide {
-    NSMutableArray *tmp = [NSMutableArray arrayWithArray:self.slides];
-    [tmp removeObject:slide];
     [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
-    [self setSlides: tmp];
+    [[self slides] removeObject:slide];
     [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
 }
 
