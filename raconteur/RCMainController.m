@@ -146,12 +146,11 @@
     else {
         [[[self project] slides] insertObject:slide atIndex:(NSUInteger) row];
     }
-    [[self slideArrayController] rearrangeObjects];
+    [[self slideArrayController] setContent:self.project.slides];
     return YES;
 }
 
 -(NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
-    NSLog(@"Proposed Row: %lu", row);
     return NSDragOperationMove;
 }
 
