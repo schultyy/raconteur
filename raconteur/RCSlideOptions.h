@@ -10,7 +10,7 @@
 
 @property (nonatomic, strong) NSString *fontFamily;
 
-@property (nonatomic, strong) NSColor *textColor;
+@property (nonatomic, strong) NSColor *foregroundColor;
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 

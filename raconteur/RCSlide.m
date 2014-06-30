@@ -65,7 +65,7 @@
             "%@: %@\n"
             "---",
                     RCFontFamily, opts.fontFamily,
-                    RCTextColor, opts.textColor.hexColor,
+                    RCTextColor, opts.foregroundColor.hexColor,
                     RCBackgroundColor, opts.backgroundColor.hexColor,
                     RCTextAlignment, opts.textAlignment];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];

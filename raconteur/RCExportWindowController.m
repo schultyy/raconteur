@@ -15,7 +15,7 @@
 -(id) init {
     self = [super initWithWindowNibName:@"RCExportWindow"];
     [self setExportOptions:[[RCSlideOptions alloc] init]];
-    [[self exportOptions] setTextColor: [NSColor blackColor]];
+    [[self exportOptions] setForegroundColor: [NSColor blackColor]];
     [[self exportOptions] setBackgroundColor: [NSColor whiteColor]];
     return self;
 }

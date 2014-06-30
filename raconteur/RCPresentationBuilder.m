@@ -28,7 +28,7 @@
 -(NSString *) generateStyles: (RCSlideOptions *) options {
     NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", options.fontFamily];
     NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", options.backgroundColor.hexColor];
-    NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", options.textColor.hexColor];
+    NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", options.foregroundColor.hexColor];
     NSString *textAlignment = [NSString stringWithFormat:@"text-align: %@", options.textAlignment];
 
     return [NSString stringWithFormat:@"body {\n" \
