@@ -25,6 +25,7 @@
     RCSlideOptions *opts = [[RCSlideOptions alloc] init];
     [opts setForegroundColor: [NSColor blackColor]];
     [opts setBackgroundColor: [NSColor whiteColor]];
+    [opts setTextAlignment:RCAlignmentLeftValue];
     [opts setFontFamily:@"Arial"];
     return opts;
 }
