@@ -6,7 +6,8 @@
 FOUNDATION_EXPORT NSString * const RCBackgroundColor;
 FOUNDATION_EXPORT NSString * const RCTextColor;
 FOUNDATION_EXPORT NSString * const RCFontFamily;
-FOUNDATION_EXPORT NSString * const RCTextAlignment;
+FOUNDATION_EXPORT NSString * const RCHorizontalTextAlignment;
+FOUNDATION_EXPORT NSString * const RCVerticalTextAlignment;
 
 FOUNDATION_EXPORT NSString * const RCHorizontalTextAlignmentRightKey;
 FOUNDATION_EXPORT NSString * const RCHorizontalTextAlignmentLeftKey;

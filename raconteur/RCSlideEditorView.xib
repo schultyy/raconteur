@@ -41,9 +41,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="HMB-v0-isu">
-                                <rect key="frame" x="13" y="336" width="69" height="17"/>
+                                <rect key="frame" x="13" y="336" width="138" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alignment" id="Yaz-Bz-raj">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Horizontal alignment" id="Yaz-Bz-raj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -64,8 +64,32 @@
                                     <binding destination="-2" name="selectedValue" keyPath="self.currentSlide.options.horizontalTextAlignment" previousBinding="5xA-bI-66h" id="WG4-pJ-vGa"/>
                                 </connections>
                             </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="dh0-DW-qqq">
+                                <rect key="frame" x="13" y="279" width="119" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Vertical alignment" id="4Oi-Ay-3Mq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton verticalHuggingPriority="750" id="r8P-Zt-U1A">
+                                <rect key="frame" x="13" y="247" width="183" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="aUi-dh-DLU">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" title="OtherViews" id="E2j-GV-jhI"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="f91-Pu-fXc" name="content" keyPath="arrangedObjects" id="UlL-zU-dla"/>
+                                    <binding destination="f91-Pu-fXc" name="contentObjects" keyPath="arrangedObjects.key" previousBinding="UlL-zU-dla" id="Paf-O3-TOn"/>
+                                    <binding destination="f91-Pu-fXc" name="contentValues" keyPath="arrangedObjects.value" previousBinding="Paf-O3-TOn" id="WRh-x0-ShP"/>
+                                    <binding destination="-2" name="selectedValue" keyPath="self.currentSlide.options.verticalTextAlignment" previousBinding="WRh-x0-ShP" id="Xss-ab-Z8R"/>
+                                </connections>
+                            </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="mcz-rS-zzN">
-                                <rect key="frame" x="13" y="267" width="78" height="17"/>
+                                <rect key="frame" x="13" y="210" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Foreground" id="Hov-YT-wFG">
                                     <font key="font" metaFont="system"/>
@@ -74,7 +98,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="leQ-8Z-JpW">
-                                <rect key="frame" x="13" y="236" width="79" height="17"/>
+                                <rect key="frame" x="13" y="179" width="79" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="rTJ-2X-3KW">
                                     <font key="font" metaFont="system"/>
@@ -83,7 +107,7 @@
                                 </textFieldCell>
                             </textField>
                             <colorWell id="CRb-PX-u3d">
-                                <rect key="frame" x="149" y="264" width="44" height="23"/>
+                                <rect key="frame" x="149" y="207" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -91,7 +115,7 @@
                                 </connections>
                             </colorWell>
                             <colorWell id="F99-Tm-4UO">
-                                <rect key="frame" x="149" y="233" width="44" height="23"/>
+                                <rect key="frame" x="149" y="176" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -106,9 +130,14 @@
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="F5b-H4-9l5"/>
-        <dictionaryController objectClassName="_NSControllerKeyValuePair" automaticallyPreparesContent="YES" id="xee-oH-ezP">
+        <dictionaryController objectClassName="_NSControllerKeyValuePair" automaticallyPreparesContent="YES" id="xee-oH-ezP" userLabel="HorizontalAlignmentController">
             <connections>
-                <binding destination="-2" name="contentDictionary" keyPath="alignmentOptions" id="8YF-Je-lXM"/>
+                <binding destination="-2" name="contentDictionary" keyPath="horizontalAlignmentOptions" id="i8E-WM-JZU"/>
+            </connections>
+        </dictionaryController>
+        <dictionaryController objectClassName="_NSControllerKeyValuePair" automaticallyPreparesContent="YES" id="f91-Pu-fXc" userLabel="VerticalAlignmentController">
+            <connections>
+                <binding destination="-2" name="contentDictionary" keyPath="verticalAlignmentOptions" id="ofd-AY-76I"/>
             </connections>
         </dictionaryController>
     </objects>

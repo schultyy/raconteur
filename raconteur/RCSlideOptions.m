@@ -41,7 +41,8 @@
     [opts setBackgroundColor: backgroundColor];
     [opts setForegroundColor: textColor];
     [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
-    [opts setHorizontalTextAlignment:[frontmatter valueForKey:RCTextAlignment]];
+    [opts setHorizontalTextAlignment:[frontmatter valueForKey:RCHorizontalTextAlignment]];
+    [opts setVerticalTextAlignment: [frontmatter valueForKey:RCVerticalTextAlignment]];
     return opts;
 }
 

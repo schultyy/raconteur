@@ -10,7 +10,8 @@
 
 
 @interface RCSlideEditorViewController()
-@property (nonatomic, strong, readwrite) NSDictionary *alignmentOptions;
+@property (nonatomic, strong, readwrite) NSDictionary *horizontalAlignmentOptions;
+@property (nonatomic, strong, readwrite) NSDictionary *verticalAlignmentOptions;
 @end
 
 @implementation RCSlideEditorViewController
@@ -18,12 +19,18 @@
 -(id) init {
     self = [super initWithNibName:@"RCSlideEditorView" bundle:nil];
     if(self) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue: RCHorizontalTextAlignmentCenterValue forKey:RCHorizontalTextAlignmentCenterKey];
-        [dict setValue: RCHorizontalTextAlignmentLeftValue forKey:RCHorizontalTextAlignmentLeftKey];
-        [dict setValue: RCHorizontalTextAlignmentRightValue forKey:RCHorizontalTextAlignmentRightKey];
+        NSMutableDictionary *horizontalDict = [NSMutableDictionary dictionary];
+        [horizontalDict setValue: RCHorizontalTextAlignmentCenterValue forKey:RCHorizontalTextAlignmentCenterKey];
+        [horizontalDict setValue: RCHorizontalTextAlignmentLeftValue forKey:RCHorizontalTextAlignmentLeftKey];
+        [horizontalDict setValue: RCHorizontalTextAlignmentRightValue forKey:RCHorizontalTextAlignmentRightKey];
 
-        [self setAlignmentOptions:dict];
+        NSMutableDictionary *verticalDict = [NSMutableDictionary dictionary];
+        [verticalDict setValue:RCVerticalTextAlignmentTopValue forKey:RCVerticalTextAlignmentTopKey];
+        [verticalDict setValue:RCVerticalTextAlignmentCenterValue forKey:RCVerticalTextAlignmentCenterKey];
+        [verticalDict setValue:RCVerticalTextAlignmentBottomValue forKey:RCVerticalTextAlignmentBottomKey];
+
+        [self setHorizontalAlignmentOptions:horizontalDict];
+        [self setVerticalAlignmentOptions:verticalDict];
     }
     return self;
 }
