@@ -137,9 +137,6 @@
 #pragma mark - NSTableViewDataSource
 
 -(BOOL)tableView:(NSTableView *)tableView acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation {
-    NSLog(@"Row: %lu", row);
-    NSLog(@"Drop Operation: %@", dropOperation);
-    NSLog(@"Info: %@", info);
     NSData *data = [[info draggingPasteboard] dataForType:BasicTableViewDragAndDropDataType];
     NSArray *slides = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     RCSlide *slide = [slides objectAtIndex:0];
@@ -149,23 +146,17 @@
     else {
         [[[self project] slides] insertObject:slide atIndex:(NSUInteger) row];
     }
-
     [[self slideArrayController] rearrangeObjects];
-    //[[[self slideArrayController] arrangedObjects] insertObject:slide atIndex:(NSUInteger)row];
-
     return YES;
 }
 
 -(NSDragOperation)tableView:(NSTableView *)tableView validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)dropOperation {
     NSLog(@"Proposed Row: %lu", row);
-    //return NSDragOperationGeneric;
     return NSDragOperationMove;
 }
 
 -(BOOL)tableView:(NSTableView *)tableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
     if([rowIndexes firstIndex] >= 0 && [rowIndexes firstIndex] < self.project.slides.count) {
-        NSLog(@"write rows with indexes");
-        NSLog(@"Indexes: %@", rowIndexes);
         [pboard declareTypes:[NSArray arrayWithObject:BasicTableViewDragAndDropDataType] owner:self];
 
         NSMutableArray *rows = [NSMutableArray array];
