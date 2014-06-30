@@ -158,6 +158,7 @@
     if([rowIndexes firstIndex] >= 0 && [rowIndexes firstIndex] < self.project.slides.count) {
         [pboard declareTypes:[NSArray arrayWithObject:BasicTableViewDragAndDropDataType] owner:self];
 
+        [[self slideEditorController] setCurrentSlide:nil];
         NSMutableArray *rows = [NSMutableArray array];
         NSArray * selectedObjects = [[[self project] slides] objectsAtIndexes:rowIndexes];
 
