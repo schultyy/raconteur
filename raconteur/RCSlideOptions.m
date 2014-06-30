@@ -13,10 +13,11 @@
 -(id) initWithCoder: (NSCoder *) coder {
     self = [super init];
     if(self) {
-        [self setTextAlignment:   [coder decodeObjectForKey:NSStringFromSelector(@selector(textAlignment))]];
-        [self setFontFamily:      [coder decodeObjectForKey:NSStringFromSelector(@selector(fontFamily))]];
-        [self setBackgroundColor: [coder decodeObjectForKey:NSStringFromSelector(@selector(backgroundColor))]];
-        [self setForegroundColor:       [coder decodeObjectForKey:NSStringFromSelector(@selector(foregroundColor))]];
+        [self setHorizontalTextAlignment: [coder decodeObjectForKey:NSStringFromSelector(@selector(horizontalTextAlignment))]];
+        [self setVerticalTextAlignment:   [coder decodeObjectForKey:NSStringFromSelector(@selector(verticalTextAlignment))]];
+        [self setFontFamily:              [coder decodeObjectForKey:NSStringFromSelector(@selector(fontFamily))]];
+        [self setBackgroundColor:         [coder decodeObjectForKey:NSStringFromSelector(@selector(backgroundColor))]];
+        [self setForegroundColor:         [coder decodeObjectForKey:NSStringFromSelector(@selector(foregroundColor))]];
     }
     return self;
 }
@@ -25,7 +26,8 @@
     RCSlideOptions *opts = [[RCSlideOptions alloc] init];
     [opts setForegroundColor: [NSColor blackColor]];
     [opts setBackgroundColor: [NSColor whiteColor]];
-    [opts setTextAlignment:RCAlignmentLeftValue];
+    [opts setHorizontalTextAlignment:RCHorizontalTextAlignmentLeftValue];
+    [opts setVerticalTextAlignment:RCVerticalTextAlignmentTopValue];
     [opts setFontFamily:@"Arial"];
     return opts;
 }
@@ -39,7 +41,7 @@
     [opts setBackgroundColor: backgroundColor];
     [opts setForegroundColor: textColor];
     [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
-    [opts setTextAlignment: [frontmatter valueForKey:RCTextAlignment]];
+    [opts setHorizontalTextAlignment:[frontmatter valueForKey:RCTextAlignment]];
     return opts;
 }
 
@@ -47,7 +49,7 @@
 
 -(void) encodeWithCoder: (NSCoder *) coder {
     [coder encodeObject:self.foregroundColor forKey:NSStringFromSelector(@selector(foregroundColor))];
-    [coder encodeObject: self.textAlignment forKey:NSStringFromSelector(@selector(textAlignment))];
+    [coder encodeObject: self.horizontalTextAlignment forKey:NSStringFromSelector(@selector(horizontalTextAlignment))];
     [coder encodeObject: self.backgroundColor forKey:NSStringFromSelector(@selector(backgroundColor))];
     [coder encodeObject:self.foregroundColor forKey:NSStringFromSelector(@selector(foregroundColor))];
 }

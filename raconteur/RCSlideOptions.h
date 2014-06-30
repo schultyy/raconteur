@@ -14,7 +14,9 @@
 
 @property (nonatomic, strong) NSColor *backgroundColor;
 
-@property (nonatomic, strong) NSString *textAlignment;
+@property (nonatomic, strong) NSString *horizontalTextAlignment;
+
+@property (nonatomic, strong) NSString *verticalTextAlignment;
 
 -(id) initWithCoder: (NSCoder *) coder;
 

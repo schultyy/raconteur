@@ -61,7 +61,7 @@
                                     <binding destination="xee-oH-ezP" name="content" keyPath="arrangedObjects" id="maN-f6-iQl"/>
                                     <binding destination="xee-oH-ezP" name="contentObjects" keyPath="arrangedObjects.key" previousBinding="maN-f6-iQl" id="Yia-k4-CWj"/>
                                     <binding destination="xee-oH-ezP" name="contentValues" keyPath="arrangedObjects.value" previousBinding="Yia-k4-CWj" id="5xA-bI-66h"/>
-                                    <binding destination="-2" name="selectedValue" keyPath="self.currentSlide.options.textAlignment" previousBinding="5xA-bI-66h" id="ojh-MU-gxg"/>
+                                    <binding destination="-2" name="selectedValue" keyPath="self.currentSlide.options.horizontalTextAlignment" previousBinding="5xA-bI-66h" id="WG4-pJ-vGa"/>
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="mcz-rS-zzN">

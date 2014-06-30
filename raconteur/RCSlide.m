@@ -68,7 +68,7 @@
                     RCFontFamily, opts.fontFamily,
                     RCTextColor, opts.foregroundColor.hexColor,
                     RCBackgroundColor, opts.backgroundColor.hexColor,
-                    RCTextAlignment, opts.textAlignment];
+                    RCTextAlignment, opts.horizontalTextAlignment];
     return [NSString stringWithFormat:@"%@\n%@", frontMatter, self.text];
 }
 
@@ -78,7 +78,7 @@
     NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", self.options.fontFamily];
     NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", self.options.backgroundColor.hexColor];
     NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", self.options.foregroundColor.hexColor];
-    NSString *textAlignment = [NSString stringWithFormat:@"text-align: %@", self.options.textAlignment];
+    NSString *textAlignment = [NSString stringWithFormat:@"text-align: %@", self.options.horizontalTextAlignment];
 
     return [NSString stringWithFormat:@"body {\n" \
                                 "%@\n" \

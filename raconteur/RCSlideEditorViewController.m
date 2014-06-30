@@ -19,9 +19,9 @@
     self = [super initWithNibName:@"RCSlideEditorView" bundle:nil];
     if(self) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue: RCAlignmentCenterValue forKey:RCAlignmentCenterKey];
-        [dict setValue: RCAlignmentLeftValue forKey:RCAlignmentLeftKey];
-        [dict setValue: RCAlignmentRightValue forKey:RCAlignmentRightKey];
+        [dict setValue: RCHorizontalTextAlignmentCenterValue forKey:RCHorizontalTextAlignmentCenterKey];
+        [dict setValue: RCHorizontalTextAlignmentLeftValue forKey:RCHorizontalTextAlignmentLeftKey];
+        [dict setValue: RCHorizontalTextAlignmentRightValue forKey:RCHorizontalTextAlignmentRightKey];
 
         [self setAlignmentOptions:dict];
     }
