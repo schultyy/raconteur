@@ -173,7 +173,7 @@
 
         for (RCSlide * o in selectedObjects) {
             [rows addObject: o];
-            [[self project] removeSlide:o];
+            [[[self project] slides] removeObject:o];
         }
         NSData * encodedObjects = [NSKeyedArchiver archivedDataWithRootObject:rows];
         [pboard setData:encodedObjects forType:BasicTableViewDragAndDropDataType];
