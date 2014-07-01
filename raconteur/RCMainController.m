@@ -47,6 +47,17 @@
 
     [[self slideList] setDataSource:self];
     [[self slideList] registerForDraggedTypes: [NSArray arrayWithObject:BasicTableViewDragAndDropDataType]];
+
+    [self addObserver:self
+           forKeyPath:NSStringFromSelector(@selector(selectionIndex))
+              options:NSKeyValueObservingOptionNew
+              context:NULL];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:NSStringFromSelector(@selector(selectionIndex))]) {
+        [[self slideEditorController] setCurrentSlide: self.selectedSlide];
+    }
 }
 
 -(RCSlide *) selectedSlide {
