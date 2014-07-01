@@ -43,7 +43,7 @@
 
     [[self detailView] setContentView:self.slideEditorController.view];
     [[self slideList] setTarget:self];
-    [[self slideList] setDoubleAction:@selector(slideListDoubleClick:)];
+    [[self slideList] setDoubleAction:@selector(addSlide)];
 
     [[self slideList] setDataSource:self];
     [[self slideList] registerForDraggedTypes: [NSArray arrayWithObject:BasicTableViewDragAndDropDataType]];
@@ -68,10 +68,6 @@
     }
 
     return [[[self slideArrayController] arrangedObjects] objectAtIndex: selectedIndex];
-}
-
--(void) slideListDoubleClick: (id) sender {
-    [[self slideEditorController] setCurrentSlide: self.selectedSlide];
 }
 
 #pragma mark - Menu actions
