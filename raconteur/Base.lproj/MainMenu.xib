@@ -95,6 +95,28 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Edit" id="Kcx-6V-P4p">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="y0o-uZ-Bvr">
+                        <items>
+                            <menuItem title="Copy" keyEquivalent="c" id="oE2-f8-x7z">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="IAR-dK-zVH"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="qmh-4T-Tp4">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="nE4-Tf-Q2r"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="Pp2-VS-nut">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="SgI-l0-1tt"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Slides" id="roc-eM-Lgk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Slides" id="dQN-8S-5PN">
