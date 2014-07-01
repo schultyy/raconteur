@@ -73,7 +73,10 @@
 #pragma mark - Menu actions
 
 -(void) addSlide {
-    [[self project] addSlide];
+    RCSlide *slide = [[self project] addSlide];
+    NSIndexSet *newIndex = [[NSIndexSet alloc] initWithIndex:self.project.slides.count - 1];
+    [self setSelectionIndex:newIndex];
+    [[self slideEditorController] setCurrentSlide: slide];
 }
 
 -(void) removeSelectedSlide {

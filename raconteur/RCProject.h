@@ -16,7 +16,7 @@
 
 -(id) initWithSlides: (NSArray *) slides andPath: (NSString *) path;
 
--(void) addSlide;
+-(RCSlide *) addSlide;
 
 -(void) removeSlide: (RCSlide *) slide;
 

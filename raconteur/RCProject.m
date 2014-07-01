@@ -23,12 +23,13 @@
     return self;
 }
 
--(void) addSlide {
+-(RCSlide *) addSlide {
     RCSlide *slide = [[RCSlide alloc] init];
     [slide setText:@"text"];
     [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
     [[self slides] addObject:slide];
     [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
+    return slide;
 }
 
 -(void) removeSlide: (RCSlide *) slide {
