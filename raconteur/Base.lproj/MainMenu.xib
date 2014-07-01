@@ -102,11 +102,21 @@
                             <menuItem title="Add slide" keyEquivalent="n" id="cR8-7h-3Ig">
                                 <connections>
                                     <action selector="addSlide:" target="Voe-Tx-rLC" id="zyv-DL-iiQ"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.project" id="2ZY-cD-1eg">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                             <menuItem title="Remove slide" keyEquivalent="d" id="7bZ-tL-qfU">
                                 <connections>
                                     <action selector="removeSelectedSlide:" target="Voe-Tx-rLC" id="OLD-20-caO"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.project.slides" id="Lha-WQ-BsL">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                         </items>
@@ -120,18 +130,33 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="startPresentation:" target="Voe-Tx-rLC" id="5BL-AK-iLf"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.project" id="ZUA-iP-487">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                             <menuItem title="Next slide" keyEquivalent="" id="TgJ-dC-CL7">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="nextSlide:" target="Voe-Tx-rLC" id="qRQ-AV-zYD"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.presentationController" id="ivz-wA-8vf">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                             <menuItem title="Previous slide" keyEquivalent="" id="pfp-Qf-Fot">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="previousSlide:" target="Voe-Tx-rLC" id="wsN-ai-raB"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.presentationController" id="9V4-xk-GPl">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </menuItem>
                         </items>
@@ -151,5 +176,6 @@
                 </menuItem>
             </items>
         </menu>
+        <userDefaultsController representsSharedInstance="YES" id="R62-X0-mJR"/>
     </objects>
 </document>
