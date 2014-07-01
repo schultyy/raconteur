@@ -14,7 +14,7 @@
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
-@interface RCMainController()
+@interface RCMainController()<NSWindowDelegate>
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
 @property (readwrite, nonatomic, strong) RCPresentationWindowController *presentationController;
@@ -117,6 +117,7 @@
 -(void) startPresentation{
     [self setPresentationController:[[RCPresentationWindowController alloc] initWithProject:self.project]];
     [[self presentationController] showWindow:self];
+    [[[self presentationController] window] setDelegate:self];
     [[self presentationController] start];
 }
 
@@ -181,5 +182,8 @@
     return NO;
 }
 
+-(void)windowWillClose:(NSNotification *)notification {
+    [self setPresentationController:nil];
+}
 
 @end
