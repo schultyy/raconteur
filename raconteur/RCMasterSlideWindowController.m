@@ -12,12 +12,13 @@
 -(id) init {
     self = [super initWithWindowNibName:@"RCMasterSlideWindow"];
     if(self) {
-        [self setDefaultOptions: [[RCSlideOptions defaultOptions] copy]];
+        [self setDefaultOptions: [RCSlideOptions defaultOptions]];
     }
     return self;
 }
 
 -(IBAction) discard: (id) sender {
+    [self setDefaultOptions:[RCSlideOptions defaultOptions]];
     [[self window] orderOut:self];
     [NSApp endSheet:self.window returnCode:-1];
 }

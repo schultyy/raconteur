@@ -35,7 +35,7 @@ static RCSlideOptions *defaultOptions;
         [opts setFontFamily:@"Arial"];
         defaultOptions = opts;
     }
-    return defaultOptions;
+    return [defaultOptions copy];
 }
 
 +(void) setDefaultOptions: (RCSlideOptions *) newOptions {
