@@ -82,6 +82,25 @@
     [[self slideEditorController] setCurrentSlide: slide];
 }
 
+-(void) addExistingSlide {
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    [openPanel setCanChooseDirectories:NO];
+    [openPanel setCanChooseFiles:YES];
+    [openPanel setAllowsMultipleSelection:YES];
+    [openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"md"]];
+    [openPanel setPrompt:@"Add"];
+
+    if([openPanel runModal] == NSOKButton) {
+        Underscore.arrayEach(openPanel.URLs, ^(NSURL *url) {
+            RCSlide *slide = [RCSlide fromFile:url.path];
+            [[self project] addSlide: slide];
+            NSIndexSet *newIndex = [[NSIndexSet alloc] initWithIndex:self.project.slides.count - 1];
+            [self setSelectionIndex:newIndex];
+            [[self slideEditorController] setCurrentSlide: slide];
+        });
+    }
+}
+
 -(void) removeSelectedSlide {
     if(self.selectedSlide) {
         [[self project] removeSlide: self.selectedSlide];

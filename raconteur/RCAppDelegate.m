@@ -43,6 +43,10 @@
     [[self mainController] addSlide];
 }
 
+-(IBAction) addExistingSlide: (id) sender {
+    [[self mainController] addExistingSlide];
+}
+
 -(IBAction) removeSelectedSlide: (id) sender {
     [[self mainController] removeSelectedSlide];
 }

@@ -131,6 +131,17 @@
                                     </binding>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Add existing slide" id="gya-Il-WYD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="addExistingSlide:" target="Voe-Tx-rLC" id="5ZR-az-KaH"/>
+                                    <binding destination="Voe-Tx-rLC" name="enabled" keyPath="self.mainController.project" id="cWn-Ze-ajv">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSIsNotNil</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Remove slide" keyEquivalent="d" id="7bZ-tL-qfU">
                                 <connections>
                                     <action selector="removeSelectedSlide:" target="Voe-Tx-rLC" id="OLD-20-caO"/>

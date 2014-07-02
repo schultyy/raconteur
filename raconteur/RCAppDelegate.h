@@ -20,6 +20,8 @@
 
 -(IBAction) addSlide: (id) sender;
 
+-(IBAction) addExistingSlide: (id) sender;
+
 -(IBAction) removeSelectedSlide: (id) sender;
 
 -(IBAction) saveProject: (id) sender;

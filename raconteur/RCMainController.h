@@ -33,6 +33,8 @@
 
 -(void) addSlide;
 
+-(void) addExistingSlide;
+
 -(void) removeSelectedSlide;
 
 -(void) editMasterSlide;

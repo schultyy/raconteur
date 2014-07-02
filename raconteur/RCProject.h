@@ -18,6 +18,8 @@
 
 -(RCSlide *) addSlide;
 
+-(void) addSlide: (RCSlide *) newSlide;
+
 -(void) removeSlide: (RCSlide *) slide;
 
 @end

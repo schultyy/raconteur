@@ -26,10 +26,14 @@
 -(RCSlide *) addSlide {
     RCSlide *slide = [[RCSlide alloc] init];
     [slide setText:@"text"];
-    [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
-    [[self slides] addObject:slide];
-    [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
+    [self addSlide: slide];
     return slide;
+}
+
+-(void) addSlide: (RCSlide *) newSlide {
+    [self willChangeValueForKey:NSStringFromSelector(@selector(slides))];
+    [[self slides] addObject:newSlide];
+    [self didChangeValueForKey:NSStringFromSelector(@selector(slides))];
 }
 
 -(void) removeSlide: (RCSlide *) slide {
