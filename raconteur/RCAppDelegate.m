@@ -70,4 +70,8 @@
 -(IBAction)previousSlide:(id)sender {
     [[[self mainController] presentationController] previousSlide];
 }
+
+-(IBAction) editMasterSlide: (id) sender {
+    [[self mainController] editMasterSlide];
+}
 @end

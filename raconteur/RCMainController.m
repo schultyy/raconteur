@@ -10,6 +10,7 @@
 #import "RCProjectSerializer.h"
 #import "RCPresentationWindowController.h"
 #import "RCPresentationBuilder.h"
+#import "RCMasterSlideWindowController.h"
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
@@ -17,6 +18,7 @@
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
 @property (readwrite, nonatomic, strong) RCPresentationWindowController *presentationController;
+@property (readwrite, nonatomic, strong) RCMasterSlideWindowController *masterSlideController;
 @end
 
 @implementation RCMainController
@@ -31,6 +33,7 @@
     if(self) {
         [self setProject: project];
         [self setSlideEditorController:[[RCSlideEditorViewController alloc] init]];
+        [self setMasterSlideController:[[RCMasterSlideWindowController alloc] init]];
         [self setSelectionIndex:[[NSIndexSet alloc] init]];
     }
     return self;
@@ -123,6 +126,17 @@
     [[self presentationController] showWindow:self];
     [[[self presentationController] window] setDelegate:self];
     [[self presentationController] start];
+}
+
+-(void) editMasterSlide {
+    [NSApp beginSheet:self.masterSlideController.window
+       modalForWindow:self.window
+        modalDelegate:self
+       didEndSelector:@selector(editMasterSlideDidEndSheet:returnCode:contextInfo:)
+          contextInfo:NULL];
+}
+
+- (void) editMasterSlideDidEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
 }
 
 #pragma mark - NSTableViewDataSource

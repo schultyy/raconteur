@@ -8,6 +8,7 @@
 @class RCProject;
 @class RCSlideEditorViewController;
 @class RCPresentationWindowController;
+@class RCMasterSlideWindowController;
 
 
 @interface RCMainController : NSWindowController<NSTableViewDataSource>
@@ -20,6 +21,8 @@
 
 @property (readonly, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
 
+@property (readonly, nonatomic, strong) RCMasterSlideWindowController *masterSlideController;
+
 @property IBOutlet NSBox *detailView;
 
 @property IBOutlet NSTableView *slideList;
@@ -31,6 +34,8 @@
 -(void) addSlide;
 
 -(void) removeSelectedSlide;
+
+-(void) editMasterSlide;
 
 -(void) saveProject;
 

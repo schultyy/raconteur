@@ -34,4 +34,6 @@
 
 -(IBAction)previousSlide:(id)sender;
 
+-(IBAction) editMasterSlide: (id) sender;
+
 @end
