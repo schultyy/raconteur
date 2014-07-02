@@ -104,8 +104,7 @@
 }
 
 -(NSString *) html {
-    return [NSString stringWithFormat:@"<div class='slide'>%@</div>",
-                                       [MMMarkdown HTMLStringWithMarkdown:self.text error:nil]];
+    return [MMMarkdown HTMLStringWithMarkdown:self.text error:nil];
 }
 
 #pragma mark - NSCoding
