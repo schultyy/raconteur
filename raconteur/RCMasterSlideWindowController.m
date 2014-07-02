@@ -12,7 +12,7 @@
 -(id) init {
     self = [super initWithWindowNibName:@"RCMasterSlideWindow"];
     if(self) {
-        [self setDefaultOptions:[RCSlideOptions defaultOptions]];
+        [self setDefaultOptions: [[RCSlideOptions defaultOptions] copy]];
     }
     return self;
 }

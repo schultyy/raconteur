@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface RCSlideOptions : NSObject<NSCoding>
+@interface RCSlideOptions : NSObject<NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSString *fontFamily;
 
@@ -21,6 +21,8 @@
 -(id) initWithCoder: (NSCoder *) coder;
 
 +(RCSlideOptions *) defaultOptions;
+
++(void) setDefaultOptions: (RCSlideOptions *) newOptions;
 
 +(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter;
 

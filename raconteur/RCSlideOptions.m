@@ -3,12 +3,15 @@
 // Copyright (c) 2014 schultyy. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "RCSlideOptions.h"
 #import "RCConstants.h"
 #import "NSColor+RCHexValue.h"
 
 
 @implementation RCSlideOptions
+
+static RCSlideOptions *defaultOptions;
 
 -(id) initWithCoder: (NSCoder *) coder {
     self = [super init];
@@ -23,13 +26,20 @@
 }
 
 +(RCSlideOptions *) defaultOptions {
-    RCSlideOptions *opts = [[RCSlideOptions alloc] init];
-    [opts setForegroundColor: [NSColor blackColor]];
-    [opts setBackgroundColor: [NSColor whiteColor]];
-    [opts setHorizontalTextAlignment:RCHorizontalTextAlignmentLeftValue];
-    [opts setVerticalTextAlignment:RCVerticalTextAlignmentTopValue];
-    [opts setFontFamily:@"Arial"];
-    return opts;
+    if(!defaultOptions) {
+        RCSlideOptions *opts = [[RCSlideOptions alloc] init];
+        [opts setForegroundColor:[NSColor blackColor]];
+        [opts setBackgroundColor:[NSColor whiteColor]];
+        [opts setHorizontalTextAlignment:RCHorizontalTextAlignmentLeftValue];
+        [opts setVerticalTextAlignment:RCVerticalTextAlignmentTopValue];
+        [opts setFontFamily:@"Arial"];
+        defaultOptions = opts;
+    }
+    return defaultOptions;
+}
+
++(void) setDefaultOptions: (RCSlideOptions *) newOptions {
+    defaultOptions = newOptions;
 }
 
 +(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter {
@@ -44,6 +54,20 @@
     [opts setHorizontalTextAlignment:[frontmatter valueForKey:RCHorizontalTextAlignment]];
     [opts setVerticalTextAlignment: [frontmatter valueForKey:RCVerticalTextAlignment]];
     return opts;
+}
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {
+    id copy = [[[self class] alloc] init];
+    if(copy) {
+        [copy setBackgroundColor:[self.backgroundColor copyWithZone:zone]];
+        [copy setForegroundColor:[self.foregroundColor copyWithZone:zone]];
+        [copy setFontFamily:[self.fontFamily copyWithZone:zone]];
+        [copy setHorizontalTextAlignment:[self.horizontalTextAlignment copyWithZone:zone]];
+        [copy setVerticalTextAlignment:[self.verticalTextAlignment copyWithZone:zone]];
+    }
+    return copy;
 }
 
 #pragma mark - NSCoder

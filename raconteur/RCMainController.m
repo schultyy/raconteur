@@ -143,8 +143,10 @@
         //success
         RCSlideOptions *opts = [[self masterSlideController] defaultOptions];
         Underscore.arrayEach(self.project.slides, ^(RCSlide *slide){
-            [slide setOptions:opts];
+            [slide setOptions:opts.copy];
         });
+
+        [RCSlideOptions setDefaultOptions:opts.copy];
     }
 }
 
