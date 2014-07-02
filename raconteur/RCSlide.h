@@ -12,7 +12,7 @@
 
 @property (strong) NSString *text;
 
-@property (readonly, nonatomic, strong) RCSlideOptions *options;
+@property (nonatomic, strong) RCSlideOptions *options;
 
 -(id) initWithCoder: (NSCoder *) coder;
 
@@ -21,6 +21,8 @@
 -(NSString *) textWithFrontmatter;
 
 -(void) encodeWithCoder: (NSCoder *) coder;
+
+-(void) setOptions: (RCSlideOptions *) newOptions;
 
 -(NSArray *) styles;
 

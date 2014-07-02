@@ -11,6 +11,8 @@
 #import "RCPresentationWindowController.h"
 #import "RCPresentationBuilder.h"
 #import "RCMasterSlideWindowController.h"
+#import "Underscore.h"
+#import "RCSlideOptions.h"
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
@@ -137,6 +139,13 @@
 }
 
 - (void) editMasterSlideDidEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if(returnCode == 1) {
+        //success
+        RCSlideOptions *opts = [[self masterSlideController] defaultOptions];
+        Underscore.arrayEach(self.project.slides, ^(RCSlide *slide){
+            [slide setOptions:opts];
+        });
+    }
 }
 
 #pragma mark - NSTableViewDataSource

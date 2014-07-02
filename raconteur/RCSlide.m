@@ -11,7 +11,6 @@
 #import "MMMarkdown.h"
 
 @interface RCSlide()
-@property (readwrite, nonatomic, strong) RCSlideOptions *options;
 @end
 
 @implementation RCSlide
