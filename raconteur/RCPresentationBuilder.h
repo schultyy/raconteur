@@ -13,4 +13,6 @@
 
 -(NSString *) renderSlides;
 
+-(void) export: (NSString *) filePath;
+
 @end

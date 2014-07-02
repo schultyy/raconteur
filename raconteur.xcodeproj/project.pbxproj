@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6964F0CFC13670376B7C980C /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F12FA39B251AF06930D6 /* RCPresentationBuilder.m */; };
 		6964F5EA9761A56CAAC2E81D /* RCFrontMatterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */; };
+		6964F6A2E04303E5698600E2 /* jquery-2.1.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */; };
+		6964F725AEAA39494413E543 /* slideManager.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964F34A4FA74374D06E4C8B /* slideManager.js */; };
 		6964FA258D2DF01FE056A0AA /* RCPresentationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */; };
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
 		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
@@ -37,6 +39,8 @@
 		D41B6A29195CCBD800426F13 /* RCPresentationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B6A28195CCBD800426F13 /* RCPresentationWindow.xib */; };
 		D41B6A2B195CD43900426F13 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41B6A2A195CD43900426F13 /* WebKit.framework */; };
 		D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */; };
+		D48C9349196450B7003D366B /* jquery-2.1.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */; };
+		D48C934A196450B7003D366B /* slideManager.js in Resources */ = {isa = PBXBuildFile; fileRef = 6964F34A4FA74374D06E4C8B /* slideManager.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 		6964F12FA39B251AF06930D6 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
 		6964F173C0D9A1A778D27EA5 /* RCSlideOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideOptions.m; sourceTree = "<group>"; };
 		6964F2723278279F101169CE /* RCBuilderBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBuilderBase.m; sourceTree = "<group>"; };
+		6964F34A4FA74374D06E4C8B /* slideManager.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = slideManager.js; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPagedPresentationBuilder.h; sourceTree = "<group>"; };
 		6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+RCHexValue.m"; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
+		6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.1.min.js"; sourceTree = "<group>"; };
 		6964FC2F582EA51EF11F51AF /* RCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainController.m; sourceTree = "<group>"; };
 		6964FD7BA408CB962F3484EE /* RCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCConstants.m; sourceTree = "<group>"; };
 		6964FE76C00AEE43E82649C2 /* RCProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProject.m; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				6964F0A3AFAACF2909DD7B14 /* basic-template.html */,
+				6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */,
+				6964F34A4FA74374D06E4C8B /* slideManager.js */,
 			);
 			name = Templates;
 			sourceTree = "<group>";
@@ -368,6 +376,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48C9349196450B7003D366B /* jquery-2.1.1.min.js in Resources */,
+				D48C934A196450B7003D366B /* slideManager.js in Resources */,
 				D41B6A27195C904A00426F13 /* basic-template.html in Resources */,
 				D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */,
 				D41B6A29195CCBD800426F13 /* RCPresentationWindow.xib in Resources */,
@@ -442,6 +452,8 @@
 				6964FBF9E44FAD8AF2322D42 /* RCConstants.m in Sources */,
 				6964F0CFC13670376B7C980C /* RCPresentationBuilder.m in Sources */,
 				6964FFA57A1AC0D82040AA0D /* RCBuilderBase.m in Sources */,
+				6964F6A2E04303E5698600E2 /* jquery-2.1.1.min.js in Sources */,
+				6964F725AEAA39494413E543 /* slideManager.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
