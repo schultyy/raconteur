@@ -20,10 +20,12 @@
 
 -(id) initWithCoder: (NSCoder *) coder;
 
+-(id) initWithDictionary: (NSDictionary *) dict;
+
+-(NSDictionary *) toDictionary;
+
 +(RCSlideOptions *) defaultOptions;
 
 +(void) setDefaultOptions: (RCSlideOptions *) newOptions;
-
-+(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter;
 
 @end

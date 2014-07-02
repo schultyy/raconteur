@@ -37,8 +37,7 @@
 
     RCFrontMatterParser *parser = [[RCFrontMatterParser alloc] initWithFilepath:filename];
     NSDictionary *frontMatter = [parser parse:nil];
-    [slide setOptions:[RCSlideOptions fromFrontmatter:frontMatter]];
-
+    [slide setOptions: [[RCSlideOptions alloc] initWithDictionary:frontMatter]];
     [slide setText:[self parseSlide:filename]];
     return slide;
 }

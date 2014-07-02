@@ -8,6 +8,7 @@
 #import "Underscore.h"
 #import "RCSlide.h"
 #import "RCFrontMatterParser.h"
+#import "RCSlideOptions.h"
 
 
 @implementation RCProjectSerializer
@@ -31,12 +32,23 @@
         filenames = [filenames arrayByAddingObject:filename];
     }
 
-    [[NSJSONSerialization dataWithJSONObject:filenames options:0 error:nil] writeToFile: filePath atomically:NO];
+    NSDictionary *projectFile = @{
+            @"masterSlide": [[RCSlideOptions defaultOptions] toDictionary],
+            @"filenames": filenames
+    };
+
+    [[NSJSONSerialization dataWithJSONObject:projectFile options:0 error:nil] writeToFile: filePath atomically:NO];
 }
 
 +(RCProject *) load: (NSString *) projectFilePath {
     NSData *json = [NSData dataWithContentsOfFile:projectFilePath];
-    NSArray *slideFilenames = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
+    //NSDictionary *slideFilenames = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
+    NSDictionary *projectFile = [NSJSONSerialization JSONObjectWithData:json options:0 error:nil];
+
+    NSArray *slideFilenames = [projectFile valueForKey:@"filenames"];
+    RCSlideOptions *opts = [[RCSlideOptions alloc] initWithDictionary:[projectFile valueForKey:@"masterSlide"]];
+    [RCSlideOptions setDefaultOptions:opts];
+
     NSArray *slides = Underscore.arrayMap(slideFilenames, ^(NSString *filename){
         return [RCSlide fromFile: filename];
     });

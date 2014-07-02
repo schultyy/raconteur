@@ -25,6 +25,31 @@ static RCSlideOptions *defaultOptions;
     return self;
 }
 
+-(id)initWithDictionary:(NSDictionary *)dict {
+    self = [super init];
+    if(self) {
+        NSColor *backgroundColor = [NSColor colorWithHexColorString: [dict valueForKey: RCBackgroundColor]];
+        NSColor *textColor = [NSColor colorWithHexColorString:[dict valueForKey: RCTextColor]];
+
+        [self setBackgroundColor: backgroundColor];
+        [self setForegroundColor: textColor];
+        [self setFontFamily:[dict valueForKey: RCFontFamily]];
+        [self setHorizontalTextAlignment:[dict valueForKey:RCHorizontalTextAlignment]];
+        [self setVerticalTextAlignment: [dict valueForKey:RCVerticalTextAlignment]];
+    }
+    return self;
+}
+
+-(NSDictionary *) toDictionary {
+    return @{
+            RCHorizontalTextAlignment: self.horizontalTextAlignment,
+            RCVerticalTextAlignment: self.verticalTextAlignment,
+            RCFontFamily: self.fontFamily,
+            RCBackgroundColor: self.backgroundColor.hexColor,
+            RCTextColor: self.foregroundColor.hexColor
+    };
+}
+
 +(RCSlideOptions *) defaultOptions {
     if(!defaultOptions) {
         RCSlideOptions *opts = [[RCSlideOptions alloc] init];
@@ -40,20 +65,6 @@ static RCSlideOptions *defaultOptions;
 
 +(void) setDefaultOptions: (RCSlideOptions *) newOptions {
     defaultOptions = newOptions;
-}
-
-+(RCSlideOptions *) fromFrontmatter: (NSDictionary *) frontmatter {
-    RCSlideOptions *opts = [[RCSlideOptions alloc] init];
-
-    NSColor *backgroundColor = [NSColor colorWithHexColorString: [frontmatter valueForKey: RCBackgroundColor]];
-    NSColor *textColor = [NSColor colorWithHexColorString:[frontmatter valueForKey: RCTextColor]];
-
-    [opts setBackgroundColor: backgroundColor];
-    [opts setForegroundColor: textColor];
-    [opts setFontFamily:[frontmatter valueForKey: RCFontFamily]];
-    [opts setHorizontalTextAlignment:[frontmatter valueForKey:RCHorizontalTextAlignment]];
-    [opts setVerticalTextAlignment: [frontmatter valueForKey:RCVerticalTextAlignment]];
-    return opts;
 }
 
 #pragma mark - NSCopying
