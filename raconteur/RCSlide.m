@@ -94,33 +94,18 @@
     return style;
 }
 
--(NSString *) styles {
+-(NSArray *) styles {
     NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", self.options.fontFamily];
     NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", self.options.backgroundColor.hexColor];
     NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", self.options.foregroundColor.hexColor];
     NSString *horizontalTextAlignment = [NSString stringWithFormat:@"text-align: %@;", self.options.horizontalTextAlignment];
 
-
-    return [NSString stringWithFormat:@".slide {\n" \
-                                "%@\n" \
-                                "%@\n" \
-                                "%@\n" \
-                                "%@\n" \
-                                "%@\n}", fontFamily, backgroundColor, foregroundColor, horizontalTextAlignment, self.verticalTextAlign];
+    return @[fontFamily, backgroundColor, foregroundColor, horizontalTextAlignment];
 }
 
--(NSString *)preview {
-    NSString *slideHtml =
-            [NSString stringWithFormat:@"<div class='slide'>%@</div>",
+-(NSString *) html {
+    return [NSString stringWithFormat:@"<div class='slide'>%@</div>",
                                        [MMMarkdown HTMLStringWithMarkdown:self.text error:nil]];
-
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"basic-template" ofType:@"html"];
-    NSString *template = [NSString stringWithContentsOfFile:path
-                                                   encoding:NSUTF8StringEncoding
-                                                      error:nil];
-
-    return [[template stringByReplacingOccurrencesOfString:@"{{CONTENT}}" withString:slideHtml]
-            stringByReplacingOccurrencesOfString:@"{{STYLES}}" withString: self.styles];
 }
 
 #pragma mark - NSCoding

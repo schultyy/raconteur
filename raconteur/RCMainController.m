@@ -8,9 +8,8 @@
 #import "RCSlideEditorViewController.h"
 #import "RCSlide.h"
 #import "RCProjectSerializer.h"
-#import "RCExportWindowController.h"
 #import "RCPresentationWindowController.h"
-#import "RCPagedPresentationBuilder.h"
+#import "RCPresentationBuilder.h"
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
@@ -18,7 +17,6 @@
 @property (readwrite, nonatomic, strong) RCProject *project;
 @property (readwrite, nonatomic, strong) RCSlideEditorViewController *slideEditorController;
 @property (readwrite, nonatomic, strong) RCPresentationWindowController *presentationController;
-@property (readwrite, nonatomic, strong) RCExportWindowController *exportWindowController;
 @end
 
 @implementation RCMainController
@@ -108,13 +106,21 @@
 }
 
 -(void) exportSlides {
-//    [self setExportWindowController:[[RCExportWindowController alloc] init]];
-//
-//    [NSApp beginSheet:self.exportWindowController.window
-//       modalForWindow:self.window
-//        modalDelegate:self
-//       didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
-//          contextInfo:NULL];
+    //Sucess
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setCanCreateDirectories:YES];
+    [savePanel setPrompt:@"Export"];
+    [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
+
+    if([savePanel runModal] == NSOKButton) {
+        RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
+        NSString *html = [builder renderSlides];
+
+        [html writeToFile:savePanel.URL.path
+               atomically:NO
+                 encoding:NSUTF8StringEncoding
+                    error:nil];
+    }
 }
 
 -(void) startPresentation{
@@ -122,27 +128,6 @@
     [[self presentationController] showWindow:self];
     [[[self presentationController] window] setDelegate:self];
     [[self presentationController] start];
-}
-
-#pragma mark - ExportSheet delegate methods
-
-- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-//    if(returnCode == 1) {
-//        //Sucess
-//        NSSavePanel *savePanel = [NSSavePanel savePanel];
-//        [savePanel setCanCreateDirectories:YES];
-//        [savePanel setPrompt:@"Export"];
-//        [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
-//
-//        if([savePanel runModal] == NSOKButton) {
-//            RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-//            NSString *html = [builder processAllSlides:self.exportWindowController.exportOptions];
-//            [html writeToFile:savePanel.URL.path
-//                   atomically:NO
-//                     encoding:NSUTF8StringEncoding
-//                        error:nil];
-//        }
-//    }
 }
 
 #pragma mark - NSTableViewDataSource

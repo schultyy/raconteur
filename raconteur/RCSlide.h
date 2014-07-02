@@ -22,6 +22,8 @@
 
 -(void) encodeWithCoder: (NSCoder *) coder;
 
--(NSString *) preview;
+-(NSArray *) styles;
+
+-(NSString *) html;
 
 @end
