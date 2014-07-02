@@ -93,12 +93,13 @@
 }
 
 -(NSArray *) styles {
+    NSString *height = @"height: 100%;";
     NSString *fontFamily = [NSString stringWithFormat:@"font-family: %@;", self.options.fontFamily];
     NSString *backgroundColor = [NSString stringWithFormat:@"background-color:%@;", self.options.backgroundColor.hexColor];
     NSString *foregroundColor = [NSString stringWithFormat:@"color:%@;", self.options.foregroundColor.hexColor];
     NSString *horizontalTextAlignment = [NSString stringWithFormat:@"text-align: %@;", self.options.horizontalTextAlignment];
 
-    return @[fontFamily, backgroundColor, foregroundColor, horizontalTextAlignment];
+    return @[height, fontFamily, backgroundColor, foregroundColor, horizontalTextAlignment];
 }
 
 -(NSString *) html {
