@@ -25,6 +25,7 @@
 		6964FFA57A1AC0D82040AA0D /* RCBuilderBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F2723278279F101169CE /* RCBuilderBase.m */; };
 		6964FFEC67E4C29FF6C6D02B /* RCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FE76C00AEE43E82649C2 /* RCProject.m */; };
 		801DB213EB8042B09F38ECC1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2F4843875A4EED8F22BB0E /* libPods.a */; };
+		D4183C1419660C28001518F2 /* file.png in Resources */ = {isa = PBXBuildFile; fileRef = D4183C1319660C28001518F2 /* file.png */; };
 		D4198BEA1964ACDB00EBEA83 /* RCMasterSlideWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4198BE91964ACDB00EBEA83 /* RCMasterSlideWindow.xib */; };
 		D41997021958C50D00EA6DCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41997011958C50D00EA6DCB /* Cocoa.framework */; };
 		D419970C1958C50D00EA6DCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D419970A1958C50D00EA6DCB /* InfoPlist.strings */; };
@@ -91,6 +92,7 @@
 		6964FF7B605BAD5D40998537 /* RCMasterSlideWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMasterSlideWindowController.m; sourceTree = "<group>"; };
 		6964FF985B5147A8F9C4C172 /* RCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCConstants.h; sourceTree = "<group>"; };
 		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D4183C1319660C28001518F2 /* file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file.png; sourceTree = "<group>"; };
 		D4198BE91964ACDB00EBEA83 /* RCMasterSlideWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCMasterSlideWindow.xib; sourceTree = "<group>"; };
 		D41996FE1958C50D00EA6DCB /* raconteur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raconteur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41997011958C50D00EA6DCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -111,7 +113,7 @@
 		D41997291958C50D00EA6DCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D419972B1958C50D00EA6DCB /* raconteurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = raconteurTests.m; sourceTree = "<group>"; };
 		D41997351958C62E00EA6DCB /* RCMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCMainWindow.xib; sourceTree = "<group>"; };
-		D419A5391965A008007B6BFA /* raconteur.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = raconteur.icns; sourceTree = "<group>"; };
+		D419A5391965A008007B6BFA /* raconteur.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = raconteur.icns; sourceTree = SOURCE_ROOT; };
 		D41B6A28195CCBD800426F13 /* RCPresentationWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPresentationWindow.xib; sourceTree = "<group>"; };
 		D41B6A2A195CD43900426F13 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCSlideEditorView.xib; sourceTree = "<group>"; };
@@ -219,7 +221,6 @@
 		D41996F51958C50D00EA6DCB = {
 			isa = PBXGroup;
 			children = (
-				D419A5391965A008007B6BFA /* raconteur.icns */,
 				D41997071958C50D00EA6DCB /* raconteur */,
 				D41997251958C50D00EA6DCB /* raconteurTests */,
 				D41997001958C50D00EA6DCB /* Frameworks */,
@@ -281,6 +282,8 @@
 		D41997081958C50D00EA6DCB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4183C1319660C28001518F2 /* file.png */,
+				D419A5391965A008007B6BFA /* raconteur.icns */,
 				D41997091958C50D00EA6DCB /* raconteur-Info.plist */,
 				D419970A1958C50D00EA6DCB /* InfoPlist.strings */,
 				D419970D1958C50D00EA6DCB /* main.m */,
@@ -399,6 +402,7 @@
 				6964FD28D973CA91C93955AD /* MainMenu.xib in Resources */,
 				D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */,
 				D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */,
+				D4183C1419660C28001518F2 /* file.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
