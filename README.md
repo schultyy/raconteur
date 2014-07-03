@@ -1,6 +1,11 @@
 # raconteur
 
-This is my try to build a basic presentation software because I don’t want to use Keynote.
+This is my try to build a basic presentation software.
+I used to use Keynote or Powerpoint (when I was a Windows user), but it always took very long until I finished something. I am not used anymore to use WYSIWYG software to build my slides. Always I thought “Hmm, would be so much faster when I just could write down my stuff and compile this to HTML or something”. There are many HTML5 presentation tools available, but I wanted to focus on writing down my slides. In many cases I needed to write my stuff directly into HTML, which is okay, but I didn’t feel comfortable.
+This combines best of both:
+
+- I can write down slides in Markdown and don’t need to focus on styling yet
+- I can compile my slides to HTML later on *after* I am finished
 
 # Requirements
 Tested on Mac OS X 10.9. No guarantee for older OS X versions.
