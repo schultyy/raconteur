@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
@@ -89,7 +89,7 @@
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="mcz-rS-zzN">
-                                <rect key="frame" x="13" y="210" width="78" height="17"/>
+                                <rect key="frame" x="13" y="213" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Foreground" id="Hov-YT-wFG">
                                     <font key="font" metaFont="system"/>
@@ -98,7 +98,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="leQ-8Z-JpW">
-                                <rect key="frame" x="13" y="179" width="79" height="17"/>
+                                <rect key="frame" x="13" y="148" width="79" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="rTJ-2X-3KW">
                                     <font key="font" metaFont="system"/>
@@ -107,7 +107,7 @@
                                 </textFieldCell>
                             </textField>
                             <colorWell id="CRb-PX-u3d">
-                                <rect key="frame" x="149" y="207" width="44" height="23"/>
+                                <rect key="frame" x="149" y="183" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -115,13 +115,45 @@
                                 </connections>
                             </colorWell>
                             <colorWell id="F99-Tm-4UO">
-                                <rect key="frame" x="149" y="176" width="44" height="23"/>
+                                <rect key="frame" x="149" y="117" width="44" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <binding destination="-2" name="value" keyPath="currentSlide.options.backgroundColor" id="2Y0-2K-mf9"/>
                                 </connections>
                             </colorWell>
+                            <textField verticalHuggingPriority="750" id="C1J-kG-TM6">
+                                <rect key="frame" x="15" y="183" width="126" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dBo-2U-Wqe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.foregroundHexColor" id="nod-p3-91A">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" id="acA-E6-oFY">
+                                <rect key="frame" x="15" y="118" width="126" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="tia-oU-0XK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.backgroundHexColor" id="EWu-O0-v96">
+                                        <dictionary key="options">
+                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </textField>
                         </subviews>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>

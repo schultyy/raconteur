@@ -5,6 +5,7 @@
 
 #import "RCSlideEditorViewController.h"
 #import "RCConstants.h"
+#import "NSColor+RCHexValue.h"
 #import "RCSlide.h"
 #import "RCSlideOptions.h"
 
@@ -33,6 +34,28 @@
         [self setVerticalAlignmentOptions:verticalDict];
     }
     return self;
+}
+
+-(void)awakeFromNib {
+    [super awakeFromNib];
+
+    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(foregroundHexColor)) options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(backgroundHexColor)) options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(currentSlide)) options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:NSStringFromSelector(@selector(foregroundHexColor))]) {
+        [[[self currentSlide] options] setForegroundColor: [NSColor colorWithHexColorString:self.foregroundHexColor]];
+    }
+    else if([keyPath isEqualToString:NSStringFromSelector(@selector(backgroundHexColor))]) {
+        [[[self currentSlide] options] setBackgroundColor: [NSColor colorWithHexColorString:self.backgroundHexColor]];
+    }
+    else if([keyPath isEqualToString:NSStringFromSelector(@selector(currentSlide))]) {
+        RCSlideOptions *options = [[self currentSlide] options];
+        [self setForegroundHexColor:options.foregroundColor.hexColor];
+        [self setBackgroundHexColor:options.backgroundColor.hexColor];
+    }
 }
 
 /*

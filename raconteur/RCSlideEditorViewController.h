@@ -15,4 +15,8 @@
 
 @property (nonatomic, strong, readonly) NSDictionary *verticalAlignmentOptions;
 
+@property (retain) NSString *foregroundHexColor;
+
+@property (retain) NSString *backgroundHexColor;
+
 @end
