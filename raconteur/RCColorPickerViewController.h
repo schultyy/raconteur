@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *hexColor;
 
+-(id) initWithColor: (NSColor *) color;
+
 @end

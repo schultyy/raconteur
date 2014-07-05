@@ -6,11 +6,20 @@
 #import <Foundation/Foundation.h>
 
 @class RCSlideOptions;
+@class RCColorPickerViewController;
 
 
 @interface RCMasterSlideWindowController : NSWindowController
 
 @property (nonatomic, strong) RCSlideOptions *defaultOptions;
+
+@property (nonatomic, strong, readonly) RCColorPickerViewController *foregroundPicker;
+
+@property (nonatomic, strong, readonly) RCColorPickerViewController *backgroundPicker;
+
+@property IBOutlet NSBox *foregroundPickerView;
+
+@property IBOutlet NSBox *backgroundPickerView;
 
 -(IBAction) discard: (id) sender;
 

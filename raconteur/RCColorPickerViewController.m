@@ -9,7 +9,16 @@
 @implementation RCColorPickerViewController
 
 -(id) init {
+    self = [self initWithColor:[NSColor blackColor]];
+    return self;
+}
+
+-(id) initWithColor: (NSColor *) color {
     self = [super initWithNibName:@"RCColorPickerView" bundle:nil];
+    if(self) {
+        [self setPickedColor:color];
+        [self setHexColor:color.hexColor];
+    }
     return self;
 }
 

@@ -5,7 +5,13 @@
 
 #import "RCMasterSlideWindowController.h"
 #import "RCSlideOptions.h"
+#import "RCColorPickerViewController.h"
 
+@interface RCMasterSlideWindowController()
+@property (nonatomic, strong, readwrite) RCColorPickerViewController *foregroundPicker;
+
+@property (nonatomic, strong, readwrite) RCColorPickerViewController *backgroundPicker;
+@end
 
 @implementation RCMasterSlideWindowController
 
@@ -13,8 +19,34 @@
     self = [super initWithWindowNibName:@"RCMasterSlideWindow"];
     if(self) {
         [self setDefaultOptions: [RCSlideOptions defaultOptions]];
+        [self setForegroundPicker:[[RCColorPickerViewController alloc] initWithColor:self.defaultOptions.foregroundColor]];
+        [self setBackgroundPicker:[[RCColorPickerViewController alloc] initWithColor:self.defaultOptions.backgroundColor]];
     }
     return self;
+}
+
+-(void)awakeFromNib {
+    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(defaultOptions)) options:NSKeyValueObservingOptionNew context:NULL];
+    [self.foregroundPicker addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+    [self.backgroundPicker addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+
+    [[self foregroundPickerView] setContentView:self.foregroundPicker.view];
+    [[self backgroundPickerView] setContentView:self.backgroundPicker.view];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:NSStringFromSelector(@selector(pickedColor))]) {
+        if([object isEqual:self.foregroundPicker]) {
+            [self.defaultOptions setForegroundColor:self.foregroundPicker.pickedColor];
+        }
+        else if([object isEqual:self.backgroundPicker]) {
+            [self.defaultOptions setBackgroundColor:self.backgroundPicker.pickedColor];
+        }
+    }
+    else if([keyPath isEqualToString:NSStringFromSelector(@selector(defaultOptions))]) {
+        [[self foregroundPicker] setPickedColor:self.defaultOptions.foregroundColor];
+        [[self backgroundPicker] setPickedColor:self.defaultOptions.backgroundColor];
+    }
 }
 
 -(IBAction) discard: (id) sender {
