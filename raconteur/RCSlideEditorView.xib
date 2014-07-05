@@ -6,7 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RCSlideEditorViewController">
             <connections>
-                <outlet property="alignmentPopupButton" destination="nkH-l7-9Kk" id="Tsg-Fw-gln"/>
+                <outlet property="backgroundColorView" destination="722-gR-q4r" id="bYs-rA-eiO"/>
+                <outlet property="foregroundColorView" destination="1dX-Xc-cyp" id="5K2-zX-GyA"/>
                 <outlet property="view" destination="c22-O7-iKe" id="hmE-8n-j9x"/>
             </connections>
         </customObject>
@@ -89,7 +90,7 @@
                                 </connections>
                             </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="mcz-rS-zzN">
-                                <rect key="frame" x="13" y="213" width="78" height="17"/>
+                                <rect key="frame" x="13" y="225" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Foreground" id="Hov-YT-wFG">
                                     <font key="font" metaFont="system"/>
@@ -98,7 +99,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="leQ-8Z-JpW">
-                                <rect key="frame" x="13" y="148" width="79" height="17"/>
+                                <rect key="frame" x="13" y="152" width="79" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="rTJ-2X-3KW">
                                     <font key="font" metaFont="system"/>
@@ -106,54 +107,26 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <colorWell id="CRb-PX-u3d">
-                                <rect key="frame" x="149" y="183" width="44" height="23"/>
+                            <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="1dX-Xc-cyp">
+                                <rect key="frame" x="12" y="173" width="177" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <binding destination="-2" name="value" keyPath="currentSlide.options.foregroundColor" id="xHU-L7-Ohc"/>
-                                </connections>
-                            </colorWell>
-                            <colorWell id="F99-Tm-4UO">
-                                <rect key="frame" x="149" y="117" width="44" height="23"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="175" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
+                            <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="722-gR-q4r">
+                                <rect key="frame" x="12" y="100" width="177" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <binding destination="-2" name="value" keyPath="currentSlide.options.backgroundColor" id="2Y0-2K-mf9"/>
-                                </connections>
-                            </colorWell>
-                            <textField verticalHuggingPriority="750" id="C1J-kG-TM6">
-                                <rect key="frame" x="15" y="183" width="126" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dBo-2U-Wqe">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <binding destination="-2" name="value" keyPath="self.foregroundHexColor" id="nod-p3-91A">
-                                        <dictionary key="options">
-                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </textField>
-                            <textField verticalHuggingPriority="750" id="acA-E6-oFY">
-                                <rect key="frame" x="15" y="118" width="126" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="tia-oU-0XK">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <binding destination="-2" name="value" keyPath="self.backgroundHexColor" id="EWu-O0-v96">
-                                        <dictionary key="options">
-                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </textField>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="175" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
                         </subviews>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>

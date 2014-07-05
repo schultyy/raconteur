@@ -28,8 +28,8 @@ static RCSlideOptions *defaultOptions;
 -(id)initWithDictionary:(NSDictionary *)dict {
     self = [super init];
     if(self) {
-        NSColor *backgroundColor = [NSColor colorWithHexColorString: [dict valueForKey: RCBackgroundColor]];
-        NSColor *textColor = [NSColor colorWithHexColorString:[dict valueForKey: RCTextColor]];
+        NSColor *backgroundColor = [NSColor colorWithHex: [dict valueForKey: RCBackgroundColor]];
+        NSColor *textColor = [NSColor colorWithHex:[dict valueForKey: RCTextColor]];
 
         [self setBackgroundColor: backgroundColor];
         [self setForegroundColor: textColor];

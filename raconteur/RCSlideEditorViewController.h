@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @class RCSlide;
+@class RCColorPickerViewController;
 
 @interface RCSlideEditorViewController : NSViewController
 
@@ -15,8 +16,12 @@
 
 @property (nonatomic, strong, readonly) NSDictionary *verticalAlignmentOptions;
 
-@property (retain) NSString *foregroundHexColor;
+@property (nonatomic, strong, readonly) RCColorPickerViewController *foregroundPicker;
 
-@property (retain) NSString *backgroundHexColor;
+@property (nonatomic, strong, readonly) RCColorPickerViewController *backgroundPicker;
+
+@property IBOutlet NSBox *foregroundColorView;
+
+@property IBOutlet NSBox *backgroundColorView;
 
 @end

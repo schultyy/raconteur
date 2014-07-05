@@ -8,11 +8,14 @@
 #import "NSColor+RCHexValue.h"
 #import "RCSlide.h"
 #import "RCSlideOptions.h"
+#import "RCColorPickerViewController.h"
 
 
 @interface RCSlideEditorViewController()
 @property (nonatomic, strong, readwrite) NSDictionary *horizontalAlignmentOptions;
 @property (nonatomic, strong, readwrite) NSDictionary *verticalAlignmentOptions;
+@property (nonatomic, strong, readwrite) RCColorPickerViewController *foregroundPicker;
+@property (nonatomic, strong, readwrite) RCColorPickerViewController *backgroundPicker;
 @end
 
 @implementation RCSlideEditorViewController
@@ -32,57 +35,51 @@
 
         [self setHorizontalAlignmentOptions:horizontalDict];
         [self setVerticalAlignmentOptions:verticalDict];
+
+        [self setForegroundPicker:[[RCColorPickerViewController alloc] init]];
+        [self setBackgroundPicker:[[RCColorPickerViewController alloc] init]];
     }
     return self;
 }
 
 -(void)awakeFromNib {
     [super awakeFromNib];
-    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(foregroundHexColor)) options:NSKeyValueObservingOptionNew context:NULL];
-    [self addObserver:self forKeyPath:NSStringFromSelector(@selector(backgroundHexColor)) options:NSKeyValueObservingOptionNew context:NULL];
     [self addObserver:self forKeyPath:NSStringFromSelector(@selector(currentSlide)) options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionPrior context:NULL];
+
+    [[self foregroundColorView] setContentView:self.foregroundPicker.view];
+    [[self backgroundColorView] setContentView:self.backgroundPicker.view];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if([keyPath isEqualToString:NSStringFromSelector(@selector(foregroundHexColor))]) {
-        if([self.currentSlide.options.foregroundColor.hexColor isEqualToString:self.foregroundHexColor]) {
-            return;
-        }
-        [[[self currentSlide] options] setForegroundColor: [NSColor colorWithHexColorString:self.foregroundHexColor]];
-    }
-    else if([keyPath isEqualToString:NSStringFromSelector(@selector(backgroundHexColor))]) {
-        if([self.currentSlide.options.backgroundColor.hexColor isEqualToString:self.backgroundHexColor]) {
-            return;
-        }
-        [[[self currentSlide] options] setBackgroundColor: [NSColor colorWithHexColorString:self.backgroundHexColor]];
-    }
-    else if([keyPath isEqualToString:NSStringFromSelector(@selector(currentSlide))]) {
-        if([change valueForKey:@"notificationIsPrior"] == [NSNumber numberWithBool:YES]) {
-            @try{
-                [[self currentSlide] removeObserver:self forKeyPath:NSStringFromSelector(@selector(foregroundColor))];
-            }
-            @catch(NSException * __unused exception) {}
+    if([object isEqual:self]) {
+        if ([keyPath isEqualToString:NSStringFromSelector(@selector(currentSlide))]) {
+            if([change valueForKey:@"notificationIsPrior"] == [NSNumber numberWithBool:YES]) {
+                @try {
+                    [[self foregroundPicker] removeObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor))];
+                }
+                @catch(NSException * __unused exception) {}
 
-            @try {
-                [[self currentSlide] removeObserver:self forKeyPath:NSStringFromSelector(@selector(backgroundColor))];
+                @try {
+                    [[self backgroundPicker] removeObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor))];
+                }
+                @catch(NSException * __unused exception) {}
             }
-            @catch (NSException * __unused exception) {}
-        }
-        else {
-            RCSlideOptions *options = [[self currentSlide] options];
-            [self setForegroundHexColor:options.foregroundColor.hexColor];
-            [self setBackgroundHexColor:options.backgroundColor.hexColor];
-            [self.currentSlide.options addObserver:self forKeyPath:NSStringFromSelector(@selector(foregroundColor)) options:NSKeyValueObservingOptionNew context:NULL];
-            [self.currentSlide.options addObserver:self forKeyPath:NSStringFromSelector(@selector(backgroundColor)) options:NSKeyValueObservingOptionNew context:NULL];
+            else {
+                RCSlideOptions *options = [[self currentSlide] options];
+                [[self foregroundPicker] setPickedColor:options.foregroundColor];
+                [[self backgroundPicker] setPickedColor:options.backgroundColor];
+                [[self foregroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+                [[self backgroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+            }
         }
     }
-    else if([keyPath isEqualToString:NSStringFromSelector(@selector(foregroundColor))]) {
-        NSString *hexCode = [[[[self currentSlide] options] foregroundColor] hexColor];
-        [self setForegroundHexColor:hexCode];
+    else if([object isEqual:self.foregroundPicker] &&
+        [keyPath isEqualToString:NSStringFromSelector(@selector(pickedColor))]) {
+        [[[self currentSlide] options] setForegroundColor:self.foregroundPicker.pickedColor];
     }
-    else if([keyPath isEqualToString:NSStringFromSelector(@selector(backgroundColor))]) {
-        NSString *hexCode = [[[[self currentSlide] options] backgroundColor] hexColor];
-        [self setBackgroundHexColor:hexCode];
+    else if([object isEqual:self.backgroundPicker] &&
+            [keyPath isEqualToString:NSStringFromSelector(@selector(pickedColor))]) {
+        [[[self currentSlide] options] setBackgroundColor:self.backgroundPicker.pickedColor];
     }
 }
 

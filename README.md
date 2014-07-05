@@ -36,4 +36,4 @@ It places the following files on your disk:
 * Underscore.m
 * MMMarkdown
 * JQuery-2.1.1
-
+* [CINSColor](https://github.com/faceleg/CINSColor-Hex)

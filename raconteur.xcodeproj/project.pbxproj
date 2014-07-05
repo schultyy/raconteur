@@ -11,6 +11,7 @@
 		6964F5EA9761A56CAAC2E81D /* RCFrontMatterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */; };
 		6964F6A2E04303E5698600E2 /* jquery-2.1.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */; };
 		6964F725AEAA39494413E543 /* slideManager.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964F34A4FA74374D06E4C8B /* slideManager.js */; };
+		6964F853217AF0EF43EA633B /* RCColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FFB21162046D09DAAEBF /* RCColorPickerViewController.m */; };
 		6964FA258D2DF01FE056A0AA /* RCPresentationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F82E94E9A60FB8834AE8 /* RCPresentationWindowController.m */; };
 		6964FA8C9E0FCB4701663CBC /* RCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964FC2F582EA51EF11F51AF /* RCMainController.m */; };
 		6964FAB57DF7F94AFA45183A /* RCProjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */; };
@@ -42,6 +43,7 @@
 		D41B6A27195C904A00426F13 /* basic-template.html in Resources */ = {isa = PBXBuildFile; fileRef = 6964F0A3AFAACF2909DD7B14 /* basic-template.html */; };
 		D41B6A29195CCBD800426F13 /* RCPresentationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41B6A28195CCBD800426F13 /* RCPresentationWindow.xib */; };
 		D41B6A2B195CD43900426F13 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41B6A2A195CD43900426F13 /* WebKit.framework */; };
+		D41E6D4219681E5100376201 /* RCColorPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41E6D4119681E5100376201 /* RCColorPickerView.xib */; };
 		D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */; };
 		D48C9349196450B7003D366B /* jquery-2.1.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */; };
 		D48C934A196450B7003D366B /* slideManager.js in Resources */ = {isa = PBXBuildFile; fileRef = 6964F34A4FA74374D06E4C8B /* slideManager.js */; };
@@ -80,6 +82,7 @@
 		6964F9F126CDC8B4C46CBBC8 /* RCSlideEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideEditorViewController.m; sourceTree = "<group>"; };
 		6964FA4BE9FE82D8C82E8A01 /* RCFrontMatterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCFrontMatterParser.h; sourceTree = "<group>"; };
 		6964FA50C091833EC6CCC15F /* RCSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSlide.h; sourceTree = "<group>"; };
+		6964FB04CC39407F54B33A83 /* RCColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCColorPickerViewController.h; sourceTree = "<group>"; };
 		6964FB2E111D9712F45BF79F /* RCPagedPresentationBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPagedPresentationBuilder.h; sourceTree = "<group>"; };
 		6964FB75F769609916DADB91 /* NSColor+RCHexValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+RCHexValue.m"; sourceTree = "<group>"; };
 		6964FB798DC0F9CCF75BF269 /* RCProjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectSerializer.h; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		6964FF569984A93ACE7A3707 /* RCProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProject.h; sourceTree = "<group>"; };
 		6964FF7B605BAD5D40998537 /* RCMasterSlideWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMasterSlideWindowController.m; sourceTree = "<group>"; };
 		6964FF985B5147A8F9C4C172 /* RCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCConstants.h; sourceTree = "<group>"; };
+		6964FFB21162046D09DAAEBF /* RCColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCColorPickerViewController.m; sourceTree = "<group>"; };
 		CD570114AF254F93955998A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D4183C1319660C28001518F2 /* file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = file.png; sourceTree = "<group>"; };
 		D4198BE91964ACDB00EBEA83 /* RCMasterSlideWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCMasterSlideWindow.xib; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		D419A5391965A008007B6BFA /* raconteur.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = raconteur.icns; sourceTree = SOURCE_ROOT; };
 		D41B6A28195CCBD800426F13 /* RCPresentationWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCPresentationWindow.xib; sourceTree = "<group>"; };
 		D41B6A2A195CD43900426F13 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D41E6D4119681E5100376201 /* RCColorPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCColorPickerView.xib; sourceTree = "<group>"; };
 		D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCSlideEditorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +164,7 @@
 				D48865EC195AFED00046DB4B /* RCSlideEditorView.xib */,
 				D41B6A28195CCBD800426F13 /* RCPresentationWindow.xib */,
 				D4198BE91964ACDB00EBEA83 /* RCMasterSlideWindow.xib */,
+				D41E6D4119681E5100376201 /* RCColorPickerView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 				6964F5F64CF8F30245DBDD07 /* RCPresentationWindowController.h */,
 				6964FF7B605BAD5D40998537 /* RCMasterSlideWindowController.m */,
 				6964F3333EE578278C825844 /* RCMasterSlideWindowController.h */,
+				6964FFB21162046D09DAAEBF /* RCColorPickerViewController.m */,
+				6964FB04CC39407F54B33A83 /* RCColorPickerViewController.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 				D48865ED195AFED00046DB4B /* RCSlideEditorView.xib in Resources */,
 				D41997361958C62E00EA6DCB /* RCMainWindow.xib in Resources */,
 				D4183C1419660C28001518F2 /* file.png in Resources */,
+				D41E6D4219681E5100376201 /* RCColorPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +481,7 @@
 				6964F6A2E04303E5698600E2 /* jquery-2.1.1.min.js in Sources */,
 				6964F725AEAA39494413E543 /* slideManager.js in Sources */,
 				6964FBA9894C43DEF138DF2F /* RCMasterSlideWindowController.m in Sources */,
+				6964F853217AF0EF43EA633B /* RCColorPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

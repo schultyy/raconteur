@@ -1,55 +1,78 @@
 //
 // Created by Jan Schulte on 26/06/14.
 // Copyright (c) 2014 schultyy. All rights reserved.
+// Originally from https://github.com/faceleg/CINSColor-Hex
 //
 
 #import "NSColor+RCHexValue.h"
 
 
 @implementation NSColor (RCHexValue)
--(NSString *)hexColor {
 
-    CGFloat redFloatValue, greenFloatValue, blueFloatValue;
-    int redIntValue, greenIntValue, blueIntValue;
-    NSString *redHexValue, *greenHexValue, *blueHexValue;
++ (NSColor *) colorWithHex:(NSString *)hexColor {
 
-    //Convert the NSColor to the RGB color space before we can access its components
-    NSColor *convertedColor=[self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+    // Remove the hash if it exists
+    hexColor = [hexColor stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    int length = (int)[hexColor length];
+    bool triple = (length == 3);
 
-    if(convertedColor)
-    {
-        // Get the red, green, and blue components of the color
-        [convertedColor getRed:&redFloatValue green:&greenFloatValue blue:&blueFloatValue alpha:NULL];
+    NSMutableArray *rgb = [[NSMutableArray alloc] init];
 
-        // Convert the components to numbers (unsigned decimal integer) between 0 and 255
-        redIntValue= (int) (redFloatValue*255.99999f);
-        greenIntValue= (int) (greenFloatValue*255.99999f);
-        blueIntValue= (int) (blueFloatValue*255.99999f);
+    // Make sure the string is three or six characters long
+    if (triple || length == 6) {
 
-        // Convert the numbers to inColorString strings
-        redHexValue=[NSString stringWithFormat:@"%02x", redIntValue];
-        greenHexValue=[NSString stringWithFormat:@"%02x", greenIntValue];
-        blueHexValue=[NSString stringWithFormat:@"%02x", blueIntValue];
+        CFIndex i = 0;
+        UniChar character = 0;
+        NSString *segment = @"";
+        CFStringInlineBuffer buffer;
+        CFStringInitInlineBuffer((__bridge CFStringRef)hexColor, &buffer, CFRangeMake(0, length));
 
-        // Concatenate the red, green, and blue components' inColorString strings together with a "#"
-        return [NSString stringWithFormat:@"#%@%@%@", redHexValue, greenHexValue, blueHexValue];
+
+        while ((character = CFStringGetCharacterFromInlineBuffer(&buffer, i)) != 0 ) {
+            if (triple) segment = [segment stringByAppendingFormat:@"%c%c", character, character];
+            else segment = [segment stringByAppendingFormat:@"%c", character];
+
+            if ((int)[segment length] == 2) {
+                NSScanner *scanner = [[NSScanner alloc] initWithString:segment];
+
+                unsigned number;
+
+                while([scanner scanHexInt:&number]){
+                    [rgb addObject:[NSNumber numberWithFloat:(float)(number / (float)255)]];
+                }
+                segment = @"";
+            }
+
+            i++;
+        }
+
+        // Pad the array out (for cases where we're given invalid input)
+        while ([rgb count] != 3) [rgb addObject:[NSNumber numberWithFloat:0.0]];
+
+        return [NSColor colorWithCalibratedRed:[[rgb objectAtIndex:0] floatValue]
+                                         green:[[rgb objectAtIndex:1] floatValue]
+                                          blue:[[rgb objectAtIndex:2] floatValue]
+                                         alpha:1];
     }
-    return nil;
+    else {
+        NSException* invalidHexException = [NSException exceptionWithName:@"InvalidHexException"
+                                                                   reason:@"Hex color not three or six characters excluding hash"
+                                                                 userInfo:nil];
+        @throw invalidHexException;
+
+    }
+
 }
 
-+ (NSColor*)colorWithHexColorString:(NSString*)inColorString
-{
-    if ([inColorString hasPrefix:@"#"]) {
-        inColorString = [inColorString substringWithRange:NSMakeRange(1, [inColorString length] - 1)];
-    }
-    unsigned int colorCode = 0;
-    if (inColorString) {
-        NSScanner *scanner = [NSScanner scannerWithString:inColorString];
-        (void)[scanner scanHexInt:&colorCode];
-    }
-    return [NSColor colorWithDeviceRed:((colorCode>>16)&0xFF)/255.0
-                                 green:((colorCode>>8)&0xFF)/255.0
-                                  blue:((colorCode)&0xFF)/255.0 alpha:1.0];
+- (NSString *) hexColor {
+
+    // Convert colour to RGBA
+    NSColor *rgb = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
+
+    return [NSString stringWithFormat:@"#%0.2X%0.2X%0.2X",
+                                      (int)([rgb redComponent] * 255),
+                                      (int)([rgb greenComponent] * 255),
+                                      (int)([rgb blueComponent] * 255)];
 }
 
 @end
