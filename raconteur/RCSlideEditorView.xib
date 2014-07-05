@@ -107,21 +107,21 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="1dX-Xc-cyp">
+                            <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="1dX-Xc-cyp">
                                 <rect key="frame" x="12" y="173" width="177" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="175" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="46"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
-                            <box autoresizesSubviews="NO" title="Box" borderType="line" titlePosition="noTitle" id="722-gR-q4r">
+                            <box autoresizesSubviews="NO" title="Box" borderType="none" titlePosition="noTitle" id="722-gR-q4r">
                                 <rect key="frame" x="12" y="100" width="177" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="175" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="177" height="46"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
