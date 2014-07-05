@@ -24,4 +24,6 @@
 
 @property IBOutlet NSBox *backgroundColorView;
 
+-(void) removeObservers;
+
 @end

@@ -57,6 +57,14 @@
               context:NULL];
 }
 
+-(void) removeObservers {
+    @try {
+        [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(selectionIndex))];
+        [[self slideEditorController] removeObservers];
+    }
+    @catch (NSException * __unused exception) {}
+}
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if([keyPath isEqualToString:NSStringFromSelector(@selector(selectionIndex))]) {
         [[self slideEditorController] setCurrentSlide: self.selectedSlide];

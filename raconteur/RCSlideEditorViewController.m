@@ -42,6 +42,21 @@
     return self;
 }
 
+-(void) removeObservers {
+    @try {
+        [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(currentSlide))];
+    }
+    @catch (NSException * __unused exc) {}
+    @try {
+        [[self foregroundPicker] removeObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor))];
+    }
+    @catch (NSException * __unused exc) {}
+    @try {
+        [[self backgroundPicker] removeObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor))];
+    }
+    @catch (NSException * __unused exc) {}
+}
+
 -(void)awakeFromNib {
     [super awakeFromNib];
     [self addObserver:self forKeyPath:NSStringFromSelector(@selector(currentSlide)) options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionPrior context:NULL];

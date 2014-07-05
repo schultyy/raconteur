@@ -47,4 +47,6 @@
 
 -(void) startPresentation;
 
+-(void) removeObservers;
+
 @end

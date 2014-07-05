@@ -20,6 +20,10 @@
 #pragma mark - Actions
 
 -(IBAction)newProject:(id)sender {
+    if(self.mainController) {
+        [[self mainController] removeObservers];
+        [self setMainController:nil];
+    }
     [self setMainController:[[RCMainController alloc] init]];
     [[self mainController] showWindow:self];
 }
@@ -34,6 +38,10 @@
 
     if([openDlg runModal] == NSOKButton) {
         RCProject *project = [RCProjectSerializer load:openDlg.URL.path];
+        if(self.mainController) {
+            [[self mainController] removeObservers];
+            [self setMainController:nil];
+        }
         [self setMainController:[[RCMainController alloc] initWithProject: project]];
         [[self mainController] showWindow:self];
     }
