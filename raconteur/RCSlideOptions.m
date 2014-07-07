@@ -87,7 +87,7 @@ static RCSlideOptions *defaultOptions;
     [coder encodeObject:self.foregroundColor forKey:NSStringFromSelector(@selector(foregroundColor))];
     [coder encodeObject: self.horizontalTextAlignment forKey:NSStringFromSelector(@selector(horizontalTextAlignment))];
     [coder encodeObject: self.backgroundColor forKey:NSStringFromSelector(@selector(backgroundColor))];
-    [coder encodeObject:self.foregroundColor forKey:NSStringFromSelector(@selector(foregroundColor))];
+    [coder encodeObject:self.fontFamily forKey:NSStringFromSelector(@selector(fontFamily))];
 }
 
 @end
