@@ -81,10 +81,12 @@
             }
             else {
                 RCSlideOptions *options = [[self currentSlide] options];
-                [[self foregroundPicker] setPickedColor:options.foregroundColor];
-                [[self backgroundPicker] setPickedColor:options.backgroundColor];
-                [[self foregroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
-                [[self backgroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+                if(options) {
+                    [[self foregroundPicker] setPickedColor:options.foregroundColor];
+                    [[self backgroundPicker] setPickedColor:options.backgroundColor];
+                    [[self foregroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+                    [[self backgroundPicker] addObserver:self forKeyPath:NSStringFromSelector(@selector(pickedColor)) options:NSKeyValueObservingOptionNew context:NULL];
+                }
             }
         }
     }
