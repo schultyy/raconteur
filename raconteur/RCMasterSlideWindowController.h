@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong, readonly) RCColorPickerViewController *backgroundPicker;
 
+@property (nonatomic, strong, readonly) NSDictionary *horizontalTextAlignmentOptions;
+
 @property IBOutlet NSBox *foregroundPickerView;
 
 @property IBOutlet NSBox *backgroundPickerView;

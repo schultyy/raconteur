@@ -6,11 +6,12 @@
 #import "RCMasterSlideWindowController.h"
 #import "RCSlideOptions.h"
 #import "RCColorPickerViewController.h"
+#import "RCConstants.h"
 
 @interface RCMasterSlideWindowController()
 @property (nonatomic, strong, readwrite) RCColorPickerViewController *foregroundPicker;
-
 @property (nonatomic, strong, readwrite) RCColorPickerViewController *backgroundPicker;
+@property (nonatomic, strong, readwrite) NSDictionary *horizontalTextAlignmentOptions;
 @end
 
 @implementation RCMasterSlideWindowController
@@ -21,6 +22,12 @@
         [self setDefaultOptions: [RCSlideOptions defaultOptions]];
         [self setForegroundPicker:[[RCColorPickerViewController alloc] initWithColor:self.defaultOptions.foregroundColor]];
         [self setBackgroundPicker:[[RCColorPickerViewController alloc] initWithColor:self.defaultOptions.backgroundColor]];
+
+        NSMutableDictionary *horizontalDict = [NSMutableDictionary dictionary];
+        [horizontalDict setValue: RCHorizontalTextAlignmentCenterValue forKey:RCHorizontalTextAlignmentCenterKey];
+        [horizontalDict setValue: RCHorizontalTextAlignmentLeftValue forKey:RCHorizontalTextAlignmentLeftKey];
+        [horizontalDict setValue: RCHorizontalTextAlignmentRightValue forKey:RCHorizontalTextAlignmentRightKey];
+        [self setHorizontalTextAlignmentOptions:horizontalDict];
     }
     return self;
 }

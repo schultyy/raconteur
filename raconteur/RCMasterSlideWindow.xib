@@ -16,14 +16,14 @@
         <window title="Edit Master Slide" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="341" height="213"/>
+            <rect key="contentRect" x="196" y="240" width="341" height="257"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="213"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="257"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cz-lX-OH9">
-                        <rect key="frame" x="88" y="169" width="165" height="23"/>
+                        <rect key="frame" x="88" y="213" width="165" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Edit Master Slide" id="5CQ-6C-f9s">
                             <font key="font" metaFont="system" size="19"/>
@@ -54,14 +54,14 @@
                         </connections>
                     </button>
                     <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="et6-da-8qA">
-                        <rect key="frame" x="12" y="158" width="309" height="5"/>
+                        <rect key="frame" x="12" y="202" width="309" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3S-Zv-8qr">
-                        <rect key="frame" x="18" y="121" width="78" height="17"/>
+                        <rect key="frame" x="18" y="165" width="78" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Foreground" id="Ljq-lD-ZFh">
                             <font key="font" metaFont="system"/>
@@ -70,7 +70,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Lg-zl-ab9">
-                        <rect key="frame" x="18" y="73" width="79" height="17"/>
+                        <rect key="frame" x="18" y="117" width="79" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Background" id="E9K-Sx-hod">
                             <font key="font" metaFont="system"/>
@@ -79,7 +79,7 @@
                         </textFieldCell>
                     </textField>
                     <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="3ej-bJ-hny">
-                        <rect key="frame" x="154" y="105" width="170" height="46"/>
+                        <rect key="frame" x="154" y="149" width="170" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="170" height="46"/>
@@ -89,7 +89,7 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <box autoresizesSubviews="NO" fixedFrame="YES" title="Box" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-su-vmf">
-                        <rect key="frame" x="154" y="57" width="170" height="46"/>
+                        <rect key="frame" x="154" y="101" width="170" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="170" height="46"/>
@@ -98,9 +98,43 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHc-P0-ap2">
+                        <rect key="frame" x="18" y="51" width="114" height="39"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Horizontal text alignment" id="PBw-JI-fer">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-H2-Ksp">
+                        <rect key="frame" x="155" y="57" width="169" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xnY-NZ-2Br" id="OtZ-Ou-FBS">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="97l-3f-ky5">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="xnY-NZ-2Br"/>
+                                    <menuItem title="Item 2" id="54V-GU-GQr"/>
+                                    <menuItem title="Item 3" id="ztQ-LS-Jha"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <binding destination="e4H-Ba-Q3D" name="content" keyPath="arrangedObjects" id="TTb-Ad-Gul"/>
+                            <binding destination="e4H-Ba-Q3D" name="contentObjects" keyPath="arrangedObjects.key" previousBinding="TTb-Ad-Gul" id="4F1-Bf-j2j"/>
+                            <binding destination="e4H-Ba-Q3D" name="contentValues" keyPath="arrangedObjects.value" previousBinding="4F1-Bf-j2j" id="QkT-Dx-Nim"/>
+                        </connections>
+                    </popUpButton>
                 </subviews>
             </view>
         </window>
+        <dictionaryController objectClassName="_NSControllerKeyValuePair" id="e4H-Ba-Q3D">
+            <connections>
+                <binding destination="-2" name="contentDictionary" keyPath="self.horizontalTextAlignmentOptions" id="R0N-tj-deC"/>
+            </connections>
+        </dictionaryController>
         <userDefaultsController representsSharedInstance="YES" id="vN0-uN-bsf"/>
     </objects>
 </document>
