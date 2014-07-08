@@ -24,6 +24,10 @@
     return self;
 }
 
+-(void)windowDidLoad {
+    [[self webView] setPolicyDelegate:self];
+}
+
 -(void) start {
     NSString *html = [[self presentationBuilder] firstSlide];
 
@@ -47,4 +51,21 @@
     
     [[[self webView] mainFrame] loadHTMLString:html baseURL:nil];
 }
+
+#pragma mark - WebViewDelegate
+
+- (void)webView:(WebView *)webView
+        decidePolicyForNavigationAction:(NSDictionary *)actionInformation
+        request:(NSURLRequest *)request
+        frame:(WebFrame *)frame
+        decisionListener:(id <WebPolicyDecisionListener>)listener
+{
+    NSString *host = [[request URL] host];
+    if (host) {
+        [[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    } else {
+        [listener use];
+    }
+}
+
 @end

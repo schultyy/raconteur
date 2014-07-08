@@ -619,7 +619,7 @@
 				GCC_PREFIX_HEADER = "raconteur/raconteur-Prefix.pch";
 				INFOPLIST_FILE = "raconteur/raconteur-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/mruby\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -634,7 +634,7 @@
 				GCC_PREFIX_HEADER = "raconteur/raconteur-Prefix.pch";
 				INFOPLIST_FILE = "raconteur/raconteur-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/mruby\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
