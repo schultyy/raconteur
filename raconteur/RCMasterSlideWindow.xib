@@ -125,6 +125,7 @@
                             <binding destination="e4H-Ba-Q3D" name="content" keyPath="arrangedObjects" id="TTb-Ad-Gul"/>
                             <binding destination="e4H-Ba-Q3D" name="contentObjects" keyPath="arrangedObjects.key" previousBinding="TTb-Ad-Gul" id="4F1-Bf-j2j"/>
                             <binding destination="e4H-Ba-Q3D" name="contentValues" keyPath="arrangedObjects.value" previousBinding="4F1-Bf-j2j" id="QkT-Dx-Nim"/>
+                            <binding destination="-2" name="selectedValue" keyPath="self.defaultOptions.horizontalTextAlignment" previousBinding="QkT-Dx-Nim" id="w9o-Ia-2Bx"/>
                         </connections>
                     </popUpButton>
                 </subviews>
