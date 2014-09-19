@@ -13,6 +13,7 @@
 #import "RCMasterSlideWindowController.h"
 #import "Underscore.h"
 #import "RCSlideOptions.h"
+#import "RCProjectContext.h"
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
@@ -116,11 +117,12 @@
 }
 
 -(void) saveProject {
-    if([[[self project] filePath] length] == 0) {
+    if([[[self project] projectDirectoryPath] length] == 0) {
         [self saveProjectAs];
     }
     else {
-        [RCProjectSerializer serializeObject:self.project toFile: self.project.filePath];
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        [context saveProject:self.project];
     }
 }
 
@@ -130,24 +132,16 @@
 
     [savePanel setAllowedFileTypes: [NSArray arrayWithObject:@"json"]];
 
-
     if([savePanel runModal] == NSOKButton) {
-        [RCProjectSerializer serializeObject:self.project toFile: savePanel.URL.path];
-        [[self project] setFilePath:savePanel.URL.path];
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        RCProject *savedProject = [context saveNewProject: self.project atPath: savePanel.URL.path];
+        [self setProject:savedProject];
     }
 }
 
 -(void) exportSlides {
-    //Sucess
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    [savePanel setCanCreateDirectories:YES];
-    [savePanel setPrompt:@"Export"];
-    [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
-
-    if([savePanel runModal] == NSOKButton) {
-        RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-        [builder export:savePanel.URL.path];
-    }
+    RCProjectContext *context = [[RCProjectContext alloc] init];
+    [context exportProject:self.project];
 }
 
 -(void) startPresentation{

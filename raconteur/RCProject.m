@@ -10,15 +10,20 @@
 @implementation RCProject
 
 -(id) init {
-    self = [self initWithSlides:[NSMutableArray array] andPath: nil];
+    self = [self initWithSlides:[NSMutableArray array] directory: nil andFilename:nil];
     return self;
 }
 
--(id)initWithSlides:(NSArray *)slides andPath:(NSString *)path {
+-(id) initWithSlides: (NSArray *) slides {
+    return [self initWithSlides:slides directory: nil andFilename:nil];
+}
+
+-(id) initWithSlides: (NSArray *) slides directory: (NSString *) directory andFilename: (NSString *) filename {
     self = [super init];
     if(self) {
         [self setSlides:[NSMutableArray arrayWithArray:slides]];
-        [self setFilePath:path];
+        [self setProjectDirectoryPath:directory];
+        [self setFilename:filename];
     }
     return self;
 }

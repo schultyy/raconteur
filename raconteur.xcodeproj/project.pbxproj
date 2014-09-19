@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6964F0CFC13670376B7C980C /* RCPresentationBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F12FA39B251AF06930D6 /* RCPresentationBuilder.m */; };
+		6964F247C8B84711ABC88E86 /* RCProjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F3FCC3795E516B3960AD /* RCProjectContext.m */; };
 		6964F5EA9761A56CAAC2E81D /* RCFrontMatterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964F7BE0CABAB5ABA91510F /* RCFrontMatterParser.m */; };
 		6964F6A2E04303E5698600E2 /* jquery-2.1.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964FBCC607BA0A40789F2FA /* jquery-2.1.1.min.js */; };
 		6964F725AEAA39494413E543 /* slideManager.js in Sources */ = {isa = PBXBuildFile; fileRef = 6964F34A4FA74374D06E4C8B /* slideManager.js */; };
@@ -63,6 +64,7 @@
 		2F2F4843875A4EED8F22BB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6964F059153C4F40DFE10C4A /* NSColor+RCHexValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+RCHexValue.h"; sourceTree = "<group>"; };
 		6964F0A3AFAACF2909DD7B14 /* basic-template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "basic-template.html"; sourceTree = "<group>"; };
+		6964F0FE308C7DA33F9A68EE /* RCProjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCProjectContext.h; sourceTree = "<group>"; };
 		6964F12FA39B251AF06930D6 /* RCPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPresentationBuilder.m; sourceTree = "<group>"; };
 		6964F173C0D9A1A778D27EA5 /* RCSlideOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlideOptions.m; sourceTree = "<group>"; };
 		6964F2723278279F101169CE /* RCBuilderBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBuilderBase.m; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		6964F34A4FA74374D06E4C8B /* slideManager.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = slideManager.js; sourceTree = "<group>"; };
 		6964F39CD8CA781BA19CE868 /* RCSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSlide.m; sourceTree = "<group>"; };
 		6964F3C7896A8493DC872D55 /* RCProjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectSerializer.m; sourceTree = "<group>"; };
+		6964F3FCC3795E516B3960AD /* RCProjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCProjectContext.m; sourceTree = "<group>"; };
 		6964F4253EC6DA9182EE3BF5 /* RCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainController.h; sourceTree = "<group>"; };
 		6964F57AA1DE447CE2415911 /* RCPagedPresentationBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPagedPresentationBuilder.m; sourceTree = "<group>"; };
 		6964F5F64CF8F30245DBDD07 /* RCPresentationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPresentationWindowController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				6964F8814E41DA6BA80FDE58 /* RCPresentationBuilder.h */,
 				6964F2723278279F101169CE /* RCBuilderBase.m */,
 				6964F60BCE8777C3133D1351 /* RCBuilderBase.h */,
+				6964F3FCC3795E516B3960AD /* RCProjectContext.m */,
+				6964F0FE308C7DA33F9A68EE /* RCProjectContext.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				6964F725AEAA39494413E543 /* slideManager.js in Sources */,
 				6964FBA9894C43DEF138DF2F /* RCMasterSlideWindowController.m in Sources */,
 				6964F853217AF0EF43EA633B /* RCColorPickerViewController.m in Sources */,
+				6964F247C8B84711ABC88E86 /* RCProjectContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

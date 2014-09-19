@@ -12,9 +12,13 @@
 
 @property (nonatomic, strong) NSMutableArray *slides;
 
-@property (strong) NSString *filePath;
+@property (strong) NSString *projectDirectoryPath;
 
--(id) initWithSlides: (NSArray *) slides andPath: (NSString *) path;
+@property (strong) NSString *filename;
+
+-(id) initWithSlides: (NSArray *) slides;
+
+-(id) initWithSlides: (NSArray *) slides directory: (NSString *) directory andFilename: (NSString *) filename;
 
 -(RCSlide *) addSlide;
 

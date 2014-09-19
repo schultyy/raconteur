@@ -52,7 +52,7 @@
     NSArray *slides = Underscore.arrayMap(slideFilenames, ^(NSString *filename){
         return [RCSlide fromFile: filename];
     });
-    return [[RCProject alloc] initWithSlides: slides andPath: projectFilePath];
+    return [[RCProject alloc] initWithSlides: slides];
 }
 
 @end

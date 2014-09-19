@@ -10,6 +10,8 @@
 #import "RCMainController.h"
 #import "RCProjectSerializer.h"
 #import "RCPresentationWindowController.h"
+#import "RCProjectContext.h"
+#import "RCProject.h"
 
 @implementation RCAppDelegate
 
@@ -37,7 +39,9 @@
     [openDlg setPrompt:@"Select"];
 
     if([openDlg runModal] == NSOKButton) {
-        RCProject *project = [RCProjectSerializer load:openDlg.URL.path];
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        RCProject *project = [context loadProject:openDlg.URL.path];
+
         if(self.mainController) {
             [[self mainController] removeObservers];
             [self setMainController:nil];
