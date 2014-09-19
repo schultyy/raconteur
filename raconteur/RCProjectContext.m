@@ -6,6 +6,7 @@
 #import "RCProjectContext.h"
 #import "RCProject.h"
 #import "RCProjectSerializer.h"
+#import "RCPresentationBuilder.h"
 
 
 @implementation RCProjectContext
@@ -42,6 +43,20 @@
                                                   andFilename:filename];
     [self saveProject:newProject];
     return newProject;
+}
+
+-(void)exportProject:(RCProject *)project {
+    RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:project];
+    NSString *exportPath = [self buildPathForProject:project.projectDirectoryPath];
+    NSString *htmlFilename = [self buildExportFilename:project];
+
+    [builder export: [exportPath stringByAppendingPathComponent:htmlFilename]];
+}
+
+-(NSString *) buildExportFilename: (RCProject *) project {
+    NSString *filename = project.filename;
+    NSString *name = [filename stringByDeletingPathExtension];
+    return [name stringByAppendingPathExtension:@"html"];
 }
 
 -(NSString *) assetPathForProject: (NSString *) projectPath {

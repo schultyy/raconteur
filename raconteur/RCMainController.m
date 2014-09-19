@@ -140,16 +140,8 @@
 }
 
 -(void) exportSlides {
-    //Sucess
-    NSSavePanel *savePanel = [NSSavePanel savePanel];
-    [savePanel setCanCreateDirectories:YES];
-    [savePanel setPrompt:@"Export"];
-    [savePanel setAllowedFileTypes:[NSArray arrayWithObject: @"html"]];
-
-    if([savePanel runModal] == NSOKButton) {
-        RCPresentationBuilder *builder = [[RCPresentationBuilder alloc] initWithProject:self.project];
-        [builder export:savePanel.URL.path];
-    }
+    RCProjectContext *context = [[RCProjectContext alloc] init];
+    [context exportProject:self.project];
 }
 
 -(void) startPresentation{

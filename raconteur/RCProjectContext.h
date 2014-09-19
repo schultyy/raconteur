@@ -11,8 +11,8 @@
 @interface RCProjectContext : NSObject
 
 -(RCProject *) loadProject: (NSString *) projectPath;
-
 -(void) saveProject: (RCProject *) project;
 -(RCProject *) saveNewProject: (RCProject *) project atPath: (NSString *) path;
+-(void) exportProject: (RCProject *) project;
 
 @end
