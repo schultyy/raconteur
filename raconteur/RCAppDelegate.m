@@ -38,7 +38,7 @@
     [openDlg setAllowedFileTypes:[NSArray arrayWithObject:@"json"]];
     [openDlg setPrompt:@"Select"];
 
-    if([openDlg runModal] == NSOKButton) {g
+    if([openDlg runModal] == NSOKButton) {
         RCProjectContext *context = [[RCProjectContext alloc] init];
         RCProject *project = [context loadProject:openDlg.URL.path];
 
