@@ -13,6 +13,7 @@
 #import "RCMasterSlideWindowController.h"
 #import "Underscore.h"
 #import "RCSlideOptions.h"
+#import "RCProjectContext.h"
 
 #define BasicTableViewDragAndDropDataType @"BasicTableViewDragAndDropDataType"
 
@@ -120,7 +121,8 @@
         [self saveProjectAs];
     }
     else {
-        [RCProjectSerializer serializeObject:self.project toFile: self.project.filePath];
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        [context saveProject:self.project atPath:self.project.filePath];
     }
 }
 
@@ -132,8 +134,9 @@
 
 
     if([savePanel runModal] == NSOKButton) {
-        [RCProjectSerializer serializeObject:self.project toFile: savePanel.URL.path];
-        [[self project] setFilePath:savePanel.URL.path];
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        NSString *path = [context saveNewProject: self.project atPath: savePanel.URL.path];
+        [[self project] setFilePath: path];
     }
 }
 
