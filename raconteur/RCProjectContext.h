@@ -9,7 +9,10 @@
 
 
 @interface RCProjectContext : NSObject
--(NSString *) saveProject: (RCProject *) project atPath:(NSString *) rootPath;
--(NSString *) saveNewProject: (RCProject *) project atPath: (NSString *) path;
+
+-(RCProject *) loadProject: (NSString *) projectPath;
+
+-(void) saveProject: (RCProject *) project;
+-(RCProject *) saveNewProject: (RCProject *) project atPath: (NSString *) path;
 
 @end

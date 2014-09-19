@@ -10,6 +10,8 @@
 #import "RCMainController.h"
 #import "RCProjectSerializer.h"
 #import "RCPresentationWindowController.h"
+#import "RCProjectContext.h"
+#import "RCProject.h"
 
 @implementation RCAppDelegate
 
@@ -36,8 +38,10 @@
     [openDlg setAllowedFileTypes:[NSArray arrayWithObject:@"json"]];
     [openDlg setPrompt:@"Select"];
 
-    if([openDlg runModal] == NSOKButton) {
-        RCProject *project = [RCProjectSerializer load:openDlg.URL.path];
+    if([openDlg runModal] == NSOKButton) {g
+        RCProjectContext *context = [[RCProjectContext alloc] init];
+        RCProject *project = [context loadProject:openDlg.URL.path];
+
         if(self.mainController) {
             [[self mainController] removeObservers];
             [self setMainController:nil];

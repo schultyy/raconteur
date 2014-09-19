@@ -10,37 +10,50 @@
 
 @implementation RCProjectContext
 
--(NSString *)saveProject: (RCProject *) project atPath:(NSString *) rootPath {
-    NSString *filename = [rootPath lastPathComponent];
-    NSString *slidePath = [[self srcPathForProject:rootPath] stringByAppendingPathComponent:filename];
-    [RCProjectSerializer serializeObject:project toFile: slidePath];
-    return slidePath;
+-(RCProject *)loadProject:(NSString *)projectPath {
+    RCProject *project = [RCProjectSerializer load: projectPath];
+    NSString *filename = [projectPath lastPathComponent];
+    NSString *src = [projectPath stringByDeletingLastPathComponent];
+
+    [project setProjectDirectoryPath:[self basePath:src]];
+    [project setFilename:filename];
+
+    return project;
 }
 
--(NSString *)saveNewProject:(RCProject *)project atPath:(NSString *)rootPath {
-    [[NSFileManager defaultManager] createDirectoryAtPath: [self srcPathForProject:rootPath] withIntermediateDirectories:NO
+-(void) saveProject: (RCProject *) project {
+    NSString *srcPath = [self srcPathForProject:project.projectDirectoryPath];
+    NSString *slidePath = [srcPath stringByAppendingPathComponent:project.filename];
+    [RCProjectSerializer serializeObject:project toFile: slidePath];
+}
+
+-(RCProject *)saveNewProject:(RCProject *)project atPath:(NSString *)rootPath {
+    NSString *basePath = [self basePath:rootPath];
+    [[NSFileManager defaultManager] createDirectoryAtPath: [self srcPathForProject:basePath] withIntermediateDirectories:NO
                                                attributes:nil error:NULL];
-    [[NSFileManager defaultManager] createDirectoryAtPath:[self buildPathForProject:rootPath] withIntermediateDirectories:NO
+    [[NSFileManager defaultManager] createDirectoryAtPath:[self buildPathForProject:basePath] withIntermediateDirectories:NO
                                                attributes:nil error:NULL];
-    [[NSFileManager defaultManager] createDirectoryAtPath:[self assetPathForProject:rootPath] withIntermediateDirectories:NO
+    [[NSFileManager defaultManager] createDirectoryAtPath:[self assetPathForProject:basePath] withIntermediateDirectories:NO
                                                attributes:nil error:NULL];
 
-    return [self saveProject:project atPath:rootPath];
+    NSString *filename = [rootPath lastPathComponent];
+    RCProject *newProject = [[RCProject alloc] initWithSlides:project.slides
+                                                    directory:[self basePath:rootPath]
+                                                  andFilename:filename];
+    [self saveProject:newProject];
+    return newProject;
 }
 
 -(NSString *) assetPathForProject: (NSString *) projectPath {
-    NSString *root = [self basePath:projectPath];
-    return [root stringByAppendingPathComponent:@"assets"];
+    return [projectPath stringByAppendingPathComponent:@"assets"];
 }
 
 -(NSString *) buildPathForProject: (NSString *) projectPath {
-    NSString *root = [self basePath:projectPath];
-    return [root stringByAppendingPathComponent:@"build"];
+    return [projectPath stringByAppendingPathComponent:@"build"];
 }
 
 -(NSString *) srcPathForProject: (NSString *) projectPath {
-    NSString *root = [self basePath:projectPath];
-    return [root stringByAppendingPathComponent:@"src"];
+    return [projectPath stringByAppendingPathComponent:@"src"];
 }
 
 -(NSString *) basePath: (NSString *) projectPath {

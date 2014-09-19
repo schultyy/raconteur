@@ -117,12 +117,12 @@
 }
 
 -(void) saveProject {
-    if([[[self project] filePath] length] == 0) {
+    if([[[self project] projectDirectoryPath] length] == 0) {
         [self saveProjectAs];
     }
     else {
         RCProjectContext *context = [[RCProjectContext alloc] init];
-        [context saveProject:self.project atPath:self.project.filePath];
+        [context saveProject:self.project];
     }
 }
 
@@ -132,11 +132,10 @@
 
     [savePanel setAllowedFileTypes: [NSArray arrayWithObject:@"json"]];
 
-
     if([savePanel runModal] == NSOKButton) {
         RCProjectContext *context = [[RCProjectContext alloc] init];
-        NSString *path = [context saveNewProject: self.project atPath: savePanel.URL.path];
-        [[self project] setFilePath: path];
+        RCProject *savedProject = [context saveNewProject: self.project atPath: savePanel.URL.path];
+        [self setProject:savedProject];
     }
 }
 
