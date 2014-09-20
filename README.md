@@ -29,7 +29,9 @@ There is a `json` file, which contains information about default slide options (
 * `example-3.md`
 
 # Export
-You can export your slides as HTML. It has a JQuery dependency for basic DOM operations. 
+Slides are exported automatically as HTML and are placed in the `build`
+folder.
+It has a JQuery dependency for basic DOM operations.
 
 It places the following files on your disk:
 

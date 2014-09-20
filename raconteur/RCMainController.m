@@ -123,6 +123,7 @@
     else {
         RCProjectContext *context = [[RCProjectContext alloc] init];
         [context saveProject:self.project];
+        [context exportProject:self.project];
     }
 }
 
@@ -136,6 +137,7 @@
         RCProjectContext *context = [[RCProjectContext alloc] init];
         RCProject *savedProject = [context saveNewProject: self.project atPath: savePanel.URL.path];
         [self setProject:savedProject];
+        [context exportProject:self.project];
     }
 }
 

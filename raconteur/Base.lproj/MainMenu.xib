@@ -85,13 +85,6 @@
                                     <action selector="saveProjectAs:" target="Voe-Tx-rLC" id="od2-Cx-UVv"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="cqH-Qa-Adm"/>
-                            <menuItem title="Export" id="7Ay-4w-r4C">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="exportSlides:" target="Voe-Tx-rLC" id="XGK-km-xJC"/>
-                                </connections>
-                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
