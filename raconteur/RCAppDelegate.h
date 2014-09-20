@@ -28,8 +28,6 @@
 
 -(IBAction) saveProjectAs: (id) sender;
 
--(IBAction)exportSlides:(id)sender;
-
 -(IBAction)startPresentation:(id)sender;
 
 -(IBAction)nextSlide:(id)sender;

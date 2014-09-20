@@ -71,10 +71,6 @@
     [[self mainController] saveProjectAs];
 }
 
--(IBAction)exportSlides:(id)sender {
-    [[self mainController] exportSlides];
-}
-
 -(IBAction)startPresentation:(id)sender {
     [[self mainController] startPresentation];
 }
