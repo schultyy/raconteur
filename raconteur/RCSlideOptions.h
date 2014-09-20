@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSString *verticalTextAlignment;
 
+@property (nonatomic, strong) NSNumber *fontSize;
+
 -(id) initWithCoder: (NSCoder *) coder;
 
 -(id) initWithDictionary: (NSDictionary *) dict;

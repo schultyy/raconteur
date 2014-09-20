@@ -21,6 +21,7 @@ static RCSlideOptions *defaultOptions;
         [self setFontFamily:              [coder decodeObjectForKey:NSStringFromSelector(@selector(fontFamily))]];
         [self setBackgroundColor:         [coder decodeObjectForKey:NSStringFromSelector(@selector(backgroundColor))]];
         [self setForegroundColor:         [coder decodeObjectForKey:NSStringFromSelector(@selector(foregroundColor))]];
+        [self setFontSize:                [coder decodeObjectForKey:NSStringFromSelector(@selector(fontSize))]];
     }
     return self;
 }
@@ -36,6 +37,7 @@ static RCSlideOptions *defaultOptions;
         [self setFontFamily:[dict valueForKey: RCFontFamily]];
         [self setHorizontalTextAlignment:[dict valueForKey:RCHorizontalTextAlignment]];
         [self setVerticalTextAlignment: [dict valueForKey:RCVerticalTextAlignment]];
+        [self setFontSize:[dict valueForKey:RCFontsize]];
     }
     return self;
 }
@@ -46,7 +48,8 @@ static RCSlideOptions *defaultOptions;
             RCVerticalTextAlignment: self.verticalTextAlignment,
             RCFontFamily: self.fontFamily,
             RCBackgroundColor: self.backgroundColor.hexColor,
-            RCTextColor: self.foregroundColor.hexColor
+            RCTextColor: self.foregroundColor.hexColor,
+            RCFontsize: self.fontSize
     };
 }
 
@@ -58,6 +61,7 @@ static RCSlideOptions *defaultOptions;
         [opts setHorizontalTextAlignment:RCHorizontalTextAlignmentLeftValue];
         [opts setVerticalTextAlignment:RCVerticalTextAlignmentTopValue];
         [opts setFontFamily:@"Arial"];
+        [opts setFontSize:[NSNumber numberWithInt:40]];
         defaultOptions = opts;
     }
     return [defaultOptions copy];
@@ -77,6 +81,7 @@ static RCSlideOptions *defaultOptions;
         [copy setFontFamily:[self.fontFamily copyWithZone:zone]];
         [copy setHorizontalTextAlignment:[self.horizontalTextAlignment copyWithZone:zone]];
         [copy setVerticalTextAlignment:[self.verticalTextAlignment copyWithZone:zone]];
+        [copy setFontSize:[self.fontSize copyWithZone:zone]];
     }
     return copy;
 }
@@ -88,6 +93,7 @@ static RCSlideOptions *defaultOptions;
     [coder encodeObject: self.horizontalTextAlignment forKey:NSStringFromSelector(@selector(horizontalTextAlignment))];
     [coder encodeObject: self.backgroundColor forKey:NSStringFromSelector(@selector(backgroundColor))];
     [coder encodeObject:self.fontFamily forKey:NSStringFromSelector(@selector(fontFamily))];
+    [coder encodeObject:self.fontSize forKey:NSStringFromSelector(@selector(fontSize))];
 }
 
 @end

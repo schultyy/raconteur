@@ -4,6 +4,7 @@ NSString * const RCTextColor = @"TextColor";
 NSString * const RCFontFamily = @"FontFamily";
 NSString * const RCHorizontalTextAlignment = @"HorizontalAlignment";
 NSString * const RCVerticalTextAlignment = @"VerticalAlignment";
+NSString * const RCFontsize = @"RCFontsize";
 
 NSString * const RCHorizontalTextAlignmentRightKey = @"RCHorizontalTextAlignmentRightKey";
 NSString * const RCHorizontalTextAlignmentLeftKey = @"RCHorizontalTextAlignmentLeftKey";
